@@ -1,15 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-
-import AddPengumuman from "./addPengumuman";
 import EditPengumuman from "./EditProduct";
+import AddPengumuman from "./AddPengumuman";
 
 const PengumumanList = () => {
   const [dataPengumuman, setDataPengumuman] = useState([]);
   const [idPengumumanEdit, setIdPengumumanEdit] = useState("");
-  const urlImg = "http://localhost:5000/beranda/pengumumanImg";
+  const urlImg = "http://localhost:4000/pengumumanImg/";
 
   // ================= RETRIEVE DATA ULANG =============
   useEffect(() => {
@@ -19,7 +17,7 @@ const PengumumanList = () => {
 
   // ================ GET DATA BE ======================
   const getPengumuman = async () => {
-    const res = await axios.get("http://localhost:5000/pengumuman");
+    const res = await axios.get("http://localhost:4000/pengumuman");
     setDataPengumuman(res.data);
   };
   // ================ LAST GET DATA BE ======================
@@ -29,7 +27,7 @@ const PengumumanList = () => {
     const notifyDelete = (message) => toast.success(message);
 
     try {
-      await axios.delete(`http://localhost:5000/pengumuman/${id}`);
+      await axios.delete(`http://localhost:4000/pengumuman/${id}`);
       getPengumuman();
       notifyDelete("Data Berhasil Dihapus!");
     } catch (error) {
@@ -60,50 +58,76 @@ const PengumumanList = () => {
 
   return (
     <div className="flex flex-col gap-2">
-      {/* <button onClick={notify}>Notify !</button> */}
-      {dataPengumuman.map((pengumuman) => (
-        <div
-          key={pengumuman.id}
-          className="flex flex-col  bg-base-100 shadow-xl"
-        >
-          <figure>
-            <img
-              className="h-24"
-              src={`${urlImg}/${pengumuman.img}`}
-              alt="foto"
-            />
-          </figure>
-          <div className="card-body">
-            <h2 className="card-title">{pengumuman.title}</h2>
-            <div dangerouslySetInnerHTML={{ __html: pengumuman.content }} />
-            <div className="card-actions justify-end">
-              <button
-                onClick={() => {
-                  deletePengumuman(pengumuman.id);
-                }}
-                className="btn btn-primary"
-              >
-                Delete
-              </button>
-              <button
-                onClick={() => {
-                  handleEdit({
-                    id: pengumuman.id,
-                    title: pengumuman.title,
-                    content: pengumuman.content,
-                    file: pengumuman.img,
-                  });
-                  window.my_modal_edit.showModal();
-                }}
-                className="btn btn-success"
-              >
-                {" "}
-                Edit
-              </button>
-            </div>
-          </div>
-        </div>
-      ))}
+      <div className="overflow-x-auto">
+        <table className="table">
+          {/* head */}
+          <thead>
+            <tr>
+              <th className="text-center">Nomor</th>
+              <th className="text-center">Judul</th>
+              <th className="text-center">Isi Pengumuman</th>
+              <th className="text-center">Aksi</th>
+            </tr>
+          </thead>
+          <tbody>
+            {dataPengumuman.map((pengumuman, idx) => (
+              <tr key={pengumuman.id}>
+                <td>{(idx += 1)}</td>
+                <td>
+                  <div className="flex items-center space-x-3">
+                    <div className="avatar">
+                      <div className="mask mask-squircle w-12 h-12">
+                        <img
+                          className="w-24"
+                          src={`${urlImg}${pengumuman.gambar}`}
+                          alt="gambar"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="font-bold">{pengumuman.judul}</div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div
+                    className="line-clamp-2"
+                    dangerouslySetInnerHTML={{
+                      __html: pengumuman.deskripsi,
+                    }}
+                  />
+                </td>
+                <td className="flex gap-2 justify-center items-center">
+                  <button
+                    onClick={() => {
+                      deletePengumuman(pengumuman.id);
+                    }}
+                    className="btn btn-outline btn-error"
+                  >
+                    Hapus
+                  </button>
+                  <button
+                    onClick={() => {
+                      handleEdit({
+                        id: pengumuman.id,
+                        judul: pengumuman.judul,
+                        deskripsi: pengumuman.deskripsi,
+                        gambar: pengumuman.gambar,
+                      });
+                      window.my_modal_edit.showModal();
+                    }}
+                    className="btn btn-outline btn-warning"
+                  >
+                    Edit
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+          {/* foot */}
+        </table>
+      </div>
+
       <AddPengumuman handleAddPengumuman={handleAddPengumuman} />
       <EditPengumuman
         idPengumumanEdit={idPengumumanEdit}
