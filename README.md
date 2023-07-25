@@ -1,3 +1,2 @@
 # Bakorwil-Malang
 
-asulole
