@@ -1,58 +1,48 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { deleteBerita, getBerita } from "../../../getApi";
 import { toast } from "react-toastify";
-import EditPengumuman from "./EditProduct";
-import AddPengumuman from "./AddPengumuman";
-import { deletePengumuman, getPengumuman } from "../../../getApi";
+import AddBerita from "./AddBerita";
 
-const PengumumanList = () => {
-  const [dataPengumuman, setDataPengumuman] = useState([]);
-  const [idPengumumanEdit, setIdPengumumanEdit] = useState("");
-  const urlImg = "http://localhost:4000/pengumumanImg/";
+const BeritaList = () => {
+  const [dataBerita, setDataBerita] = useState([]);
+
+  const urlImg = "http://localhost:4000/beritaImg/";
 
   useEffect(() => {
-    getPengumuman().then((data) => {
-      setDataPengumuman(data);
+    getBerita().then((data) => {
+      setDataBerita(data);
     });
   }, []);
 
-  const deletePengumumanId = async (id) => {
+  const deleteBeritaId = async (id) => {
     const notifyDelete = (message) => toast.success(message);
     try {
-      await deletePengumuman(id, setDataPengumuman, notifyDelete);
+      await deleteBerita(id, setDataBerita, notifyDelete);
     } catch (error) {
       console.log(error);
     }
   };
-
-  const handleEdit = (pengumumanData) => {
-    setIdPengumumanEdit(pengumumanData);
-    setDataPengumuman((prevData) =>
-      prevData.map((pengumuman) =>
-        pengumuman.id === pengumumanData.id ? pengumumanData : pengumuman
-      )
-    );
-  };
-
-  const handleAddPengumuman = (newPengumuman) => {
-    setDataPengumuman([...dataPengumuman, newPengumuman]);
+  const handleAddBerita = (newBerita) => {
+    setDataBerita([...dataBerita, newBerita]);
   };
 
   return (
     <div className="flex flex-col gap-2">
       <div className="overflow-x-auto">
         <table className="table">
-          <thead className="bg-base-200">
+          {/* head */}
+          <thead>
             <tr>
               <th className="text-center">Nomor</th>
               <th className="text-center">Judul</th>
-              <th className="text-center">Isi Pengumuman</th>
+              <th className="text-center">Isi Berita</th>
               <th className="text-center">Aksi</th>
             </tr>
           </thead>
           <tbody>
-            {dataPengumuman.map((pengumuman, idx) => (
-              <tr key={pengumuman.id}>
+            {dataBerita.map((berita, idx) => (
+              <tr>
                 <td>{(idx += 1)}</td>
                 <td>
                   <div className="flex items-center space-x-3">
@@ -60,13 +50,13 @@ const PengumumanList = () => {
                       <div className="mask mask-squircle w-12 h-12">
                         <img
                           className="w-24"
-                          src={`${urlImg}${pengumuman.gambar}`}
+                          src={`${urlImg}${berita.gambar}`}
                           alt="gambar"
                         />
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">{pengumuman.judul}</div>
+                      <div className="font-bold">{berita.judul}</div>
                     </div>
                   </div>
                 </td>
@@ -74,29 +64,29 @@ const PengumumanList = () => {
                   <div
                     className="line-clamp-2"
                     dangerouslySetInnerHTML={{
-                      __html: pengumuman.deskripsi,
+                      __html: berita.deskripsi,
                     }}
                   />
                 </td>
                 <td className="flex gap-2 justify-center items-center">
                   <button
                     onClick={() => {
-                      deletePengumumanId(pengumuman.id);
+                      deleteBeritaId(berita.id);
                     }}
                     className="btn btn-outline btn-error"
                   >
                     Hapus
                   </button>
                   <button
-                    onClick={() => {
-                      handleEdit({
-                        id: pengumuman.id,
-                        judul: pengumuman.judul,
-                        deskripsi: pengumuman.deskripsi,
-                        gambar: pengumuman.gambar,
-                      });
-                      window.my_modal_edit.showModal();
-                    }}
+                    // onClick={() => {
+                    //   handleEdit({
+                    //     id: pengumuman.id,
+                    //     judul: pengumuman.judul,
+                    //     deskripsi: pengumuman.deskripsi,
+                    //     gambar: pengumuman.gambar,
+                    //   });
+                    //   window.my_modal_edit.showModal();
+                    // }}
                     className="btn btn-outline btn-warning"
                   >
                     Edit
@@ -105,17 +95,11 @@ const PengumumanList = () => {
               </tr>
             ))}
           </tbody>
-          {/* foot */}
         </table>
       </div>
-
-      <AddPengumuman handleAddPengumuman={handleAddPengumuman} />
-      <EditPengumuman
-        idPengumumanEdit={idPengumumanEdit}
-        handleEdit={handleEdit}
-      />
+      <AddBerita handleAddBerita={handleAddBerita} />
     </div>
   );
 };
 
-export default PengumumanList;
+export default BeritaList;

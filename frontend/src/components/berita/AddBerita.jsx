@@ -1,10 +1,10 @@
 import { useFormik } from "formik";
-import React, { useState } from "react";
-import { toast } from "react-toastify";
+import React from "react";
 import * as Yup from "yup";
+import { addDataBerita } from "../../../getApi";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { addDataPengumuman } from "../../../getApi";
+import { toast } from "react-toastify";
 
 const Schema = Yup.object({
   judul: Yup.string().required(),
@@ -12,9 +12,9 @@ const Schema = Yup.object({
   gambar: Yup.string().required(),
 });
 
-const AddPengumuman = ({ handleAddPengumuman }) => {
+const AddBerita = ({ handleAddBerita }) => {
   const handleCloseModal = () => {
-    window.my_modal_add.close();
+    window.my_modal_addBerita.close();
   };
 
   const formik = useFormik({
@@ -31,10 +31,10 @@ const AddPengumuman = ({ handleAddPengumuman }) => {
       formData.append("judul", values.judul);
       formData.append("deskripsi", values.deskripsi);
       formData.append("img", values.gambar);
-      addDataPengumuman(
+      addDataBerita(
         formData,
         values,
-        handleAddPengumuman,
+        handleAddBerita,
         notifyAddData,
         handleCloseModal,
         formik
@@ -44,7 +44,7 @@ const AddPengumuman = ({ handleAddPengumuman }) => {
   return (
     <>
       <dialog
-        id="my_modal_add"
+        id="my_modal_addBerita"
         className="modal overflow-y-visible  bg-black/50"
       >
         <form
@@ -63,7 +63,7 @@ const AddPengumuman = ({ handleAddPengumuman }) => {
             </button>
           </form>
           <h1 className="text-2xl my-3 mx-auto font-bold">
-            Tambah Data Pengumuman
+            Tambah Data Berita
           </h1>
 
           <div className="flex flex-col mb-3 ">
@@ -148,4 +148,4 @@ const AddPengumuman = ({ handleAddPengumuman }) => {
   );
 };
 
-export default AddPengumuman;
+export default AddBerita;
