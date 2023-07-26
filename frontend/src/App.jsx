@@ -8,25 +8,40 @@ import Pengumuman from "./components/pages/Pengumuman";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import Login from "./components/login/Login";
 
 function App() {
-  return (
-    <>
+  const token = sessionStorage.getItem("access_token");
+
+  if (!token) {
+    return (
       <BrowserRouter>
-        <ToastContainer autoClose={4000} />
+        <ToastContainer autoClose={3000} />
         <Routes>
-          <Route element={<NavigationLayout />}>
-            <Route path="/pengumuman" element={<Pengumuman />} />
-            <Route path="/berita" element={<Berita />} />
-            <Route
-              path="/struktur-organisasi"
-              element={<StrukturOrganisasi />}
-            />
-          </Route>
+          <Route path="/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
-    </>
-  );
+    );
+  } else {
+    return (
+      <>
+        <BrowserRouter>
+          <ToastContainer autoClose={3000} />
+          <Routes>
+            <Route element={<NavigationLayout />}>
+              <Route path="/pengumuman" element={<Pengumuman />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/berita" element={<Berita />} />
+              <Route
+                path="/struktur-organisasi"
+                element={<StrukturOrganisasi />}
+              />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </>
+    );
+  }
 }
 
 export default App;
