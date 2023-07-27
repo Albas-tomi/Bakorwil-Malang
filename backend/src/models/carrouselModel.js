@@ -3,11 +3,10 @@ import db from "../config/database.js";
 
 const { DataTypes } = Sequelize;
 
-const bakorwilModel = db.define(
-  "bakorwil",
+const carrouselModel = db.define(
+  "carrousel",
   {
     judul: DataTypes.STRING,
-    link: DataTypes.STRING,
     gambar: DataTypes.STRING,
     url: DataTypes.STRING,
   },
@@ -15,8 +14,8 @@ const bakorwilModel = db.define(
     freezeTableName: true,
   }
 );
- 
-export default bakorwilModel;
+
+export default carrouselModel;
 
 // (async () => {
 //   await db.sync();

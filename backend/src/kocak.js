@@ -1,6 +1,7 @@
 import express from "express";
 import FileUpload from "express-fileupload";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import pengumumanRoute from "./routes/pengumumanRoute.js";
 import beritaRoute from "./routes/beritaRoute.js";
 import galeriRoute from "./routes/galeriRoute.js";
@@ -11,13 +12,19 @@ import videoRoute from "./routes/videoRoute.js";
 import ppidRoute from "./routes/ppidRoute.js";
 import programRoute from "./routes/programRoute.js";
 import sakibRoute from "./routes/sakibRoute.js";
-import "dotenv/config";
+import carrouselRoute from "./routes/carrouselRoute.js";
+import fotoRoute from "./routes/fotoRoute.js";
+import usersRoute from "./routes/usersRoute.js";
+
+import dotenv from "dotenv";
+dotenv.config();
 
 const PORT = process.env.PORT;
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
+app.use(cookieParser());
 app.use(express.json());
 app.use(FileUpload());
 app.use(express.static("public"));
@@ -42,6 +49,12 @@ app.use(ppidRoute);
 app.use(programRoute);
 // SAKIB
 app.use(sakibRoute);
+// CARROUSEL
+app.use(carrouselRoute);
+// FOTO
+app.use(fotoRoute);
+// USERS
+app.use(usersRoute);
 
 app.listen(PORT, () =>
   console.log(`the server is running on port ${PORT}....`)
