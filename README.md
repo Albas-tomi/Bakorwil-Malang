@@ -4,3 +4,4 @@
 
 ## JWT :
 https://www.youtube.com/watch?v=Ll_71n60vAM&ab_channel=MFikri
+https://bakorwilmalang.jatimprov.go.id/images/logobakorwilmalang_sticky.png
