@@ -15,7 +15,7 @@ const bakorwilModel = db.define(
     freezeTableName: true,
   }
 );
- 
+
 export default bakorwilModel;
 
 // (async () => {
