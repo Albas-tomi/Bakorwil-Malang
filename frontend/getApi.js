@@ -13,14 +13,14 @@ export const deletePengumuman = async (id, setDataPengumuman, notifyDelete) => {
     setDataPengumuman((prevData) =>
       prevData.filter((pengumuman) => pengumuman.id !== id)
     );
-    notifyDelete("Data Berhasil Dihapus!");
+    notifyDelete("Data Pengumuman Berhasil Dihapus!");
   } catch (error) {
     console.log(error);
   }
 };
 
 export const editDataPengumuman = async (
-  idPengumumanEdit,
+  pickOfPengumumanEdit,
   formData,
   values,
   handleEdit,
@@ -30,7 +30,7 @@ export const editDataPengumuman = async (
 ) => {
   try {
     await axios.patch(
-      `http://localhost:4000/pengumuman/${idPengumumanEdit.id}`,
+      `http://localhost:4000/pengumuman/${pickOfPengumumanEdit.id}`,
       formData,
       {
         headers: {
@@ -39,12 +39,12 @@ export const editDataPengumuman = async (
       }
     );
     handleEdit({
-      id: idPengumumanEdit.id,
+      id: pickOfPengumumanEdit.id,
       judul: values.judul,
       deskripsi: values.deskripsi,
       gambar: values.gambar,
     });
-    notifyEdit("Data Berhasil Di edit!");
+    notifyEdit("Data Pengumuman Berhasil Di edit!");
     handleCloseModal();
     formik.resetForm();
   } catch (error) {
@@ -71,7 +71,7 @@ export const addDataPengumuman = async (
       deskripsi: values.deskripsi,
       gambar: values.gambar,
     });
-    notifyAddData("Data berhasil ditambahkan!");
+    notifyAddData("Data Pengumuman berhasil ditambahkan!");
     handleCloseModal();
     formik.resetForm();
   } catch (error) {
@@ -91,7 +91,7 @@ export const deleteBerita = async (id, setDataBerita, notifyDelete) => {
   try {
     await axios.delete(`http://localhost:4000/berita/${id}`);
     setDataBerita((prevData) => prevData.filter((berita) => berita.id !== id));
-    notifyDelete("Data Berhasil Dihapus!");
+    notifyDelete("Data Berita Berhasil Dihapus!");
   } catch (error) {
     console.log(error);
   }
@@ -116,10 +116,120 @@ export const addDataBerita = async (
       deskripsi: values.deskripsi,
       gambar: values.gambar,
     });
-    notifyAddData("Data berhasil ditambahkan!");
+    notifyAddData("Data Berita berhasil ditambahkan!");
     handleCloseModal();
     formik.resetForm();
   } catch (error) {
     console.log(error);
+  }
+};
+
+export const editDataBerita = async (
+  pickOfBeritaEdit,
+  formData,
+  values,
+  handleEdit,
+  notifyEdit,
+  handleCloseModal,
+  formik
+) => {
+  try {
+    await axios.patch(
+      `http://localhost:4000/berita/${pickOfBeritaEdit.id}`,
+      formData,
+      {
+        headers: {
+          "content-Type": "multipart/form-data",
+        },
+      }
+    );
+    handleEdit({
+      id: pickOfBeritaEdit.id,
+      judul: values.judul,
+      deskripsi: values.deskripsi,
+      gambar: values.gambar,
+    });
+    notifyEdit("Data Berita Berhasil Di edit!");
+    handleCloseModal();
+    formik.resetForm();
+  } catch (error) {
+    console.log("Error submitting form:", error);
+  }
+};
+
+// =============================================Dokumen ================================
+
+export const getDokumen = async () => {
+  const res = await axios.get("http://localhost:4000/dokumen");
+  return res.data;
+};
+
+export const addDataDokumen = async (
+  formData,
+  values,
+  handleAddDokumen,
+  notifyAddData,
+  handleCloseModal,
+  formik
+) => {
+  try {
+    await axios.post("http://localhost:4000/dokumen", formData, {
+      headers: {
+        "content-Type": "multipart/form-data",
+      },
+    });
+    handleAddDokumen({
+      judul: values.judul,
+      link: values.link,
+    });
+    notifyAddData("Data Dokumen berhasil ditambahkan!");
+    handleCloseModal();
+    formik.resetForm();
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteDokumen = async (id, setDataDokumen, notifyDelete) => {
+  try {
+    await axios.delete(`http://localhost:4000/dokumen/${id}`);
+    setDataDokumen((prevData) =>
+      prevData.filter((dokumen) => dokumen.id !== id)
+    );
+    notifyDelete("Data Dokumen Berhasil Dihapus!");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const editDataDokumen = async (
+  pickOfDokumenEdit,
+  formData,
+  values,
+  handleEditDokumen,
+  notifyEdit,
+  handleCloseModal,
+  formik
+) => {
+  try {
+    await axios.patch(
+      `http://localhost:4000/dokumen/${pickOfDokumenEdit.id}`,
+      formData,
+      {
+        headers: {
+          "content-Type": "multipart/form-data",
+        },
+      }
+    );
+    handleEditDokumen({
+      id: pickOfDokumenEdit.id,
+      judul: values.judul,
+      link: values.link,
+    });
+    notifyEdit("Data Berita Berhasil Di edit!");
+    handleCloseModal();
+    formik.resetForm();
+  } catch (error) {
+    console.log("Error submitting form:", error);
   }
 };

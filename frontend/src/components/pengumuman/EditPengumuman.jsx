@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useFormik } from "formik";
 import React, { useState } from "react";
 import * as Yup from "yup";
@@ -14,14 +13,8 @@ const Schema = Yup.object({
   gambar: Yup.string().required(),
 });
 
-const EditPengumuman = ({ idPengumumanEdit, handleEdit }) => {
+const EditPengumuman = ({ pickOfPengumumanEdit, handleEdit }) => {
   const [editor, setEditor] = useState(null);
-  const [preview, setPreview] = useState("");
-
-  const loadImage = (e) => {
-    const image = e.target.files[0];
-    setPreview(URL.createObjectURL(image));
-  };
 
   const handleCloseModal = () => {
     window.my_modal_edit.close();
@@ -30,9 +23,9 @@ const EditPengumuman = ({ idPengumumanEdit, handleEdit }) => {
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      judul: idPengumumanEdit?.judul || "",
-      deskripsi: idPengumumanEdit?.deskripsi || "",
-      gambar: idPengumumanEdit?.gambar || "",
+      judul: pickOfPengumumanEdit?.judul || "",
+      deskripsi: pickOfPengumumanEdit?.deskripsi || "",
+      gambar: pickOfPengumumanEdit?.gambar || "",
     },
     validationSchema: Schema,
     onSubmit: async (values) => {
@@ -43,7 +36,7 @@ const EditPengumuman = ({ idPengumumanEdit, handleEdit }) => {
       formData.append("deskripsi", values.deskripsi);
       formData.append("img", values.gambar);
       editDataPengumuman(
-        idPengumumanEdit,
+        pickOfPengumumanEdit,
         formData,
         values,
         handleEdit,
@@ -61,7 +54,7 @@ const EditPengumuman = ({ idPengumumanEdit, handleEdit }) => {
       >
         <form
           data-testid="form"
-          className=" bg-white overflow-scroll px-6 relative  max-h-screen max-w-3xl rounded-md z-10"
+          className=" bg-white overflow-y-scroll px-6 py-3 relative  max-h-screen max-w-3xl rounded-md z-10"
           name="form"
           onSubmit={formik.handleSubmit}
         >
@@ -132,19 +125,11 @@ const EditPengumuman = ({ idPengumumanEdit, handleEdit }) => {
               name="gambar"
               onChange={(e) => {
                 formik.setFieldValue("gambar", e.target.files[0]);
-                loadImage();
               }}
               className="file-input file-input-bordered file-input-info w-full max-w-xs"
             />
           </div>
 
-          {preview ? (
-            <figure className="image is-128x128">
-              <img src={preview} className="h-20 w-20" alt="Preview Image" />
-            </figure>
-          ) : (
-            ""
-          )}
           <button
             type="submit"
             className="bg-green-300 hover:bg-green-800 rounded-md p-2"

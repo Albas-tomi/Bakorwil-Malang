@@ -1,5 +1,5 @@
 import React from "react";
-import PengumumanList from "../pengumuman/PengumumanList";
+import PengumumanList from "../components/pengumuman/PengumumanList";
 
 const Pengumuman = () => {
   return (

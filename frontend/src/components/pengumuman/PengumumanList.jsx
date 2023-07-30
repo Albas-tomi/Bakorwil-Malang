@@ -1,13 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import EditPengumuman from "./EditProduct";
+import EditPengumuman from "./EditPengumuman";
 import AddPengumuman from "./AddPengumuman";
 import { deletePengumuman, getPengumuman } from "../../../getApi";
+import ConfirmDeletePengumuman from "./ConfirmDeletePengumuman";
 
 const PengumumanList = () => {
   const [dataPengumuman, setDataPengumuman] = useState([]);
-  const [idPengumumanEdit, setIdPengumumanEdit] = useState("");
+  const [pickOfPengumumanEdit, setpickOfPengumumanEdit] = useState("");
+  const [pickIdDelete, setPickIdDelete] = useState("");
   const urlImg = "http://localhost:4000/pengumumanImg/";
 
   useEffect(() => {
@@ -26,7 +28,7 @@ const PengumumanList = () => {
   };
 
   const handleEdit = (pengumumanData) => {
-    setIdPengumumanEdit(pengumumanData);
+    setpickOfPengumumanEdit(pengumumanData);
     setDataPengumuman((prevData) =>
       prevData.map((pengumuman) =>
         pengumuman.id === pengumumanData.id ? pengumumanData : pengumuman
@@ -51,7 +53,7 @@ const PengumumanList = () => {
             </tr>
           </thead>
           <tbody>
-            {dataPengumuman.map((pengumuman, idx) => (
+            {dataPengumuman?.map((pengumuman, idx) => (
               <tr key={pengumuman.id}>
                 <td>{(idx += 1)}</td>
                 <td>
@@ -81,7 +83,8 @@ const PengumumanList = () => {
                 <td className="flex gap-2 justify-center items-center">
                   <button
                     onClick={() => {
-                      deletePengumumanId(pengumuman.id);
+                      window.my_modal_confirmDeletePengumuman.showModal();
+                      setPickIdDelete(pengumuman.id);
                     }}
                     className="btn btn-outline btn-error"
                   >
@@ -111,8 +114,12 @@ const PengumumanList = () => {
 
       <AddPengumuman handleAddPengumuman={handleAddPengumuman} />
       <EditPengumuman
-        idPengumumanEdit={idPengumumanEdit}
+        pickOfPengumumanEdit={pickOfPengumumanEdit}
         handleEdit={handleEdit}
+      />
+      <ConfirmDeletePengumuman
+        deletePengumumanId={deletePengumumanId}
+        pickIdDelete={pickIdDelete}
       />
     </div>
   );

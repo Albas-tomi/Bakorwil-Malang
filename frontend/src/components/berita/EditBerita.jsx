@@ -1,10 +1,10 @@
 import { useFormik } from "formik";
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
-import { addDataBerita } from "../../../getApi";
+import { toast } from "react-toastify";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { toast } from "react-toastify";
+import { editDataBerita, editDataPengumuman } from "../../../getApi";
 
 const Schema = Yup.object({
   judul: Yup.string().required(),
@@ -12,43 +12,47 @@ const Schema = Yup.object({
   gambar: Yup.string().required(),
 });
 
-const AddBerita = ({ handleAddBerita }) => {
+const EditBerita = ({ handleEditBerita, pickOfBeritaEdit }) => {
+  const [editor, setEditor] = useState(null);
+
   const handleCloseModal = () => {
-    window.my_modal_addBerita.close();
+    window.my_modal_editBerita.close();
   };
 
   const formik = useFormik({
+    enableReinitialize: true,
     initialValues: {
-      judul: "",
-      deskripsi: "",
-      gambar: "",
+      judul: pickOfBeritaEdit?.judul || "",
+      deskripsi: pickOfBeritaEdit?.deskripsi || "",
+      gambar: pickOfBeritaEdit?.gambar || "",
     },
     validationSchema: Schema,
-
     onSubmit: async (values) => {
-      const notifyAddData = (message) => toast.success(message);
+      const notifyEdit = (message) => toast.success(message);
+
       const formData = new FormData();
       formData.append("judul", values.judul);
       formData.append("deskripsi", values.deskripsi);
       formData.append("img", values.gambar);
-      addDataBerita(
+      editDataBerita(
+        pickOfBeritaEdit,
         formData,
         values,
-        handleAddBerita,
-        notifyAddData,
+        handleEditBerita,
+        notifyEdit,
         handleCloseModal,
         formik
       );
     },
   });
+
   return (
-    <>
+    <div>
       <dialog
-        id="my_modal_addBerita"
-        className="modal overflow-y-visible  bg-black/50"
+        id="my_modal_editBerita"
+        className="modal overflow-y-visible bg-black/50"
       >
         <form
-          method="dialog"
           data-testid="form"
           className=" bg-white overflow-y-scroll px-6 py-3 relative  max-h-screen max-w-3xl rounded-md z-10"
           name="form"
@@ -62,11 +66,9 @@ const AddBerita = ({ handleAddBerita }) => {
               ✕
             </button>
           </form>
-          <h1 className="text-2xl my-3 mx-auto font-bold">
-            Tambah Data Berita
-          </h1>
+          <h1 className="text-2xl my-3 mx-auto font-bold">Edit Data Berita</h1>
 
-          <div className="flex flex-col mb-3 ">
+          <div className="flex flex-col mb-3">
             <label className="text-xl" htmlFor="judul">
               Judul Berita
             </label>
@@ -76,7 +78,7 @@ const AddBerita = ({ handleAddBerita }) => {
               </p>
             )}
             <input
-              className="input  input-bordered input-info w-full max-w-xs"
+              className="input input-bordered input-info w-full max-w-xs"
               id="judul"
               name="judul"
               type="text"
@@ -84,8 +86,7 @@ const AddBerita = ({ handleAddBerita }) => {
               value={formik.values.judul}
             />
           </div>
-
-          <div className="mb-3  rounded-md">
+          <div className="mb-3 rounded-md">
             <label className="text-xl" htmlFor="deskripsi">
               Isi Berita
             </label>
@@ -98,26 +99,17 @@ const AddBerita = ({ handleAddBerita }) => {
               editor={ClassicEditor}
               id="deskripsi"
               name="deskripsi"
-              type="text"
+              data={formik.values.deskripsi}
               onChange={(event, editor) => {
                 const data = editor.getData();
                 formik.setFieldValue("deskripsi", data);
+                setEditor(editor);
               }}
-              value={formik.values.judul}
-            />
-
-            <input
-              id="deskripsi"
-              name="deskripsi"
-              value={formik.values.deskripsi}
-              onChange={formik.handleChange}
-              type="text"
-              className="input hidden input-bordered input-info w-full max-w-xs"
             />
           </div>
           <div className="mb-3 flex flex-col">
             <label className="text-xl" htmlFor="gambar">
-              Gambar Berita
+              Gambar Berita{" "}
             </label>
             {formik.errors.gambar && formik.touched.gambar && (
               <p className="mt-1 text-red-500 max-[640px]:text-sm">
@@ -129,9 +121,9 @@ const AddBerita = ({ handleAddBerita }) => {
               id="gambar"
               accept=".jpg,.jpeg,.png"
               name="gambar"
-              onChange={(e) =>
-                formik.setFieldValue("gambar", e.target.files[0])
-              }
+              onChange={(e) => {
+                formik.setFieldValue("gambar", e.target.files[0]);
+              }}
               className="file-input file-input-bordered file-input-info w-full max-w-xs"
             />
           </div>
@@ -144,8 +136,8 @@ const AddBerita = ({ handleAddBerita }) => {
           </button>
         </form>
       </dialog>
-    </>
+    </div>
   );
 };
 
-export default AddBerita;
+export default EditBerita;

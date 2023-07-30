@@ -72,7 +72,7 @@ const Sidebar = () => {
         )}
       </NavLink>
 
-      <NavLink to={"/struktur-organisasi"}>
+      <NavLink to={"/dokumen"}>
         {({ isActive }) => (
           <ul
             className={`${
@@ -96,7 +96,7 @@ const Sidebar = () => {
               </svg>
 
               <span className="text-start pl-8 w-full text-sm font-medium  ">
-                Struktur Organisasi
+                Dokumen{" "}
               </span>
             </li>
           </ul>

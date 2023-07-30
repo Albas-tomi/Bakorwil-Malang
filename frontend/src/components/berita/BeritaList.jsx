@@ -1,11 +1,14 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { deleteBerita, getBerita } from "../../../getApi";
 import { toast } from "react-toastify";
 import AddBerita from "./AddBerita";
+import EditBerita from "./EditBerita";
+import ConfirmDeleteBerita from "./ConfirmDeleteBerita";
 
 const BeritaList = () => {
   const [dataBerita, setDataBerita] = useState([]);
+  const [pickOfBeritaEdit, setpickOfBeritaEdit] = useState("");
+  const [pickIdDelete, setPickIdDelete] = useState("");
 
   const urlImg = "http://localhost:4000/beritaImg/";
 
@@ -22,6 +25,15 @@ const BeritaList = () => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleEditBerita = (beritaData) => {
+    setpickOfBeritaEdit(beritaData);
+    setDataBerita((prevData) =>
+      prevData.map((berita) =>
+        berita.id === beritaData.id ? beritaData : berita
+      )
+    );
   };
   const handleAddBerita = (newBerita) => {
     setDataBerita([...dataBerita, newBerita]);
@@ -42,7 +54,7 @@ const BeritaList = () => {
           </thead>
           <tbody>
             {dataBerita.map((berita, idx) => (
-              <tr>
+              <tr key={berita.id}>
                 <td>{(idx += 1)}</td>
                 <td>
                   <div className="flex items-center space-x-3">
@@ -71,22 +83,23 @@ const BeritaList = () => {
                 <td className="flex gap-2 justify-center items-center">
                   <button
                     onClick={() => {
-                      deleteBeritaId(berita.id);
+                      window.my_modal_confirmDeleteBerita.showModal();
+                      setPickIdDelete(berita.id);
                     }}
                     className="btn btn-outline btn-error"
                   >
                     Hapus
                   </button>
                   <button
-                    // onClick={() => {
-                    //   handleEdit({
-                    //     id: pengumuman.id,
-                    //     judul: pengumuman.judul,
-                    //     deskripsi: pengumuman.deskripsi,
-                    //     gambar: pengumuman.gambar,
-                    //   });
-                    //   window.my_modal_edit.showModal();
-                    // }}
+                    onClick={() => {
+                      handleEditBerita({
+                        id: berita.id,
+                        judul: berita.judul,
+                        deskripsi: berita.deskripsi,
+                        gambar: berita.gambar,
+                      });
+                      window.my_modal_editBerita.showModal();
+                    }}
                     className="btn btn-outline btn-warning"
                   >
                     Edit
@@ -98,6 +111,14 @@ const BeritaList = () => {
         </table>
       </div>
       <AddBerita handleAddBerita={handleAddBerita} />
+      <EditBerita
+        handleEditBerita={handleEditBerita}
+        pickOfBeritaEdit={pickOfBeritaEdit}
+      />
+      <ConfirmDeleteBerita
+        deleteBeritaId={deleteBeritaId}
+        pickIdDelete={pickIdDelete}
+      />
     </div>
   );
 };

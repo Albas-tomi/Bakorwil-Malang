@@ -2,10 +2,38 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Logo from "../../assets/img/logopemrov.png";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import jwtDecode from "jwt-decode";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoginError, setIsLoginError] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogin = async (data) => {
+    const { email, password } = data;
+    try {
+      const res = await axios.post("http://localhost:4000/login", {
+        email,
+        password,
+      });
+
+      const token = res.data.accessToken;
+      const user = jwtDecode(token);
+
+      if (user.userid === 2) {
+        toast.success("Login Berhasil");
+        sessionStorage.setItem("access_token", token);
+        navigate("/pengumuman");
+      } else {
+        toast.error("Gagal Login !");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -19,7 +47,7 @@ const Login = () => {
       password: Yup.string().required("Please enter your password"),
     }),
     onSubmit: (values) => {
-      console(values);
+      handleLogin(values);
     },
   });
 
@@ -149,7 +177,7 @@ const Login = () => {
         <div className="fixed w-full h-full inset-0 z-50 bg-black/[.15] backdrop-blur-[2px] overflow-hidden flex justify-center items-center">
           <div className={`w-[450px] bg-white rounded-3xl px-4 py-6`}>
             <div className="w-full mx-auto mb-4">
-              <img src={ImgLoginError} alt="Modal Image" />
+              <img src={""} alt="Modal Image" />
             </div>
 
             <p className="mb-4 px-8 text-center font-face-ro">

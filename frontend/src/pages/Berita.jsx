@@ -1,5 +1,5 @@
 import React from "react";
-import BeritaList from "../berita/BeritaList";
+import BeritaList from "../components/berita/BeritaList";
 
 const Berita = () => {
   return (
