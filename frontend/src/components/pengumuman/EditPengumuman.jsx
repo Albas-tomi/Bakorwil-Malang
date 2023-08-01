@@ -1,40 +1,31 @@
-import axios from "axios";
 import { useFormik } from "formik";
 import React, { useState } from "react";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { editDataPengumuman } from "../../../getApi";
+
 // ==============TO VALIDATE INPUT ==============
 const Schema = Yup.object({
   judul: Yup.string().required(),
   deskripsi: Yup.string().required(),
   gambar: Yup.string().required(),
 });
-// ==============TO VALIDATE INPUT ==============
 
-const EditPengumuman = ({ idPengumumanEdit, handleEdit }) => {
+const EditPengumuman = ({ pickOfPengumumanEdit, handleEdit }) => {
   const [editor, setEditor] = useState(null);
-  const [preview, setPreview] = useState("");
 
-  // ===========TO GET IMG filename =============
-  const loadImage = (e) => {
-    const image = e.target.files[0];
-    setPreview(URL.createObjectURL(image));
-  };
-
-  // ============ TO CLOSE MODAL ================
   const handleCloseModal = () => {
     window.my_modal_edit.close();
   };
-  // ============= TO CLOSE MODAL ===============
 
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      judul: idPengumumanEdit?.judul || "",
-      deskripsi: idPengumumanEdit?.deskripsi || "",
-      gambar: idPengumumanEdit?.gambar || "",
+      judul: pickOfPengumumanEdit?.judul || "",
+      deskripsi: pickOfPengumumanEdit?.deskripsi || "",
+      gambar: pickOfPengumumanEdit?.gambar || "",
     },
     validationSchema: Schema,
     onSubmit: async (values) => {
@@ -44,29 +35,15 @@ const EditPengumuman = ({ idPengumumanEdit, handleEdit }) => {
       formData.append("judul", values.judul);
       formData.append("deskripsi", values.deskripsi);
       formData.append("img", values.gambar);
-      try {
-        await axios.patch(
-          `http://localhost:4000/pengumuman/${idPengumumanEdit.id}`,
-          formData,
-          {
-            headers: {
-              "content-Type": "multipart/form-data",
-            },
-          }
-        );
-        handleEdit({
-          id: idPengumumanEdit.id,
-          judul: values.judul,
-          deskripsi: values.deskripsi,
-          gambar: values.gambar,
-        });
-        notifyEdit("Data Berhasil Di edit!");
-        window.location.reload();
-        handleCloseModal();
-        formik.resetForm();
-      } catch (error) {
-        console.log("Error submitting form:", error);
-      }
+      editDataPengumuman(
+        pickOfPengumumanEdit,
+        formData,
+        values,
+        handleEdit,
+        notifyEdit,
+        handleCloseModal,
+        formik
+      );
     },
   });
   return (
@@ -77,7 +54,7 @@ const EditPengumuman = ({ idPengumumanEdit, handleEdit }) => {
       >
         <form
           data-testid="form"
-          className=" bg-white overflow-scroll px-6 relative  max-h-screen max-w-3xl rounded-md z-10"
+          className=" bg-white overflow-y-scroll px-6 py-3 relative  max-h-screen max-w-3xl rounded-md z-10"
           name="form"
           onSubmit={formik.handleSubmit}
         >
@@ -148,19 +125,11 @@ const EditPengumuman = ({ idPengumumanEdit, handleEdit }) => {
               name="gambar"
               onChange={(e) => {
                 formik.setFieldValue("gambar", e.target.files[0]);
-                loadImage();
               }}
               className="file-input file-input-bordered file-input-info w-full max-w-xs"
             />
           </div>
 
-          {preview ? (
-            <figure className="image is-128x128">
-              <img src={preview} className="h-20 w-20" alt="Preview Image" />
-            </figure>
-          ) : (
-            ""
-          )}
           <button
             type="submit"
             className="bg-green-300 hover:bg-green-800 rounded-md p-2"
