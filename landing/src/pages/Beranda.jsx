@@ -7,7 +7,7 @@ const Beranda = () => {
       <div className="pengumuman mt-7 px-5">
         <h1 className="text-xl text-center font-semibold text-second">Pengumuman</h1>
         <div className="card flex flex-row justify-between mt-4">
-          <div className="w-[47%] h-40 rounded-md bg-dark"></div>
+          <div className="w-[47%] h-40 aspect-square rounded-md bg-dark"></div>
           <div className="w-[47%] h-40 rounded-md bg-dark"></div>
         </div>
         <div className="berita mt-7 ">
