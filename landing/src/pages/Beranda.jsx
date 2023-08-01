@@ -26,7 +26,7 @@ const Beranda = () => {
                 <img src="https://placehold.co/600x400" alt="Shoes" />
               </figure>
               <div className="card-body">
-                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <p>If a dog chews shoes whose shoes does he choose?ok</p>
               </div>
             </div>
           </div>
