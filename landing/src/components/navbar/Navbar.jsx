@@ -1,13 +1,11 @@
-// Font Awesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { FaMagnifyingGlass } from 'react-icons/fa6';
 
 import BakorwilLogo from '../../assets/image/logobakorwilmalang.png';
 
 const Navbar = () => {
   return (
     <>
-      <div className="navbar bg-transparent px-5 fixed z-50 ">
+      <div className="navbar bg-transparent px-5 sticky z-50 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="lg:hidden">
@@ -81,8 +79,8 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end text-white ">
-          <a className="bg-second px-3 py-1 rounded-md">
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
+          <a className="bg-second px-3 py-2 rounded-lg">
+            <FaMagnifyingGlass />
           </a>
         </div>
       </div>
