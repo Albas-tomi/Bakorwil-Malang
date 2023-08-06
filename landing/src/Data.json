@@ -28,5 +28,23 @@
     "title": "anjing pintar",
     "deskripsi": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus atque similique quasi pariatur repellat quia quas delectus ex suscipit! Rerum.",
     "image": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"
+  },
+  {
+    "id": 6,
+    "title": "anjing pintar",
+    "deskripsi": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus atque similique quasi pariatur repellat quia quas delectus ex suscipit! Rerum.",
+    "image": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"
+  },
+  {
+    "id": 7,
+    "title": "anjing pintar",
+    "deskripsi": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus atque similique quasi pariatur repellat quia quas delectus ex suscipit! Rerum.",
+    "image": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"
+  },
+  {
+    "id": 8,
+    "title": "anjing pintar",
+    "deskripsi": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus atque similique quasi pariatur repellat quia quas delectus ex suscipit! Rerum.",
+    "image": "https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZG9nfGVufDB8fDB8fHww&auto=format&fit=crop&w=400&q=60"
   }
 ]

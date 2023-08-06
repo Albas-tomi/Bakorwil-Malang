@@ -1,8 +1,26 @@
-import React from "react";
-import Card from "../components/beranda/Card";
+import React, { useState } from "react";
+import { Card } from "../components/berita/Card";
+import ReactPaginate from "react-paginate";
 import Data from "../Data.json";
+import { Modal } from "../components/berita/Modal";
 
 export const Berita = () => {
+  const [data, setData] = useState([]);
+
+  const Get = (dataKlik) => {
+    setData(dataKlik);
+  };
+
+  //  ==================== FOR PAGINATION ====================
+  const [pageNumber, setPageNumber] = useState(0);
+  const [card, setCard] = useState(50);
+  const beritaPerPage = 6;
+  const currentPage = pageNumber * beritaPerPage;
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+  const pageCount = Data.length / beritaPerPage;
+
   return (
     <div>
       <h1 className="text-xl text-center font-semibold text-[#094067] mb-5 md:text-4xl">
@@ -10,39 +28,39 @@ export const Berita = () => {
       </h1>
       {/* =============== GRID COL CARD =============== */}
       <div className="grid grid-cols-2 gap-2 gap-y-6 justify-items-center md:grid-cols-3">
-        {/* =============== CARD =============== */}
-        <Card />
+        {/* =============== CARD BERITA PER PAGE =============== */}
+        {Data.slice(0, card)
+          .slice(currentPage, currentPage + beritaPerPage)
+          .map((b) => (
+            <Card b={b} Get={Get} />
+          ))}
       </div>
       {/* =============== PAGINATION =============== */}
-      <div className="grid justify-items-center my-6">
-        <div className="join">
-          <button className="join-item btn btn-md">1</button>
-          <button className="join-item btn btn-md btn-active">2</button>
-          <button className="join-item btn btn-md">3</button>
-          <button className="join-item btn btn-md">4</button>
-        </div>
+      <div className="flex justify-center">
+        <ReactPaginate
+          className="flex gap-3 mx-auto my-5"
+          breakLabel="..."
+          previousLabel={
+            <button className="join-item btn-sm btn btn-outline">Prev</button>
+          }
+          nextLabel={
+            <button className="join-item btn-sm btn btn-outline">Next</button>
+          }
+          onPageChange={changePage}
+          pageCount={pageCount}
+          // containerClassName={"paginationBttns"}
+          // previousLinkClassName={"previousBttn"}
+          nextLinkClassName={"nextBttn"}
+          disabledClassName={"paginationDisabled"}
+          activeClassName={
+            <button className="join-item btn btn-sm btn-active">
+              {pageCount}
+            </button>
+          }
+          renderOnZeroPageCount={null}
+        />
       </div>
-
-      {/* =============== MODAL =============== */}
-      {/* {BeritaCard.map((bc) => {
-        return ( */}
-      <dialog id="modalll" className="modal">
-        <form method="dialog" className="modal-box">
-          <h3 className="font-bold text-lg">Lorem ipsum dolor sit amet.</h3>
-          <p className="py-4">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
-            magnam in nesciunt eius beatae iste assumenda quo sed non blanditiis
-            perspiciatis alias, quas quam dolor repellat voluptatum. Nesciunt,
-            corporis officiis!
-          </p>
-          <div className="modal-action">
-            {/* if there is a button in form, it will close the modal */}
-            <button className="btn">Close</button>
-          </div>
-        </form>
-      </dialog>
-      {/* );
-      })} */}
+      <Modal data={data} />
     </div>
   );
 };
