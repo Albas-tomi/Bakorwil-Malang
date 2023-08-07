@@ -1,9 +1,11 @@
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
-import Navbar from './components/navbar/Navbar';
-import Beranda from './pages/Beranda';
-import { Berita } from './pages/Berita';
-import Footer from './components/footer/Footer';
+
+import Navbar from "./components/navbar/Navbar";
+import Beranda from "./pages/Beranda";
+import { Berita } from "./pages/Berita";
+import { Pengumuman } from "./pages/Pengumuman";
+import { Profile } from "./pages/Profile";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Beranda />} />
           <Route path="/berita" element={<Berita />} />
+          <Route path="/pengumuman" element={<Pengumuman />} />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
       <Footer />
