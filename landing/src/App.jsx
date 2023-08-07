@@ -1,10 +1,11 @@
-import { Routes, Route, BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
-import Navbar from "./components/navbar/Navbar";
-import Beranda from "./pages/Beranda";
-import { Berita } from "./pages/Berita";
-import { Pengumuman } from "./pages/Pengumuman";
-import { Profile } from "./pages/Profile";
+import Navbar from './components/navbar/Navbar';
+import Beranda from './pages/Beranda';
+import { Berita } from './pages/Berita';
+import { Pengumuman } from './pages/Pengumuman';
+import { Profile } from './pages/Profile';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
+      <Footer />
     </>
   );
 }
