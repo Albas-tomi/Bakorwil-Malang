@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Card } from "../components/berita/Card";
+import { Card } from "../components/pengumuman/Card";
 import ReactPaginate from "react-paginate";
 import Data from "../Data.json";
-import { Modal } from "../components/berita/Modal";
+import { Modal } from "../components/pengumuman/Modal";
 
-export const Berita = () => {
+export const Pengumuman = () => {
   const [data, setData] = useState([]);
 
   const Get = (dataKlik) => {
@@ -14,25 +14,25 @@ export const Berita = () => {
   //  ==================== FOR PAGINATION ====================
   const [pageNumber, setPageNumber] = useState(0);
   const [card, setCard] = useState(1000);
-  const beritaPerPage = 6;
-  const currentPage = pageNumber * beritaPerPage;
+  const pengumumanPerPage = 6;
+  const currentPage = pageNumber * pengumumanPerPage;
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
-  const pageCount = Data.length / beritaPerPage;
+  const pageCount = Data.length / pengumumanPerPage;
 
   return (
     <div>
       <h1 className="text-xl text-center font-semibold text-[#094067] mb-5 md:text-4xl">
-        Berita Hari ini
+        Pengumuman Hari ini
       </h1>
       {/* =============== GRID COL CARD =============== */}
       <div className="grid grid-cols-2 gap-2 gap-y-6 justify-items-center md:grid-cols-3">
-        {/* =============== CARD BERITA PER PAGE =============== */}
+        {/* =============== CARD PENGUMUMAN PER PAGE =============== */}
         {Data.slice(0, card)
-          .slice(currentPage, currentPage + beritaPerPage)
-          .map((b) => (
-            <Card b={b} Get={Get} />
+          .slice(currentPage, currentPage + pengumumanPerPage)
+          .map((p) => (
+            <Card p={p} Get={Get} />
           ))}
       </div>
       {/* =============== PAGINATION =============== */}
