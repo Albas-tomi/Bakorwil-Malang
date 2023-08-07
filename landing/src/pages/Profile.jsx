@@ -18,7 +18,7 @@ export const Profile = () => {
           <h1 className="font-bold text-primer">APA ITU BAKORWIL ? </h1>
           <p className="text-sm text-text">
             Bakorwil merupakan unsur penunjang kepala daerah, dipimpin oleh
-            seorang kepala, yang berada di bawah dan bertanggung jawab kepada
+            seorang kepala, yang benpm rada di bawah dan bertanggung jawab kepada
             Gubernur melalui Sekretaris Daerah.
           </p>
         </div>
