@@ -13,7 +13,7 @@ export const Berita = () => {
 
   //  ==================== FOR PAGINATION ====================
   const [pageNumber, setPageNumber] = useState(0);
-  const [card, setCard] = useState(50);
+  const [card, setCard] = useState(1000);
   const beritaPerPage = 6;
   const currentPage = pageNumber * beritaPerPage;
   const changePage = ({ selected }) => {
