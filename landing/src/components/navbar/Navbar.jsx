@@ -5,7 +5,7 @@ import BakorwilLogo from '../../assets/image/logobakorwilmalang.png';
 const Navbar = () => {
   return (
     <>
-      <div className="navbar bg-transparent px-5 sticky z-50 ">
+      <div className="navbar bg-white px-5 sticky top-0 shadow-md z-50 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="lg:hidden">
