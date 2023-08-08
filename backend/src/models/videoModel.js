@@ -7,10 +7,7 @@ const videoModel = db.define(
   "video",
   {
     judul: DataTypes.STRING,
-    deskripsi: DataTypes.STRING,
     link: DataTypes.STRING,
-    gambar: DataTypes.STRING,
-    url: DataTypes.STRING,
   },
   {
     freezeTableName: true,

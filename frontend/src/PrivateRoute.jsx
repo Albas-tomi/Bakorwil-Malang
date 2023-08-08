@@ -7,7 +7,7 @@ const PrivateRoute = ({ children }) => {
     if (accessToken) {
       try {
         const userData = jwtDecode(accessToken);
-        if (userData.userid === 2) {
+        if (userData.userid === 3) {
           return true;
         }
       } catch (error) {

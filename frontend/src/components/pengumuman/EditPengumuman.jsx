@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { toast } from "react-toastify";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import { editDataPengumuman } from "../../../getApi";
+import { editDataPengumuman } from "./apiPengumuman";
 
 // ==============TO VALIDATE INPUT ==============
 const Schema = Yup.object({
@@ -48,13 +48,11 @@ const EditPengumuman = ({ pickOfPengumumanEdit, handleEdit }) => {
   });
   return (
     <div>
-      <dialog
-        id="my_modal_edit"
-        className="modal overflow-y-visible bg-black/50"
-      >
+      <dialog id="my_modal_edit" className="modal   backdrop-blur-sm ">
         <form
+          method="dialog"
           data-testid="form"
-          className=" bg-white overflow-y-scroll px-6 py-3 relative  max-h-screen max-w-3xl rounded-md z-10"
+          className=" bg-white overflow-y-scroll  px-6 py-3 relative min-w-[600px] max-h-screen max-w-3xl rounded-md z-10"
           name="form"
           onSubmit={formik.handleSubmit}
         >
@@ -80,7 +78,7 @@ const EditPengumuman = ({ pickOfPengumumanEdit, handleEdit }) => {
               </p>
             )}
             <input
-              className="input input-bordered input-info w-full max-w-xs"
+              className="input input-bordered input-info w-full "
               id="judul"
               name="judul"
               type="text"

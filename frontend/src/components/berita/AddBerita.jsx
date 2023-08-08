@@ -1,10 +1,10 @@
 import { useFormik } from "formik";
 import React from "react";
 import * as Yup from "yup";
-import { addDataBerita } from "../../../getApi";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { toast } from "react-toastify";
+import { addDataBerita } from "./apiBerita";
 
 const Schema = Yup.object({
   judul: Yup.string().required(),
@@ -43,14 +43,11 @@ const AddBerita = ({ handleAddBerita }) => {
   });
   return (
     <>
-      <dialog
-        id="my_modal_addBerita"
-        className="modal overflow-y-visible  bg-black/50"
-      >
+      <dialog id="my_modal_addBerita" className="modal   backdrop-blur-sm ">
         <form
           method="dialog"
           data-testid="form"
-          className=" bg-white overflow-y-scroll px-6 py-3 relative  max-h-screen max-w-3xl rounded-md z-10"
+          className=" bg-white overflow-y-scroll  px-6 py-3 relative min-w-[600px] max-h-screen max-w-3xl rounded-md z-10"
           name="form"
           onSubmit={formik.handleSubmit}
         >
@@ -76,7 +73,7 @@ const AddBerita = ({ handleAddBerita }) => {
               </p>
             )}
             <input
-              className="input  input-bordered input-info w-full max-w-xs"
+              className="input  input-bordered input-info w-full "
               id="judul"
               name="judul"
               type="text"
