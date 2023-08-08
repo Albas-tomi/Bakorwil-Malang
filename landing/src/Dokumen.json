@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Rencana Strategis",
+    "kategori": "RS",
+    "tahun": 2019,
+    "link": "https://bakorwilmalang.jatimprov.go.id/"
+  },
+  {
+    "id": 2,
+    "title": "Rencana Strategis",
+    "kategori": "RS",
+    "tahun": 2020,
+    "link": "https://bakorwilpamekasan.jatimprov.go.id/"
+  },
+  {
+    "id": 3,
+    "title": "Rencana Kerja",
+    "kategori": "RK",
+    "tahun": 2019,
+    "link": "google.com"
+  },
+  {
+    "id": 4,
+    "title": "Rencana Kerja",
+    "kategori": "RK",
+    "tahun": 2020,
+    "link": "google.com"
+  },
+  {
+    "id": 5,
+    "title": "Rencana Aksi",
+    "kategori": "RA",
+    "tahun": 2019,
+    "link": "google.com"
+  },
+  {
+    "id": 6,
+    "title": "Rencana Aksi",
+    "kategori": "RA",
+    "tahun": 2019,
+    "link": "google.com"
+  }
+]
