@@ -1,104 +1,128 @@
 import React from "react";
-import { FaDownload } from "react-icons/fa6";
+import { FaFile } from "react-icons/fa6";
 
 const Button = () => {
   return (
     <>
       {/* ==================== RENCANA STRATEGIS ==================== */}
       <a
-        href="http://"
-        target="_blank"
+        href="#"
         rel="noopener noreferrer"
-        className="btn bg-second text-white text-xs font-extralight rounded-md w-56 "
+        className="btn bg-second text-white text-xs font-extralight rounded-md w-56"
+        onClick={() => window.rencana_strategis.showModal()}
       >
         <span>
-          <FaDownload />
+          <FaFile />
         </span>
         Rencana Strategis
       </a>
       {/* ==================== RENCANA KERJA ==================== */}
       <a
-        href="http://"
-        target="_blank"
+        href="#"
         rel="noopener noreferrer"
         className="btn bg-second text-white text-xs font-extralight rounded-md w-56"
+        onClick={() => window.rencana_kerja.showModal()}
       >
         <span>
-          <FaDownload />
+          <FaFile />
         </span>
         Rencana Kerja
       </a>
       {/* ==================== RENCANA AKSI ==================== */}
       <a
-        href="http://"
-        target="_blank"
+        href="#"
         rel="noopener noreferrer"
         className="btn bg-second text-white text-xs font-extralight rounded-md w-56"
+        onClick={() => window.rencana_aksi.showModal()}
       >
         <span>
-          <FaDownload />
+          <FaFile />
         </span>
         Rencana Aksi
       </a>
       {/* ==================== INDIKATOR KINERJA UTAMA ==================== */}
       <a
-        href="http://"
-        target="_blank"
+        href="#"
         rel="noopener noreferrer"
         className="btn bg-second text-white text-xs font-extralight rounded-md w-56"
+        onClick={() => window.iku.showModal()}
       >
         <span>
-          <FaDownload />
+          <FaFile />
         </span>
         Indikator Kinerja Utama
       </a>
       {/* ==================== POHON KINERJA ==================== */}
       <a
-        href="http://"
-        target="_blank"
+        href="#"
         rel="noopener noreferrer"
         className="btn bg-second text-white text-xs font-extralight rounded-md w-56"
+        onClick={() => window.pohon_kinerja.showModal()}
       >
         <span>
-          <FaDownload />
+          <FaFile />
         </span>
         Pohon Kinerja
       </a>
       {/* ==================== PERJANJIAN KINERJA ==================== */}
       <a
-        href="http://"
-        target="_blank"
+        href="#"
         rel="noopener noreferrer"
         className="btn bg-second text-white text-xs font-extralight rounded-md w-56"
+        onClick={() => window.perjanjian_kinerja.showModal()}
       >
         <span>
-          <FaDownload />
+          <FaFile />
         </span>
         Perjanjian Kinerja
       </a>
       {/* ==================== LAPORAN KINERJA ==================== */}
       <a
-        href="http://"
-        target="_blank"
+        href="#"
         rel="noopener noreferrer"
         className="btn bg-second text-white text-xs font-extralight rounded-md w-56"
+        onClick={() => window.laporan_kinerja.showModal()}
       >
         <span>
-          <FaDownload />
+          <FaFile />
         </span>
         Laporan Kinerja
       </a>
       {/* ==================== EVALUASI INTERNAL ==================== */}
       <a
-        href="http://"
-        target="_blank"
+        href="#"
         rel="noopener noreferrer"
         className="btn bg-second text-white text-xs font-extralight rounded-md w-56"
+        onClick={() => window.evaluasi_internal.showModal()}
       >
         <span>
-          <FaDownload />
+          <FaFile />
         </span>
         Evaluasi Internal
+      </a>
+      {/* ==================== PENGUKURAN KINERJA ==================== */}
+      <a
+        href="#"
+        rel="noopener noreferrer"
+        className="btn bg-second text-white text-xs font-extralight rounded-md w-56"
+        onClick={() => window.pengukuran_kinerja.showModal()}
+      >
+        <span>
+          <FaFile />
+        </span>
+        Pengukuran Kinerja
+      </a>
+      {/* ==================== REFORMASI BIROKRASI ==================== */}
+      <a
+        href="#"
+        rel="noopener noreferrer"
+        className="btn bg-second text-white text-xs font-extralight rounded-md w-56"
+        onClick={() => window.reformasi_birokrasi.showModal()}
+      >
+        <span>
+          <FaFile />
+        </span>
+        Reformasi Birokrasi
       </a>
     </>
   );

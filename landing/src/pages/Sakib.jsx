@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../components/sakib/Button";
+import Modal from "../components/sakib/Modal";
 
 const Sakib = () => {
   return (
@@ -9,6 +10,7 @@ const Sakib = () => {
       </h1>
       <div className="grid gap-y-3 justify-center md:grid-cols-3 justify-items-center">
         <Button />
+        <Modal />
       </div>
     </div>
   );
