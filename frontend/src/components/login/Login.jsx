@@ -22,10 +22,13 @@ const Login = () => {
 
       const token = res.data.accessToken;
       const user = jwtDecode(token);
+      console.log(user);
 
-      if (user.userid === 2) {
+      if (user.userid === 3) {
         toast.success("Login Berhasil");
         sessionStorage.setItem("access_token", token);
+        sessionStorage.setItem("email", user.email);
+        sessionStorage.setItem("name", user.name);
         navigate("/pengumuman");
       } else {
         toast.error("Gagal Login !");

@@ -8,8 +8,7 @@ const dokumenModel = db.define(
   {
     judul: DataTypes.STRING,
     link: DataTypes.STRING,
-    // gambar: DataTypes.STRING,
-    // url: DataTypes.STRING,
+    kategori: DataTypes.STRING,
   },
   {
     freezeTableName: true,
@@ -18,6 +17,6 @@ const dokumenModel = db.define(
 
 export default dokumenModel;
 
-// (async () => {
-//   await db.sync();
-// })();
+(async () => {
+  await db.sync();
+})();

@@ -4,10 +4,11 @@ import { useFormik } from "formik";
 import React from "react";
 import { toast } from "react-toastify";
 import * as Yup from "yup";
-import { addDataDokumen } from "../../../getApi";
+import { addDataDokumen } from "./apiDokumen";
 const Schema = Yup.object({
   judul: Yup.string().required(),
   link: Yup.string().required(),
+  kategori: Yup.string().required(),
 });
 
 const AddDokumen = ({ handleAddDokumen }) => {
@@ -19,6 +20,7 @@ const AddDokumen = ({ handleAddDokumen }) => {
     initialValues: {
       judul: "",
       link: "",
+      kategori: "",
     },
     ValidationSchema: Schema,
 
@@ -27,6 +29,8 @@ const AddDokumen = ({ handleAddDokumen }) => {
       const formData = new FormData();
       formData.append("judul", values.judul);
       formData.append("link", values.link);
+      formData.append("kategori", values.kategori);
+
       addDataDokumen(
         formData,
         values,
@@ -38,14 +42,11 @@ const AddDokumen = ({ handleAddDokumen }) => {
     },
   });
   return (
-    <dialog
-      id="my_modal_addDokumen"
-      className="modal overflow-y-visible  bg-black/50"
-    >
+    <dialog id="my_modal_addDokumen" className="modal   backdrop-blur-sm ">
       <form
         method="dialog"
         data-testid="form"
-        className=" bg-white overflow-y-scroll px-6 py-3 relative  max-h-screen max-w-3xl rounded-md z-10"
+        className=" bg-white overflow-y-scroll  px-6 py-3 relative min-w-[600px] max-h-screen max-w-3xl rounded-md z-10"
         name="form"
         onSubmit={formik.handleSubmit}
       >
@@ -69,7 +70,7 @@ const AddDokumen = ({ handleAddDokumen }) => {
             </p>
           )}
           <input
-            className="input  input-bordered input-info w-full max-w-xs"
+            className="input  input-bordered input-info w-full"
             id="judul"
             name="judul"
             type="text"
@@ -78,26 +79,15 @@ const AddDokumen = ({ handleAddDokumen }) => {
           />
         </div>
 
-        <div className="mb-3  rounded-md">
+        <div className="mb-3 flex flex-col rounded-md">
           <label className="text-xl" htmlFor="link">
-            Isi Pengumuman
+            Link Dokumen
           </label>
           {formik.errors.link && formik.touched.link && (
             <p className="mt-1 text-red-500 max-[640px]:text-sm">
               {formik.errors.link}
             </p>
           )}
-          <CKEditor
-            editor={ClassicEditor}
-            id="link"
-            name="link"
-            type="text"
-            onChange={(event, editor) => {
-              const data = editor.getData();
-              formik.setFieldValue("link", data);
-            }}
-            value={formik.values.judul}
-          />
 
           <input
             id="link"
@@ -105,8 +95,32 @@ const AddDokumen = ({ handleAddDokumen }) => {
             value={formik.values.link}
             onChange={formik.handleChange}
             type="text"
-            className="input hidden input-bordered input-info w-full max-w-xs"
+            className="input  input-bordered input-info w-full "
           />
+        </div>
+        <div className="mb-3 flex flex-col  rounded-md">
+          <label className="text-xl" htmlFor="kategori">
+            Kategori Dokumen
+          </label>
+          {formik.errors.kategori && formik.touched.kategori && (
+            <p className="mt-1 text-red-500 max-[640px]:text-sm">
+              {formik.errors.kategori}
+            </p>
+          )}
+
+          <select
+            id="kategori"
+            name="kategori"
+            value={formik.values.kategori}
+            onChange={formik.handleChange}
+            className="input input-bordered input-info w-full max-w-xs"
+          >
+            <option value="">Pilih Kategori</option>
+            <option value="kategori 1">Kategori 1</option>
+            <option value="kategori 2">Kategori 2</option>
+            <option value="kategori 3">Kategori 3</option>
+            {/* Add more options as needed */}
+          </select>
         </div>
 
         <button

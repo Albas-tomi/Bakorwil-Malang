@@ -1,0 +1,31 @@
+.paginationBttns {
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+  margin: 5% auto;
+}
+.paginationBttns a {
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.previousBttn,
+.nextBttn {
+  font-size: medium;
+  font-weight: 600;
+}
+.paginationActivate a {
+  background-color: #0074e5;
+  padding: 3px 6px;
+  border-radius: 4px;
+  color: white;
+}
+
+.paginationDisabled {
+  color: gray;
+}

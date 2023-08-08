@@ -1,14 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { deleteBerita, getBerita } from "../../../getApi";
 import { toast } from "react-toastify";
 import AddBerita from "./AddBerita";
 import EditBerita from "./EditBerita";
 import ConfirmDeleteBerita from "./ConfirmDeleteBerita";
+import { deleteBerita, getBerita } from "./apiBerita";
+import ReactPaginate from "react-paginate";
 
 const BeritaList = () => {
   const [dataBerita, setDataBerita] = useState([]);
   const [pickOfBeritaEdit, setpickOfBeritaEdit] = useState("");
   const [pickIdDelete, setPickIdDelete] = useState("");
+
+  // Pagination
+  const [pageNumber, setPageNumber] = useState(0);
+  const BeritaPerPage = 10;
+
+  const pageVisited = pageNumber * BeritaPerPage;
+  const pageCount = dataBerita.length / BeritaPerPage;
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
+
+  // Last Pagination
 
   const urlImg = "http://localhost:4000/beritaImg/";
 
@@ -35,6 +48,7 @@ const BeritaList = () => {
       )
     );
   };
+
   const handleAddBerita = (newBerita) => {
     setDataBerita([...dataBerita, newBerita]);
   };
@@ -53,62 +67,81 @@ const BeritaList = () => {
             </tr>
           </thead>
           <tbody>
-            {dataBerita.map((berita, idx) => (
-              <tr key={berita.id}>
-                <td>{(idx += 1)}</td>
-                <td>
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img
-                          className="w-24"
-                          src={`${urlImg}${berita.gambar}`}
-                          alt="gambar"
-                        />
+            {dataBerita
+              ?.slice(0, dataBerita.length)
+              .slice(pageVisited, pageVisited + BeritaPerPage)
+              .reverse()
+              .map((berita, idx) => (
+                <tr key={berita.id}>
+                  <td>{pageVisited + idx + 1}</td>
+                  <td>
+                    <div className="flex items-center space-x-3">
+                      <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
+                          <img
+                            className="w-24"
+                            src={`${urlImg}${berita.gambar}`}
+                            alt="gambar"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <div className="font-bold">{berita.judul}</div>
                       </div>
                     </div>
-                    <div>
-                      <div className="font-bold">{berita.judul}</div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <div
-                    className="line-clamp-2"
-                    dangerouslySetInnerHTML={{
-                      __html: berita.deskripsi,
-                    }}
-                  />
-                </td>
-                <td className="flex gap-2 justify-center items-center">
-                  <button
-                    onClick={() => {
-                      window.my_modal_confirmDeleteBerita.showModal();
-                      setPickIdDelete(berita.id);
-                    }}
-                    className="btn btn-outline btn-error"
-                  >
-                    Hapus
-                  </button>
-                  <button
-                    onClick={() => {
-                      handleEditBerita({
-                        id: berita.id,
-                        judul: berita.judul,
-                        deskripsi: berita.deskripsi,
-                        gambar: berita.gambar,
-                      });
-                      window.my_modal_editBerita.showModal();
-                    }}
-                    className="btn btn-outline btn-warning"
-                  >
-                    Edit
-                  </button>
-                </td>
-              </tr>
-            ))}
+                  </td>
+                  <td>
+                    <div
+                      className="line-clamp-2"
+                      dangerouslySetInnerHTML={{
+                        __html: berita.deskripsi,
+                      }}
+                    />
+                  </td>
+                  <td className="flex gap-2 justify-center items-center">
+                    <button
+                      onClick={() => {
+                        window.my_modal_confirmDeleteBerita.showModal();
+                        setPickIdDelete(berita.id);
+                      }}
+                      className="btn btn-outline btn-error"
+                    >
+                      Hapus
+                    </button>
+                    <button
+                      onClick={() => {
+                        handleEditBerita({
+                          id: berita.id,
+                          judul: berita.judul,
+                          deskripsi: berita.deskripsi,
+                          gambar: berita.gambar,
+                        });
+                        window.my_modal_editBerita.showModal();
+                      }}
+                      className="btn btn-outline btn-warning"
+                    >
+                      Edit
+                    </button>
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
+        <div className="w-full flex justify-end shadow-md bg-whiterounded-md h-14 p-4 items-center">
+          <ReactPaginate
+            className="flex gap-4"
+            previousLabel={"< Prev"}
+            nextLabel={"Next >"}
+            pageCount={Math.ceil(dataBerita.length / BeritaPerPage)}
+            onPageChange={changePage}
+            marginPagesDisplayed={2}
+            containerClassName={"paginationBttns"}
+            previousLinkClassName={"previousBttn"}
+            activeClassName={"paginationActivate"}
+            nextLinkClassName={"nextBttn"}
+            disabledLinkClassName={"paginationDisabled"}
+          />
+        </div>
       </div>
       <AddBerita handleAddBerita={handleAddBerita} />
       <EditBerita
