@@ -4,6 +4,7 @@ export default {
   theme: {
     extend: {},
     colors: {
+      begron: '#EEEEEE',
       primer: '#3DA9FC',
       second: '#094067',
       birumuda: '#7ABEEE',

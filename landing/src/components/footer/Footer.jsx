@@ -9,9 +9,9 @@ const Footer = () => {
   return (
     <div>
       {/* Pemprov Jatim */}
-      <div className="footer mt-10 px-5 bg-dark text-white pb-10">
+      <div className="footer px-5 bg-dark text-white pb-10">
         <div className="isi mx-auto">
-          <h1 className="font-medium text-lg mx-auto mt-10">PEMPROV JATIM</h1>
+          <h1 className="font-medium text-sm mx-auto mt-10">PEMPROV JATIM</h1>
           <div className="grid grid-cols-2 gap-x-16 gap-y-7 mx-auto items-center mt-5">
             <a href="https://jatimprov.go.id/" target="_blank" rel="noreferrer">
               <img src={LogoJatim} alt="" className="w-20" />
@@ -29,10 +29,10 @@ const Footer = () => {
         </div>
 
         {/* Kontak Kami */}
-        <div className="isi mx-auto flex flex-col gap-4 text-base">
-          <h1 className="font-medium text-lg  mx-auto mt-10">KONTAK KAMI</h1>
+        <div className="isi mx-auto flex flex-col gap-4 text-xs md:text-sm mt-7">
+          <h1 className="font-medium text-sm mx-auto ">KONTAK KAMI</h1>
           <a href="#" className="flex gap-3 mt-3">
-            <FaLocationDot className="text-lg self-center" />
+            <FaLocationDot className="self-center" />
             <div className="font-light">
               Jl. Simpang Ijen No. 2 Oro-oro Dowo,
               <br />
@@ -41,14 +41,14 @@ const Footer = () => {
             </div>
           </a>
           <a href="#" className="flex gap-3">
-            <FaPhone className="text-lg self-center" />
+            <FaPhone className="self-center" />
             <div className="font-light">
               (0341) 551321
               <div className="h-[2px] w-full bg-white"></div>
             </div>
           </a>
           <a href="#" className="flex gap-3">
-            <FaEnvelope className="text-lg self-center" />
+            <FaEnvelope className="self-center" />
             <div className="font-light">
               bakorwilmalang@jatimprov.go.id
               <div className="h-[2px] w-full bg-white"></div>
@@ -57,31 +57,31 @@ const Footer = () => {
         </div>
 
         {/* Link Bakorwil */}
-        <div className="isi mx-auto flex flex-col gap-4 text-base">
-          <h1 className="font-medium text-lg  mx-auto mt-10">BAKORWIL JATIM</h1>
+        <div className="isi mx-auto flex flex-col gap-4 text-xs md:text-sm mt-7">
+          <h1 className="font-medium text-sm mx-auto">BAKORWIL JATIM</h1>
           <a href="#" className="flex gap-3 mt-3">
-            <FaGlobe className="text-lg self-center" />
+            <FaGlobe className="self-center" />
             <div className="font-light">
               Bakorwil Madiun
               <div className="h-[2px] w-full bg-white"></div>
             </div>
           </a>
           <a href="#" className="flex gap-3">
-            <FaGlobe className="text-lg self-center" />
+            <FaGlobe className="self-center" />
             <div className="font-light">
               Bakorwil Bojonegoro
               <div className="h-[2px] w-full bg-white"></div>
             </div>
           </a>
           <a href="#" className="flex gap-3">
-            <FaGlobe className="text-lg self-center" />
+            <FaGlobe className="self-center" />
             <div className="font-light">
               Bakorwil Pamekasan
               <div className="h-[2px] w-full bg-white"></div>
             </div>
           </a>
           <a href="#" className="flex gap-3">
-            <FaGlobe className="text-lg self-center" />
+            <FaGlobe className="self-center" />
             <div className="font-light">
               Bakorwil Jember
               <div className="h-[2px] w-full bg-white"></div>
@@ -91,7 +91,7 @@ const Footer = () => {
       </div>
 
       {/* Link Sosmed */}
-      <div className="bg-second py-5 text-2xl md:flex flex-row-reverse items-center justify-around">
+      <div className="bg-second py-5 text-xl md:flex flex-row-reverse items-center justify-around">
         <div className="flex text-white justify-center gap-12">
           <a href="https://www.instagram.com/bakorwilmalang/" target="_blank" rel="noreferrer">
             <FaInstagram />
@@ -106,7 +106,7 @@ const Footer = () => {
             <FaEnvelope />
           </a>
         </div>
-        <div className="text-base md:text-lg font-medium text-white text-center mt-5 md:mt-0">Copyright © 2022. Bakorwil Malang</div>
+        <div className="text-sm md:text-base font-medium text-white text-center mt-5 md:mt-0">Copyright © 2022. Bakorwil Malang</div>
       </div>
     </div>
   );
