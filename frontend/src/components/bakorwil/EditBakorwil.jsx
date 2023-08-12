@@ -1,9 +1,7 @@
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React from "react";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { editDataBakorwil } from "./apiBakorwil";
 
 const Schema = Yup.object({
@@ -13,8 +11,6 @@ const Schema = Yup.object({
 });
 
 const EditBakorwil = ({ handleEditBakorwil, pickOfBakorwilEdit }) => {
-  const [editor, setEditor] = useState(null);
-
   const handleCloseModal = () => {
     window.my_modal_editBakorwil.close();
   };
@@ -58,7 +54,7 @@ const EditBakorwil = ({ handleEditBakorwil, pickOfBakorwilEdit }) => {
         >
           <form
             method="dialog"
-            className="modal-box shadow-none  w-full bg-white mx-auto"
+            className="modal-box shadow-none right-0  absolute w-full bg-transparent mx-auto"
           >
             <button className="btn btn-sm btn-circle btn-ghost absolute right-0 top-2">
               ✕

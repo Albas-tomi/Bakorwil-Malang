@@ -2,8 +2,6 @@ import { useFormik } from "formik";
 import React, { useState } from "react";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { editDataDokumen } from "./apiDokumen";
 
 const Schema = Yup.object({
@@ -13,7 +11,6 @@ const Schema = Yup.object({
 });
 
 const editDokumen = ({ pickOfDokumenEdit, handleEditDokumen }) => {
-  const [editor, setEditor] = useState(null);
   const handleCloseModal = () => {
     window.my_modal_editDokumen.close();
   };
@@ -54,7 +51,7 @@ const editDokumen = ({ pickOfDokumenEdit, handleEditDokumen }) => {
         >
           <form
             method="dialog"
-            className="modal-box shadow-none  w-full bg-white mx-auto"
+            className="modal-box shadow-none right-0  absolute w-full bg-transparent mx-auto"
           >
             <button className="btn btn-sm btn-circle btn-ghost absolute right-0 top-2">
               ✕
@@ -120,9 +117,17 @@ const editDokumen = ({ pickOfDokumenEdit, handleEditDokumen }) => {
               className="input input-bordered input-info px-3 w-full max-w-xs"
             >
               <option value="">Pilih Kategori</option>
-              <option value="kategori 1">Kategori 1</option>
-              <option value="kategori 2">Kategori 2</option>
-              <option value="kategori 3">Kategori 3</option>
+              <option value="Rencana Strategis">Rencana Strategis</option>
+              <option value="Rencana Kerja">Rencana Kerja</option>
+              <option value="Rencana Aksi">Rencana Aksi</option>
+              <option value="Indikator Kinerja Utama">
+                Indikator Kinerja Utama
+              </option>
+              <option value="Pohon Kinerja">Pohon Kinerja</option>
+              <option value="Perjanjian Kinerja">Perjanjian Kinerja</option>
+              <option value="Laporan Kinerja">Laporan Kinerja</option>
+              <option value="Evaluasi Internal">Evaluasi Internal</option>
+              <option value="Lainnya">Lainnya</option>
             </select>
           </div>
 

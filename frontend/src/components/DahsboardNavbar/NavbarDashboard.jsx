@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import AdminGambar from "../../assets/img/admin111.png";
-import Logo from "../../assets/img/logopemrov.png";
+import { FaUserAlt } from "react-icons/fa";
 import LogoButton from "../../assets/img/LogoutButton.png";
 import ConfirmLogout from "./ConfirmLogout";
 
@@ -17,7 +16,6 @@ const NavbarDashboard = () => {
     if (pathName === "carrousel") return "Carrousel";
     if (pathName === "bakorwil") return "Bakorwil";
     if (pathName === "galeri") return "Galeri";
-    if (pathName === "ppid") return "PPID";
     if (pathName === "program") return "Program";
     if (pathName === "video") return "Video";
     if (pathName === "wilayah-kerja") return "Wilayah Kerja";
@@ -43,7 +41,7 @@ const NavbarDashboard = () => {
       </div>
       <div className="flex w-1/2 justify-end  items-center  gap-4">
         <div className="flex items-center mr-11 gap-5">
-          <img src={Logo} alt="logo" className="w-[46px] h-[46px]" />
+          <FaUserAlt className="w-[36px] h-[36px]" />
           <div>
             <p className="font-semibold">{userName}</p>
             <span>{userEmail}</span>

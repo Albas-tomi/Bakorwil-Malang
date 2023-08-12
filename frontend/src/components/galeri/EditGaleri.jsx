@@ -58,7 +58,7 @@ const EditGaleri = ({ handleEditGaleri, pickOfGaleriEdit }) => {
         >
           <form
             method="dialog"
-            className="modal-box shadow-none  w-full bg-white mx-auto"
+            className="modal-box shadow-none right-0  absolute w-full bg-transparent mx-auto"
           >
             <button className="btn btn-sm btn-circle btn-ghost absolute right-0 top-2">
               ✕
@@ -84,26 +84,31 @@ const EditGaleri = ({ handleEditGaleri, pickOfGaleriEdit }) => {
               value={formik.values.judul}
             />
           </div>
-          <div className="mb-3 rounded-md">
+
+          <div className="mb-3 flex flex-col  rounded-md">
             <label className="text-xl" htmlFor="kategori">
-              Isi Galeri
+              Kategori Dokumen
             </label>
             {formik.errors.kategori && formik.touched.kategori && (
               <p className="mt-1 text-red-500 max-[640px]:text-sm">
                 {formik.errors.kategori}
               </p>
             )}
-            <CKEditor
-              editor={ClassicEditor}
+
+            <select
               id="kategori"
               name="kategori"
-              data={formik.values.kategori}
-              onChange={(event, editor) => {
-                const data = editor.getData();
-                formik.setFieldValue("kategori", data);
-                setEditor(editor);
-              }}
-            />
+              value={formik.values.kategori}
+              onChange={formik.handleChange}
+              className="input input-bordered input-info w-full max-w-xs"
+            >
+              <option value="">Pilih Kategori</option>
+              <option value="Rapat">Rapat</option>
+              <option value="Seminar">Seminar</option>
+              <option value="Kegiatan">Kegiatan</option>
+              <option value="KORPRI">KORPRI</option>
+              {/* Add more options as needed */}
+            </select>
           </div>
           <div className="mb-3 flex flex-col">
             <label className="text-xl" htmlFor="gambar">
