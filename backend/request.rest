@@ -2,14 +2,14 @@ GET http://localhost:5000/users
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyaWQiOjQsIm5hbWUiOiJCaWdCb3NCYWtvcndpbCIsImVtYWlsIjoiYmlnYm9zYmFrb3J3aWxAZ21haWwuY29tIiwiaWF0IjoxNjkwMzU5MDk2LCJleHAiOjE2OTAzNTkxMTZ9.L5dBD1XKyNgOmCsvTibYvk9qGQxPY1WNC0xHcCp-jOs
 
 ###
-POST http://localhost:5000/users
+POST http://localhost:4000/users
 Content-Type: application/json
 
 {
-    "name": "BigBosBakorwil",
-    "email": "bigbosbakorwil@gmail.com",
-    "password" : "0987654321",
-    "confirmPassword": "0987654321"
+    "name": "Muhammad Albas Tomi",
+    "email": "albas@gmail.com",
+    "password" : "12345",
+    "confirmPassword": "12345"
 }
 
 ###

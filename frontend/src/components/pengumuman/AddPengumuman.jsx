@@ -47,13 +47,13 @@ const AddPengumuman = ({ handleAddPengumuman }) => {
         <form
           method="dialog"
           data-testid="form"
-          className=" bg-white overflow-y-scroll  px-6 py-3 relative min-w-[600px] max-h-screen max-w-3xl rounded-md z-10"
+          className=" bg-white overflow-y-scroll p-6 relative min-w-[600px] max-h-screen max-w-3xl rounded-md z-10"
           name="form"
           onSubmit={formik.handleSubmit}
         >
           <form
             method="dialog"
-            className="modal-box shadow-none   w-full bg-white mx-auto"
+            className="modal-box shadow-none right-0  absolute w-full bg-transparent mx-auto"
           >
             <button className="btn btn-sm btn-circle btn-ghost absolute right-0 top-2">
               ✕

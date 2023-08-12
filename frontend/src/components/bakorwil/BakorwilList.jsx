@@ -14,12 +14,10 @@ const BakorwilList = () => {
   // Pagination
   const [pageNumber, setPageNumber] = useState(0);
   const BakorwilPerPage = 10;
-
   const pageVisited = pageNumber * BakorwilPerPage;
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
-
   // Last Pagination
 
   const urlImg = "http://localhost:4000/bakorwilImg/";
