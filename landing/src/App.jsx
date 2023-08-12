@@ -8,6 +8,7 @@ import { Profile } from "./pages/Profile";
 import Footer from "./components/footer/Footer";
 import Kinerja from "./pages/Kinerja";
 import Sakib from "./pages/Sakib";
+import PPID from "./pages/PPID";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/kinerja" element={<Kinerja />} />
           <Route path="/sakib" element={<Sakib />} />
+          <Route path="/ppid" element={<PPID />} />
         </Routes>
       </BrowserRouter>
       <Footer />
