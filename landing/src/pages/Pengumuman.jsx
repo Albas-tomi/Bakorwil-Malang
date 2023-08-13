@@ -22,7 +22,7 @@ export const Pengumuman = () => {
   const pageCount = Data.length / pengumumanPerPage;
 
   return (
-    <div>
+    <div className="p-5">
       <h1 className="text-xl text-center font-semibold text-[#094067] mb-5 md:text-4xl">
         Pengumuman Hari ini
       </h1>
@@ -31,33 +31,24 @@ export const Pengumuman = () => {
         {/* =============== CARD PENGUMUMAN PER PAGE =============== */}
         {Data.slice(0, card)
           .slice(currentPage, currentPage + pengumumanPerPage)
-          .map((p) => (
-            <Card p={p} Get={Get} />
+          .map((pengumumanData) => (
+            <Card pengumumanData={pengumumanData} Get={Get} />
           ))}
       </div>
       {/* =============== PAGINATION =============== */}
       <div className="flex justify-center">
-        <ReactPaginate
+      <ReactPaginate
           className="flex gap-3 mx-auto my-5"
-          breakLabel="..."
-          previousLabel={
-            <button className="join-item btn-sm btn btn-outline">Prev</button>
-          }
-          nextLabel={
-            <button className="join-item btn-sm btn btn-outline">Next</button>
-          }
+          previousLabel={"< Prev"}
+          nextLabel={"Next >"}
           onPageChange={changePage}
           pageCount={pageCount}
-          // containerClassName={"paginationBttns"}
-          // previousLinkClassName={"previousBttn"}
+          marginPagesDisplayed={2}
+          containerClassName={"paginationBttns"}
+          previousLinkClassName={"previousBttn"}
           nextLinkClassName={"nextBttn"}
-          disabledClassName={"paginationDisabled"}
-          activeClassName={
-            <button className="join-item btn btn-sm btn-active">
-              {pageCount}
-            </button>
-          }
-          renderOnZeroPageCount={null}
+          activeClassName={"paginationActivate"}
+          disabledLinkClassName={"paginationDisabled"}
         />
       </div>
       <Modal data={data} />
