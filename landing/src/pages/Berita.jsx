@@ -5,8 +5,6 @@ import Data from "../Data.json";
 import { Modal } from "../components/berita/Modal";
 
 export const Berita = () => {
-
-
   // =========== STATE FOR DATA CARD ===========
   const [data, setData] = useState([]);
   const Get = (dataKlik) => {
@@ -55,25 +53,16 @@ export const Berita = () => {
       <div className="flex justify-center">
         <ReactPaginate
           className="flex gap-3 mx-auto my-5"
-          breakLabel="..."
-          previousLabel={
-            <button className="join-item btn-sm btn btn-outline">Prev</button>
-          }
-          nextLabel={
-            <button className="join-item btn-sm btn btn-outline">Next</button>
-          }
+          previousLabel={"< Prev"}
+          nextLabel={"Next >"}
           onPageChange={changePage}
           pageCount={pageCount}
-          // containerClassName={"paginationBttns"}
-          // previousLinkClassName={"previousBttn"}
+          marginPagesDisplayed={2}
+          containerClassName={"paginationBttns"}
+          previousLinkClassName={"previousBttn"}
           nextLinkClassName={"nextBttn"}
-          disabledClassName={"paginationDisabled"}
-          activeClassName={
-            <button className="join-item btn btn-sm btn-active">
-              {pageCount}
-            </button>
-          }
-          renderOnZeroPageCount={null}
+          activeClassName={"paginationActivate"}
+          disabledLinkClassName={"paginationDisabled"}
         />
       </div>
       <Modal data={data} />
