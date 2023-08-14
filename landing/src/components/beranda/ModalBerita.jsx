@@ -4,14 +4,14 @@ const ModalBerita = ({ pickOfBerita }) => {
   return (
     <div>
       <dialog id="my_modal_5" className="modal modal-middle">
-        <form method="dialog" className="modal-box grid place-items-center gap-3">
-          <img src={pickOfBerita.image} alt="" className="max-w-92 rounded-md" />
-          <h3 className="font-bold text-lg capitalize text-second">{pickOfBerita.title}</h3>
-          <p className="">{pickOfBerita.deskripsi}</p>
-          <div className="modal-action">
-            {/* if there is a button in form, it will close the modal */}
-            <button className="btn">Close</button>
-          </div>
+        <form method="dialog" className="modal-box w-11/12 max-w-5xl grid gap-3">
+          <button className="btn btn-sm btn-circle btn-ghost sticky left-0 top-0 place-self-end bg-error hover:bg-primer text-white">✕</button>
+          <img src={pickOfBerita.image} alt="" className="max-w-92 rounded-md mx-auto mt-[-40px]" />
+          <h3 className="font-bold text-lg capitalize text-second mt-4 mx-auto">{pickOfBerita.title}</h3>
+          <p className="text-justify mx-auto">{pickOfBerita.deskripsi}</p>
+        </form>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
         </form>
       </dialog>
     </div>

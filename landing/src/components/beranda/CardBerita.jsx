@@ -15,7 +15,7 @@ const CardBerita = ({ setPickOfBerita }) => {
           }}
         >
           <figure>
-            <img src={dataBerita.image} alt="" className="object-cover h-28 md:h-36 lg:h-56 w-[100%]" />
+            <img src={dataBerita.image} alt="" className="object-cover h-28 md:h-44 lg:h-56 w-[100%]" />
           </figure>
           <div className="card-body flex gap-1">
             <span className="text-primer text-xs flex items-center gap-1">
