@@ -5,6 +5,9 @@ import Data from "../Data.json";
 import { Modal } from "../components/berita/Modal";
 
 export const Berita = () => {
+  const [query, setQuery] = useState("");
+  // console.log(Data.filter((d) => d.title.toLowerCase().includes("ketiga")));
+
   // =========== STATE FOR DATA CARD ===========
   const [data, setData] = useState([]);
   const Get = (dataKlik) => {
@@ -24,26 +27,26 @@ export const Berita = () => {
   return (
     <div>
       {/* =================== SEARCH BAR =================== */}
-      {/* <div className="p-3 grid grid-cols-2 items-center gap-2 md: ">
-        <button className="bg-second text-white rounded-md w-8 h-8 flex justify-center items-center order-last ml-5">
-          <FaMagnifyingGlass />
-        </button>
+      <div className="p-3 grid grid-cols-2 items-center gap-2">
         <div>
           <input
             type="text"
             placeholder="Cari Apenih..."
             className="input input-bordered input-accent w-full max-w-xs"
-            onChange={(e) => handleFilter(e.target.value)}
+            onChange={(e) => setQuery(e.target.value)}
           />
         </div>
-      </div> */}
+      </div>
       <h1 className="p-5 text-xl text-center font-semibold text-[#094067] md:text-4xl">
         Berita Hari ini
       </h1>
       {/* =============== CARD =============== */}
       <div className="grid grid-cols-2 gap-2 gap-y-6 justify-items-center md:grid-cols-3">
         {/* =============== CARD BERITA PER PAGE =============== */}
-        {Data.slice(0, card)
+        {Data.filter((search) =>
+          search.title.toLocaleLowerCase().includes(query)
+        )
+          .slice(0, card)
           .slice(currentPage, currentPage + beritaPerPage)
           .map((beritaData) => (
             <Card beritaData={beritaData} Get={Get} />
@@ -56,7 +59,7 @@ export const Berita = () => {
           previousLabel={"< Prev"}
           nextLabel={"Next >"}
           onPageChange={changePage}
-          pageCount={pageCount}
+          pageCount={Math.ceil(pageCount)}
           marginPagesDisplayed={2}
           containerClassName={"paginationBttns"}
           previousLinkClassName={"previousBttn"}
