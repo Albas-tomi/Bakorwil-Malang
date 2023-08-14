@@ -20,12 +20,12 @@ const Beranda = () => {
     <div>
       <Slider />
 
-      <div className="lg:grid grid-cols-4 gap-20 md:px-20">
+      <div className="lg:grid grid-cols-4 gap-20 md:px-10 lg:px-20">
         {/* Pengumuman */}
         <div className="flex flex-col order-last">
           <div className="pengumuman mt-12 md:mt-16 px-5 md:px-0">
             <h1 className="text-xl lg:text-2xl text-center font-semibold text-second">Pengumuman</h1>
-            <div className="grid grid-cols-2 lg:grid-cols-1 items-stretch gap-10 md:gap-5 mt-4 md:mt-8">
+            <div className="grid grid-cols-2 lg:grid-cols-1 items-stretch md:gap-x-10 gap-5 mt-4 md:mt-8">
               <CardPengumuman setPickOfPengumuman={setPickOfPengumuman} />
             </div>
 
@@ -58,7 +58,7 @@ const Beranda = () => {
           </div>
 
           {/* Card Berita */}
-          <div className="grid grid-cols-2 justify-between mt-4 md:mt-8 gap-10">
+          <div className="grid grid-cols-2 justify-between mt-4 md:mt-8 gap-x-5 gap-y-10 md:gap-y-14 md:gap-x-10">
             <CardBerita setPickOfBerita={setPickOfBerita} />
           </div>
 
@@ -72,15 +72,15 @@ const Beranda = () => {
 
       {/* Lihat lainnya */}
       <div className="flex justify-center mt-5">
-        <a href="#" className="py-1 px-3 rounded-lg bg-second text-white hover:bg-birumuda capitalize text-sm">
+        <a href="galeri" className="py-1 px-3 rounded-lg bg-second text-white hover:bg-birumuda capitalize text-sm">
           Lihat Lainnya
         </a>
       </div>
 
       {/* Galeri */}
-      <div className="galeri mt-12 md:px-10 lg:mt-16 px-5 md:px-20 pt-5 pb-5 md:pb-10 bg-birumuda">
+      <div className="galeri mt-12 md:px-10 lg:mt-16 px-5 lg:px-20 pt-5 pb-5 md:pb-10 bg-birumuda">
         <h1 className="text-xl md:text-2xl text-center font-semibold text-second">Galeri</h1>
-        <div className="card grid grid-cols-2 md:grid-cols-3 gap-10 items-stretch justify-between mt-8">
+        <div className="card grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-5 md:gap-x-10 md:gap-y-14 items-stretch justify-between mt-8">
           <CardGaleri setPickOfGaleri={setPickOfGaleri} />
         </div>
 
