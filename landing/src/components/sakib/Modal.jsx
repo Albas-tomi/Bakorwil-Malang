@@ -8,7 +8,6 @@ const Modal = () => {
   const dataRK = Dokumen.filter((kategori) => kategori.kategori === "RS");
   const dataRA = Dokumen.filter((kategori) => kategori.kategori === "RS");
 
-
   console;
   return (
     <div>
