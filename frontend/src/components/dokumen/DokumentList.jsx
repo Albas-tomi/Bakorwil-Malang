@@ -15,7 +15,6 @@ const DokumentList = () => {
   const DokumenPerPage = 10;
 
   const pageVisited = pageNumber * DokumenPerPage;
-  const pageCount = dataDokumen.length / DokumenPerPage;
   const changePage = ({ selected }) => {
     setPageNumber(selected);
   };
@@ -73,7 +72,15 @@ const DokumentList = () => {
                 <tr key={dokumen.id}>
                   <td>{pageVisited + idx + 1}</td>
                   <td>{dokumen.judul}</td>
-                  <td>{dokumen.link}</td>
+                  <td>
+                    <a
+                      className="text-blue-600"
+                      target="_blank"
+                      href={dokumen.link}
+                    >
+                      {dokumen.judul}
+                    </a>
+                  </td>
                   <td>{dokumen.kategori}</td>
                   <td className="flex gap-2 justify-center items-center">
                     <button

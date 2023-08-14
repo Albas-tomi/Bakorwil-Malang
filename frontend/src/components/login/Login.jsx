@@ -22,9 +22,11 @@ const Login = () => {
 
       const token = res.data.accessToken;
       const user = jwtDecode(token);
-      console.log(user);
+      const allowedUserIDs = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
+      ];
 
-      if (user.userid === 3) {
+      if (allowedUserIDs.includes(user.userid)) {
         toast.success("Login Berhasil");
         sessionStorage.setItem("access_token", token);
         sessionStorage.setItem("email", user.email);

@@ -51,7 +51,7 @@ const AddBakorwil = ({ handleAddBakorwil }) => {
         >
           <form
             method="dialog"
-            className="modal-box shadow-none  w-full bg-white mx-auto"
+            className="modal-box shadow-none right-0  absolute w-full bg-transparent mx-auto"
           >
             <button className="btn btn-sm btn-circle btn-ghost absolute right-0 top-2">
               ✕

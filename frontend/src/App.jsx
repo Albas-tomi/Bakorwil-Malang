@@ -11,24 +11,13 @@ import Dokumen from "./pages/Dokumen";
 import PrivateRoute from "./PrivateRoute";
 import Carrousel from "./pages/Carrousel";
 import Bakorwil from "./pages/Bakorwil";
-import PPID from "./pages/PPID";
 import WilayahKerja from "./pages/WilayahKerja";
 import Video from "./pages/Video";
 import Program from "./pages/Program";
 import Galeri from "./pages/Galeri";
+import NotFound from "./pages/NotFound";
 
 function App() {
-  // const token = sessionStorage.getItem("access_token");
-  // if (!token) {
-  //   return (
-  //     <BrowserRouter>
-  //       <ToastContainer autoClose={3000} />
-  //       <Routes>
-  //         <Route path="/" element={<Login />} />
-  //       </Routes>
-  //     </BrowserRouter>
-  //   );
-  // } else {
   return (
     <>
       <BrowserRouter>
@@ -43,11 +32,11 @@ function App() {
             }
           >
             <Route path="/pengumuman" element={<Pengumuman />} />
+            <Route path="*" element={<NotFound />} />
             <Route path="/berita" element={<Berita />} />
             <Route path="/dokumen" element={<Dokumen />} />
             <Route path="/carrousel" element={<Carrousel />} />
             <Route path="/bakorwil" element={<Bakorwil />} />
-            <Route path="/ppid" element={<PPID />} />
             <Route path="/wilayah-kerja" element={<WilayahKerja />} />
             <Route path="/video" element={<Video />} />
             <Route path="/program" element={<Program />} />

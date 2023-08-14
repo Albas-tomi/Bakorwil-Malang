@@ -1,10 +1,10 @@
 import React from "react";
 
-export const Card = ({ p, Get }) => {
+export const Card = ({ pengumumanData, Get }) => {
   return (
     <>
       <div
-        key={p.id}
+        key={pengumumanData.id}
         className="card card-compact bg-base-100 w-[80%] shadow-xl"
       >
         <button
@@ -12,14 +12,14 @@ export const Card = ({ p, Get }) => {
           onClick={() => {
             window.modalPengumuman.showModal();
             Get({
-              id: p.id,
-              image: p.image,
-              title: p.title,
+              id: pengumumanData.id,
+              image: pengumumanData.image,
+              title: pengumumanData.title,
             });
           }}
         >
           <figure className="rounded-xl">
-            <img className="object-cover h-48 w-96" src={p.image} />
+            <img className="object-cover h-48 w-96" src={pengumumanData.image} />
           </figure>
         </button>
       </div>
