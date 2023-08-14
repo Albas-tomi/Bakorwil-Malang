@@ -13,7 +13,7 @@ const CardGaleri = ({ setPickOfGaleri }) => {
             setPickOfGaleri({ id: dataGaleri.id, title: dataGaleri.title, image: dataGaleri.image });
           }}
         >
-          <img src={dataGaleri.image} alt="" className="object-cover h-28 md:h-44 lg:h-72" />
+          <img src={dataGaleri.image} alt="" className="object-cover h-28 md:h-40 lg:h-64" />
           <div className="absolute bottom-0 w-full text-center text-white font-medium text-xs lg:text-sm py-2 bg-neutral-900 bg-opacity-50 capitalize">{dataGaleri.title}</div>
         </label>
       ))}

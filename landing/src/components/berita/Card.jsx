@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { FaClock, FaEye } from "react-icons/fa6";
+import React, { useState } from 'react';
+import { FaClock, FaEye } from 'react-icons/fa6';
 
 export const Card = ({ beritaData, Get }) => {
   const [kunjungan, setKunjungan] = useState(0);
@@ -12,10 +12,7 @@ export const Card = ({ beritaData, Get }) => {
   };
   return (
     <>
-      <div
-        key={beritaData.id}
-        className="card card-compact bg-base-100 shadow-xl md:w-[80%]"
-      >
+      <div key={beritaData.id} className="card card-compact bg-base-100 shadow-xl md:w-[80%]">
         <figure>
           <img className="object-cover h-48 w-96" src={beritaData.image} />
         </figure>
@@ -26,7 +23,7 @@ export const Card = ({ beritaData, Get }) => {
             </span>
             {beritaData.tgl}
           </p>
-          <p>
+          <p className="capitalize">
             {beritaData.title.substring(0, 60)}
             <span> </span>
             {/* =========== MODAL =========== */}
