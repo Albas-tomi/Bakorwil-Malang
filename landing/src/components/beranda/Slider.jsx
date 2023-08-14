@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import Data from "../../Data.json";
 
 const Slider = () => {
+  const [indexGambarSlide, setIndexGambarSlide] = useState(0);
+  useEffect(() => {
+    const detikPerubahan = setInterval(() => {
+      setIndexGambarSlide((gambarSlide) => (gambarSlide + 1) % Data.length);
+    }, 4000);
+    return () => {
+      clearInterval(detikPerubahan);
+    };
+  }, []);
   return (
     <>
-      <div className="carousel min-h-full w-full">
+      <div className="carousel w-full">
         {Data.map((dataSlider, idx) => (
-          <div id={idx} className="carousel-item relative w-full">
+          <div
+            id={idx}
+            className={`carousel-item relative w-full ${
+              idx === indexGambarSlide ? "block" : "hidden"
+            }`}
+          >
             <img
               src={dataSlider.image}
               className="w-full h-56 md:h-96 lg:h-screen object-cover"
