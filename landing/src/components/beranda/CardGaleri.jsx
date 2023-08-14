@@ -7,7 +7,7 @@ const CardGaleri = ({ setPickOfGaleri }) => {
     <>
       {Data.slice(0, 6).map((dataGaleri) => (
         <label
-          className="card card-compact bg-base-100 bg-cover rounded-md overflow-hidden relative cursor-pointer"
+          className="card card-compact bg-base-100 bg-cover rounded-sm overflow-hidden relative cursor-pointer"
           htmlFor="my_modal_7"
           onClick={() => setPickOfGaleri({ id: dataGaleri.id, title: dataGaleri.title, image: dataGaleri.image })}
         >
