@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaClock, FaEye } from "react-icons/fa6";
 
 export const Card = ({ beritaData, Get }) => {
+  const [kunjungan, setKunjungan] = useState(0);
+
+  const handleKunjunganIncrement = (id) => {
+    setKunjungan((prevKunjungan) => ({
+      ...prevKunjungan,
+      [id]: (prevKunjungan[id] || 0) + 1,
+    }));
+  };
   return (
     <>
       <div
@@ -32,6 +40,7 @@ export const Card = ({ beritaData, Get }) => {
                   title: beritaData.title,
                   deskripsi: beritaData.deskripsi,
                 });
+                handleKunjunganIncrement(beritaData.id);
               }}
             >
               <a className="text-[#3da9fc]">selengkanya</a>
@@ -39,7 +48,7 @@ export const Card = ({ beritaData, Get }) => {
           </p>
           <p className="text-xs text-second flex items-center gap-2 right-0 bottom-0 absolute pr-5 pb-2">
             <FaEye />
-            12
+            {kunjungan[beritaData.id] || 0}
           </p>
         </div>
       </div>
