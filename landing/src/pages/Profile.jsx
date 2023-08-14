@@ -1,7 +1,7 @@
 import React from "react";
 import { Accordion } from "../components/profile/Accordion";
 
-export const Profile = () => {
+const Profile = () => {
   return (
     <div id="profile">
       <div className="mt-5 grid justify-items-center mb-5 px-5 md:grid-cols-2">
@@ -29,3 +29,5 @@ export const Profile = () => {
     </div>
   );
 };
+
+export default Profile;

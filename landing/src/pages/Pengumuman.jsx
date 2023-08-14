@@ -4,7 +4,7 @@ import ReactPaginate from "react-paginate";
 import Data from "../Data.json";
 import { Modal } from "../components/pengumuman/Modal";
 
-export const Pengumuman = () => {
+const Pengumuman = () => {
   const [data, setData] = useState([]);
 
   const Get = (dataKlik) => {
@@ -37,7 +37,7 @@ export const Pengumuman = () => {
       </div>
       {/* =============== PAGINATION =============== */}
       <div className="flex justify-center">
-      <ReactPaginate
+        <ReactPaginate
           className="flex gap-3 mx-auto my-5"
           previousLabel={"< Prev"}
           nextLabel={"Next >"}
@@ -55,3 +55,5 @@ export const Pengumuman = () => {
     </div>
   );
 };
+
+export default Pengumuman;
