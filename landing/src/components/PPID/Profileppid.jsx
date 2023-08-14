@@ -76,11 +76,27 @@ const Profileppid = () => {
         </div>
         <div className={toggleState === 2 ? "text-center" : "hidden"}>
           <h1 className="font-bold text-xl">Fungsi PPID Pelaksana</h1>
-          <p className="mt-3 text-xs md:text-base">
-            Merencanakan, mengorganisasikan, melaksanakan, mengawasi dan
-            mengevaluasi pelaksanaan kegiatan pengelolaan dan pelayanan
-            informasi di lingkungan satuan kerja.
-          </p>
+          <ul className="list-decimal text-xs mt-3 text-start px-5 md:text-base">
+            <li>
+              Mengelola dan melayani Informasi publik serta dokumentasi di
+              satuan kerjanya.
+            </li>
+            <li>
+              Pengolahan, penataan, data penyimpanan dan/atau informasi publik
+              yang diperoleh di satuan kerjanya.
+            </li>
+            <li>
+              Penyeleksian dan pengujian data dan informasi publik yang termasuk
+              kategori dikecualikan dari informasi yang dibuka untuk publik yang
+              ditetapkan oleh pejabat yang berwenang.
+            </li>
+            <li>Pengujian aksesibilitas atas suatu informasi publik.</li>
+            <li>Penyelesaian sengketa pelayanan informasi.</li>
+            <li>
+              Pelaksanaan koordinasi antar bidang dalam pengelolaan dan
+              pelayanan informasi publik serta dokumentasi
+            </li>
+          </ul>
         </div>
       </div>
     </div>
