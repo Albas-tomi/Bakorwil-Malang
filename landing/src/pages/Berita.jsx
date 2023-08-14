@@ -3,8 +3,7 @@ import { Card } from "../components/berita/Card";
 import ReactPaginate from "react-paginate";
 import Data from "../Data.json";
 import { Modal } from "../components/berita/Modal";
-
-export const Berita = () => {
+const Berita = () => {
   const [query, setQuery] = useState("");
   // console.log(Data.filter((d) => d.title.toLowerCase().includes("ketiga")));
 
@@ -72,3 +71,4 @@ export const Berita = () => {
     </div>
   );
 };
+export default Berita;

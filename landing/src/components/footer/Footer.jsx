@@ -1,9 +1,17 @@
-import { FaEnvelope, FaFacebook, FaGlobe, FaInstagram, FaLocationDot, FaPhone, FaTwitter } from 'react-icons/fa6';
+import {
+  FaEnvelope,
+  FaFacebook,
+  FaGlobe,
+  FaInstagram,
+  FaLocationDot,
+  FaPhone,
+  FaTwitter,
+} from "react-icons/fa6";
 
-import LogoJatim from '../../assets/image/logopemrov-png.png';
-import LogoJdihn from '../../assets/image/jdihn.png';
-import LogoLpse from '../../assets/image/lpse.png';
-import LogoLapor from '../../assets/image/lapor.png';
+import LogoJatim from "../../assets/image/logopemrov-png.png";
+import LogoJdihn from "../../assets/image/jdihn.png";
+import LogoLpse from "../../assets/image/lpse.png";
+import LogoLapor from "../../assets/image/lapor.png";
 
 const Footer = () => {
   return (
@@ -16,10 +24,18 @@ const Footer = () => {
             <a href="https://jatimprov.go.id/" target="_blank" rel="noreferrer">
               <img src={LogoJatim} alt="" className="w-20" />
             </a>
-            <a href="https://jdih.jatimprov.go.id/" target="_blank" rel="noreferrer">
+            <a
+              href="https://jdih.jatimprov.go.id/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={LogoJdihn} alt="" className="w-20" />
             </a>
-            <a href="https://lpse.jatimprov.go.id/eproc4" target="_blank" rel="noreferrer">
+            <a
+              href="https://lpse.jatimprov.go.id/eproc4"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img src={LogoLpse} alt="" className="w-20" />
             </a>
             <a href="https://www.lapor.go.id/" target="_blank" rel="noreferrer">
@@ -93,20 +109,38 @@ const Footer = () => {
       {/* Link Sosmed */}
       <div className="bg-second py-5 text-xl md:flex flex-row-reverse items-center justify-around">
         <div className="flex text-white justify-center gap-12">
-          <a href="https://www.instagram.com/bakorwilmalang/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.instagram.com/bakorwilmalang/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaInstagram />
           </a>
-          <a href="https://www.facebook.com/bakorwil.malang.7/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.facebook.com/bakorwil.malang.7/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaFacebook />
           </a>
-          <a href="https://twitter.com/BakorwilMalang" target="_blank" rel="noreferrer">
+          <a
+            href="https://twitter.com/BakorwilMalang"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaTwitter />
           </a>
-          <a href="mailto:bakorwilmalang@jatimprov.go.id?Subject=Mau%20tanya" target="_blank" rel="noreferrer">
+          <a
+            href="mailto:bakorwilmalang@jatimprov.go.id?Subject=Mau%20tanya"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaEnvelope />
           </a>
         </div>
-        <div className="text-sm md:text-base font-medium text-white text-center mt-5 md:mt-0">Copyright © 2022. Bakorwil Malang</div>
+        <div className="text-sm md:text-base font-medium text-white text-center mt-5 md:mt-0">
+          Copyright © 2022. Bakorwil Malang
+        </div>
       </div>
     </div>
   );
