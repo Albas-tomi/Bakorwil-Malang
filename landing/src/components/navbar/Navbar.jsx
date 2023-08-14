@@ -1,5 +1,3 @@
-import { FaMagnifyingGlass } from "react-icons/fa6";
-
 import BakorwilLogo from "../../assets/image/logobakorwilmalang.png";
 import { NavLink } from "react-router-dom";
 import SearchData from "./SearchData";
