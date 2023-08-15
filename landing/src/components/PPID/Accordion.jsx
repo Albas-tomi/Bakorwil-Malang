@@ -1,6 +1,12 @@
-import React from 'react';
+import React from "react";
+import dataPPID from '../../DataPPID.json'
 
 export const Accordion = () => {
+ const dataA = dataPPID.filter((kategori) => kategori.kategori === 'A')
+ const dataB = dataPPID.filter((kategori) => kategori.kategori === 'B')
+ const dataISM = dataPPID.filter((pages) => pages.pages === 'informasi serta merta')
+
+
   return (
     <div id="daftar" section="accordion" className="grid gap-y-4 p-5">
       {/* ================== INFORMASI BERKALA ================== */}
@@ -17,15 +23,19 @@ export const Accordion = () => {
                   <th>A</th>
                   <td>Informasi tentang profile Badan Publik :</td>
                 </tr>
+                {dataA.map((A) => (
                 <tr>
                   <th>1.</th>
                   <td>Informasi tentang kedudukan, domisili dan alamat lengkap</td>
+                  <th>{A.no}</th>
+                  <td>
+                    {A.judul}
+                  </td>
                   <td>
                     <a
-                      href="	
-https://bakorwilmalang.jatimprov.go.id/tentang-kami-sejarah.html"
+                      href={A.link}
                     >
-                      Tentang Kami
+                      {A.direct}
                     </a>
                   </td>
                 </tr>
@@ -62,11 +72,27 @@ https://bakorwilmalang.jatimprov.go.id/tentang-kami-struktur-organisasi.html"
                     <a href="">Wajib Lapor LHKPN Pemprov. Jatim</a>
                   </td>
                 </tr>
+                ))}
                 {/* row B */}
                 <tr className="font-bold">
                   <th>B</th>
                   <td>Ringkasan informasi tentang program dan/atau kegiatan yang sedang dijalankan dalam lingkup Badan Publik, yang meliputi :</td>
                 </tr>
+                {dataB.map((B) => (
+                <tr>
+                  <th>{B.no}</th>
+                  <td>
+                    {B.judul}
+                  </td>
+                  <td>
+                    <a
+                      href={B.link}
+                    >
+                      {B.direct}
+                    </a>
+                  </td>
+                </tr>
+                ))}
                 {/* row C */}
                 <tr className="font-bold">
                   <th>C</th>
@@ -98,6 +124,27 @@ https://bakorwilmalang.jatimprov.go.id/tentang-kami-struktur-organisasi.html"
         <div className="collapse-title text-base font-bold flex items-center gap-2 md:text-lg">Informasi Serta Merta</div>
         <div className="collapse-content">
           <p className="text-sm md:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere reiciendis asperiores unde odio incidunt deserunt quo est officia atque quod?</p>
+        <div className="overflow-x-auto">
+            <table className="table table-xs md:table-md">
+              {/* head */}
+              <tbody>
+              <tr className="font-bold">
+                  <th>A</th>
+                  <td>Informasi tentang profile Badan Publik :</td>
+                </tr>
+                {dataISM.map((ism) => (
+                <tr>
+                  <th>
+                    {ism.no}
+                  </th>
+                  <td>
+                      {ism.judul}
+                  </td>
+                </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       {/* ================== INFORMASI SETIAP SAAT ================== */}
@@ -106,6 +153,9 @@ https://bakorwilmalang.jatimprov.go.id/tentang-kami-struktur-organisasi.html"
         <div className="collapse-title text-base font-bold flex items-center gap-2 md:text-lg">Informasi Setiap Saat</div>
         <div className="collapse-content">
           <p className="text-sm md:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere reiciendis asperiores unde odio incidunt deserunt quo est officia atque quod?</p>
+          <p className="text-xs md:text-base">
+            Updating ...
+          </p>
         </div>
       </div>
     </div>
