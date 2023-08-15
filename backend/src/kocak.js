@@ -23,7 +23,12 @@ const PORT = process.env.PORT;
 
 const app = express();
 
-app.use(cors({ credentials: true, origin: "http://localhost:5173" }));
+app.use(
+  cors({
+    credentials: true,
+    origin: ["http://localhost:5174", "http://localhost:5173"],
+  })
+);
 app.use(cookieParser());
 app.use(express.json());
 app.use(FileUpload());
