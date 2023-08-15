@@ -12,17 +12,14 @@ export const Card = ({ beritaData, Get }) => {
   };
   return (
     <>
-      <div key={beritaData.id} className="card card-compact bg-base-100 shadow-xl md:w-[80%]">
+      <div key={beritaData.id} className="card card-compact bg-base-100 shadow-xl">
         <figure>
-          <img className="object-cover h-48 w-96" src={beritaData.image} />
+          <img className="object-cover h-28 md:h-44 lg:h-56 w-[100%]" src={beritaData.image} />
         </figure>
-        <div className="card-body">
-          <p className="text-[#3da9fc] flex items-center">
-            <span className="mr-2">
-              <FaClock />
-            </span>
-            {beritaData.tgl}
-          </p>
+        <div className="card-body flex gap-1">
+          <span className="text-primer text-xs flex items-center gap-1">
+            <FaClock /> {beritaData.tgl}
+          </span>
           <p className="capitalize">
             {beritaData.title.substring(0, 60)}
             <span> </span>
@@ -40,7 +37,7 @@ export const Card = ({ beritaData, Get }) => {
                 handleKunjunganIncrement(beritaData.id);
               }}
             >
-              <a className="text-[#3da9fc]">selengkanya</a>
+              <a className="text-primer">selengkanya</a>
             </button>
           </p>
           <p className="text-xs text-second flex items-center gap-2 right-0 bottom-0 absolute pr-5 pb-2">

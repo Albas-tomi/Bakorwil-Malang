@@ -14,7 +14,7 @@ export const Accordion = () => {
           Sejarah Bakorwil
         </div>
         <div className="collapse-content">
-          <p className="text-xs">
+          <p className="text-sm md:text-base">
             Lembaga Koordinasi Wilayah di Indonesia memiliki sejarah perkembangan yang cukup panjang, masih menjadi daerah jajahan Belanda dengan nama Hindia Belanda, system pemerintahan bersifat sentralitistis, urusan-urusan Pemerintahan
             Pusat maupun urusan Pemrintahan Daerah sampai sekecil-kecilnya diselenggarakan oleh Pemerintahan Pusat, yaitu terpusat ditangan Governeur Genaral. Berdasarkan Undang-Undang Pemerintahan Hindia Belanda, yang lebih dikenal
             Regerings Reglement (RR) yang dimuat dalam Stactsblad tahun 1854 yang diberlakukan tanggal 1 Mei 1855, maka Hindia Belanda dibagi atas daerah adminstratif : Gewest, yang dipimpin oleh seorang Resident Afdeling, yang dipimpin
@@ -60,10 +60,10 @@ export const Accordion = () => {
           Tujuan & Sasaran
         </div>
         <div className="collapse-content">
-          <p className="text-sm font-semibold">Tujuan </p>
-          <p className="text-xs">"Meningkatkan Koordinasi Penyelenggaraan Pemerintahan dan Pembangunan di Wilayah Kerja Bakorwil Malang"</p>
+          <p className="text-sm md:text-base font-semibold">Tujuan </p>
+          <p className="text-sm md:text-base">"Meningkatkan Koordinasi Penyelenggaraan Pemerintahan dan Pembangunan di Wilayah Kerja Bakorwil Malang"</p>
           <p className="text-sm font-semibold mt-2">Sasaran</p>
-          <p className="text-xs">"Meningkatnya hasil koordinasi pembinaan, pengawasan, supervisi, monitoring, dan evaluasi penyelenggaraan pemerintahan dan pembangunan di wilayah kerja Bakorwil Malang"</p>
+          <p className="text-sm md:text-base">"Meningkatnya hasil koordinasi pembinaan, pengawasan, supervisi, monitoring, dan evaluasi penyelenggaraan pemerintahan dan pembangunan di wilayah kerja Bakorwil Malang"</p>
         </div>
       </div>
       {/* ================== STRUKTUR BAKORWIL ================== */}
@@ -89,7 +89,7 @@ export const Accordion = () => {
           Wilayah Kerja
         </div>
         <div className="collapse-content">
-          <p className="text-sm">hello sejarah bakorwil</p>
+          <p className="text-sm md:text-base">hello sejarah bakorwil</p>
         </div>
       </div>
       {/* ================== Pejabat Struktural ================== */}
@@ -102,7 +102,7 @@ export const Accordion = () => {
           Pejabat Struktural
         </div>
         <div className="collapse-content">
-          <p className="text-sm">hello sejarah bakorwil</p>
+          <p className="text-sm md:text-base">hello sejarah bakorwil</p>
         </div>
       </div>
     </div>

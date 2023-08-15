@@ -6,10 +6,10 @@ const CardPengumuman = ({ setPickOfPengumuman }) => {
   return (
     <>
       {Data.slice(0, 2).map((dataPengumuman) => (
-        <div
+        <label
           className="card md:grid md:grid-cols-1 lg:grid-cols-5 items-stretch object-cover cursor-pointer"
           onClick={() => {
-            window.my_modal_pengumuman.showModal();
+            window.modal_pengumuman.showModal();
             setPickOfPengumuman({ id: dataPengumuman.id, title: dataPengumuman.title, image: dataPengumuman.image });
           }}
         >
@@ -18,7 +18,7 @@ const CardPengumuman = ({ setPickOfPengumuman }) => {
             <div className="absolute lg:hidden bottom-0 w-full text-center text-white text-xs py-2 bg-neutral-900 bg-opacity-50">Lorem ipsum dolor sit</div>
           </div>
           <h3 className="hidden lg:inline-block col-span-3 md:text-xs lg:text-sm font-medium capitalize place-self-center">{dataPengumuman.title}</h3>
-        </div>
+        </label>
       ))}
     </>
   );

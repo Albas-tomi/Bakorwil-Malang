@@ -7,7 +7,7 @@ import LogoLapor from '../../assets/image/lapor.png';
 
 const Footer = () => {
   return (
-    <div>
+    <>
       {/* Pemprov Jatim */}
       <div className="footer px-5 md:px-10 lg:20px bg-dark text-white pb-10">
         <div className="isi mx-auto">
@@ -108,7 +108,7 @@ const Footer = () => {
         </div>
         <div className="text-sm md:text-base font-medium text-white text-center mt-5 md:mt-0">Copyright © 2022. Bakorwil Malang</div>
       </div>
-    </div>
+    </>
   );
 };
 

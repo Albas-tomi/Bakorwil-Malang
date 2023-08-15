@@ -18,7 +18,7 @@ const Modal = () => {
           <h3 className="font-bold text-base">Unduh Document Rencana Strategis</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second text-white font-thin text-sm">
+              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
                 <span>
                   <FaDownload />
                 </span>
@@ -36,7 +36,7 @@ const Modal = () => {
           <h3 className="font-bold text-base">Unduh Document Rencana Kerja</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dataRK.map((rk) => (
-              <a target="_blank" rel="noopener noreferrer" href={rk.link} className="btn bg-second text-white font-thin text-sm">
+              <a target="_blank" rel="noopener noreferrer" href={rk.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
                 <span>
                   <FaDownload />
                 </span>
@@ -54,7 +54,7 @@ const Modal = () => {
           <h3 className="font-bold text-base">Unduh Document Rencana Aksi</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second text-white font-thin text-sm">
+              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
                 <span>
                   <FaDownload />
                 </span>
@@ -72,7 +72,7 @@ const Modal = () => {
           <h3 className="font-bold text-base">Unduh Document Indikator Kinerja Utama</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second text-white font-thin text-sm">
+              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
                 <span>
                   <FaDownload />
                 </span>
@@ -90,7 +90,7 @@ const Modal = () => {
           <h3 className="font-bold text-base">Unduh Documen Pohon Kinerja</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second text-white font-thin text-sm">
+              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
                 <span>
                   <FaDownload />
                 </span>
@@ -108,7 +108,7 @@ const Modal = () => {
           <h3 className="font-bold text-base">Unduh Documen perjanjian Kinerja</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second text-white font-thin text-sm">
+              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
                 <span>
                   <FaDownload />
                 </span>
@@ -126,7 +126,7 @@ const Modal = () => {
           <h3 className="font-bold text-base">Unduh Documen Laporan Kinerja</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second text-white font-thin text-sm">
+              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
                 <span>
                   <FaDownload />
                 </span>
@@ -144,7 +144,7 @@ const Modal = () => {
           <h3 className="font-bold text-base">Unduh Documen Evaluasi Internal</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second text-white font-thin text-sm">
+              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
                 <span>
                   <FaDownload />
                 </span>
@@ -162,7 +162,7 @@ const Modal = () => {
           <h3 className="font-bold text-base">Unduh Documen Pengukuran Kinerja</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second text-white font-thin text-sm">
+              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
                 <span>
                   <FaDownload />
                 </span>
@@ -180,7 +180,7 @@ const Modal = () => {
           <h3 className="font-bold text-base">Unduh Documen Reformasi Birokrasi</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second text-white font-thin text-sm">
+              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
                 <span>
                   <FaDownload />
                 </span>

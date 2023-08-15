@@ -16,7 +16,7 @@ const Profile = () => {
         </div>
         {/* ================= APA ITU BAKORWIL ? ================= */}
         <div className="mt-7 text-center md:text-left self-center">
-          <h1 className="font-bold text-primer text-xl lg:text-3xl tracking-widest">APA ITU BAKORWIL ? </h1>
+          <h1 className="font-bold text-primer text-2xl lg:text-3xl tracking-widest">APA ITU BAKORWIL ? </h1>
           <p className="text-sm text-text mt-3 lg:mt-7 md:text-md lg:text-lg text-justify leading-relaxed">
             Bakorwil merupakan unsur penunjang kepala daerah, dipimpin oleh seorang kepala, yang berada di bawah dan bertanggung jawab kepada Gubernur melalui Sekretaris Daerah.
           </p>

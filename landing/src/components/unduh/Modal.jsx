@@ -13,7 +13,7 @@ export const Modal = () => {
           <h3 className="font-bold text-base">Unduh Buku Pedoman Teknis</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dataTeknis.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second text-white font-thin text-sm">
+              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
                 <span>
                   <FaDownload />
                 </span>
@@ -29,7 +29,7 @@ export const Modal = () => {
           <h3 className="font-bold text-base">Unduh Dokumen PPID</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dataPpid.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second text-white font-thin text-sm">
+              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
                 <span>
                   <FaDownload />
                 </span>

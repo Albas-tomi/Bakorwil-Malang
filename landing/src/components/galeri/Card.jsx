@@ -37,7 +37,7 @@ const Card = ({ setPickOfGaleri }) => {
       </div>
 
       {/* =============== PAGINATION =============== */}
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center mb-5 mt-3">
         <ReactPaginate
           className="flex gap-3 mx-auto my-5"
           previousLabel={'< Prev'}
