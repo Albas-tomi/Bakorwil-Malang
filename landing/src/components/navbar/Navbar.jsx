@@ -1,11 +1,12 @@
 import BakorwilLogo from '../../assets/image/logobakorwilmalang.png';
 import { NavLink } from 'react-router-dom';
 import SearchData from './SearchData';
+import { Modal } from '../unduh/Modal';
 
 const Navbar = () => {
   return (
     <>
-      <div className="navbar bg-white px-5 md:px-20 sticky top-0 shadow-md z-50 ">
+      <div className="navbar bg-white px-5 md:px-10 lg:px-20 sticky top-0 shadow-md z-50 ">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="lg:hidden">
@@ -29,36 +30,23 @@ const Navbar = () => {
               <NavLink className={'bg-none'} to={'/sakib'}>
                 {({ isActive }) => <a className={`${isActive ? 'text-birumuda font-bold' : ' '} cursor-pointer`}>SAKIB & RB</a>}
               </NavLink>
-              <li>
-                <a>Unduh</a>
-                <ul className="p-2">
-                  <li>
-                    <a
-                      onClick={() => {
-                        window.modal_unduh.showModal();
-                        console.log('ok');
-                      }}
-                    >
-                      Buku Pedoman Teknis
-                    </a>
-                  </li>
-                  <li>
-                    <a>Dokumen PPID</a>
-                  </li>
-                </ul>
-              </li>
-
-              {/* Modal Unduh */}
-              <dialog id="modal_unduh" className="modal">
-                <form method="dialog" className="modal-box">
-                  <h3 className="font-bold text-lg">Hello!</h3>
-                  <p className="py-4">Press ESC key or click the button below to close</p>
-                  <div className="modal-action">
-                    {/* if there is a button in form, it will close the modal */}
-                    <button className="btn">Close</button>
-                  </div>
-                </form>
-              </dialog>
+              <a className="p-2">Unduh</a>
+              <ul>
+                <li
+                  onClick={() => {
+                    window.modal_dokumen_teknis.showModal();
+                  }}
+                >
+                  <a>Buku Pedoman Teknis</a>
+                </li>
+                <li
+                  onClick={() => {
+                    window.modal_dokumen_ppid.showModal();
+                  }}
+                >
+                  <a>Dokumen PPID</a>
+                </li>
+              </ul>
             </ul>
           </div>
           <a className="ml-3">
@@ -111,10 +99,18 @@ const Navbar = () => {
               <details>
                 <summary>Unduh Dokumen</summary>
                 <ul className="p-2">
-                  <li>
+                  <li
+                    onClick={() => {
+                      window.modal_dokumen_teknis.showModal();
+                    }}
+                  >
                     <a>Buku Pedoman Teknis</a>
                   </li>
-                  <li>
+                  <li
+                    onClick={() => {
+                      window.modal_dokumen_ppid.showModal();
+                    }}
+                  >
                     <a>Dokumen PPID</a>
                   </li>
                 </ul>
@@ -126,6 +122,9 @@ const Navbar = () => {
           <SearchData />
         </div>
       </div>
+
+      {/* Modal */}
+      <Modal />
     </>
   );
 };
