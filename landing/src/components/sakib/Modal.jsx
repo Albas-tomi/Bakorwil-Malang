@@ -8,7 +8,6 @@ const Modal = () => {
   const dataRK = Dokumen.filter((kategori) => kategori.kategori === 'RK');
   const dataRA = Dokumen.filter((kategori) => kategori.kategori === 'RA');
 
-  console;
   return (
     <div>
       {/* ===================== RENCANA STRATEGIS ===================== */}

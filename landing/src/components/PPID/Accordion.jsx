@@ -1,6 +1,12 @@
 import React from "react";
+import dataPPID from '../../DataPPID.json'
 
 export const Accordion = () => {
+ const dataA = dataPPID.filter((kategori) => kategori.kategori === 'A')
+ const dataB = dataPPID.filter((kategori) => kategori.kategori === 'B')
+ const dataISM = dataPPID.filter((pages) => pages.pages === 'informasi serta merta')
+
+
   return (
     <div section="accordion" className="grid gap-y-4 p-5">
       {/* ================== INFORMASI BERKALA ================== */}
@@ -19,60 +25,21 @@ export const Accordion = () => {
                   <th>A</th>
                   <td>Informasi tentang profile Badan Publik :</td>
                 </tr>
+                {dataA.map((A) => (
                 <tr>
-                  <th>1.</th>
+                  <th>{A.no}</th>
                   <td>
-                    Informasi tentang kedudukan, domisili dan alamat lengkap
+                    {A.judul}
                   </td>
                   <td>
                     <a
-                      href="	
-https://bakorwilmalang.jatimprov.go.id/tentang-kami-sejarah.html"
+                      href={A.link}
                     >
-                      Tentang Kami
+                      {A.direct}
                     </a>
                   </td>
                 </tr>
-                <tr>
-                  <th>2.</th>
-                  <td>
-                    Struktur organisasi, gambaran umum dan profil singkat
-                    pejabat
-                  </td>
-                  <td>
-                    <a
-                      href="	
-https://bakorwilmalang.jatimprov.go.id/tentang-kami-struktur-organisasi.html"
-                    >
-                      Struktur Organisasi
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <th>3. </th>
-                  <td>Visi Misi</td>
-                  <td>
-                    <a href="">Visi Misi</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th>4. </th>
-                  <td>Tugas Pokok dan Fungsi</td>
-                  <td>
-                    <a href="">Tugas Fungsi Pemprov Jawa Timur</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th>5. </th>
-                  <td>
-                    Laporan harta kekayaan bagi pejabatNegara yang telah
-                    diperiksa, diverifikasi dan telah dikirimkan oleh Komisi
-                    Pemberatasan Korupsi ke Badan Publik untuk diumumkan
-                  </td>
-                  <td>
-                    <a href="">Wajib Lapor LHKPN Pemprov. Jatim</a>
-                  </td>
-                </tr>
+                ))}
                 {/* row B */}
                 <tr className="font-bold">
                   <th>B</th>
@@ -82,6 +49,21 @@ https://bakorwilmalang.jatimprov.go.id/tentang-kami-struktur-organisasi.html"
                     :
                   </td>
                 </tr>
+                {dataB.map((B) => (
+                <tr>
+                  <th>{B.no}</th>
+                  <td>
+                    {B.judul}
+                  </td>
+                  <td>
+                    <a
+                      href={B.link}
+                    >
+                      {B.direct}
+                    </a>
+                  </td>
+                </tr>
+                ))}
                 {/* row C */}
                 <tr className="font-bold">
                   <th>C</th>
@@ -122,11 +104,27 @@ https://bakorwilmalang.jatimprov.go.id/tentang-kami-struktur-organisasi.html"
           Informasi Serta Merta
         </div>
         <div className="collapse-content">
-          <p className="text-xs md:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-            reiciendis asperiores unde odio incidunt deserunt quo est officia
-            atque quod?
-          </p>
+        <div className="overflow-x-auto">
+            <table className="table table-xs md:table-md">
+              {/* head */}
+              <tbody>
+              <tr className="font-bold">
+                  <th>A</th>
+                  <td>Informasi tentang profile Badan Publik :</td>
+                </tr>
+                {dataISM.map((ism) => (
+                <tr>
+                  <th>
+                    {ism.no}
+                  </th>
+                  <td>
+                      {ism.judul}
+                  </td>
+                </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
       {/* ================== INFORMASI SETIAP SAAT ================== */}
@@ -137,9 +135,7 @@ https://bakorwilmalang.jatimprov.go.id/tentang-kami-struktur-organisasi.html"
         </div>
         <div className="collapse-content">
           <p className="text-xs md:text-base">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-            reiciendis asperiores unde odio incidunt deserunt quo est officia
-            atque quod?
+            Updating ...
           </p>
         </div>
       </div>
