@@ -62,6 +62,13 @@ const Beranda = () => {
             <CardBerita setPickOfBerita={setPickOfBerita} />
           </div>
 
+          {/* Lihat lainnya */}
+          <div className="flex md:hidden justify-center mt-5">
+            <a href="berita" className="py-1 px-3 rounded-lg bg-second text-white hover:bg-birumuda capitalize text-sm">
+              Lihat Lainnya
+            </a>
+          </div>
+
           {/* Modal */}
           <ModalBerita pickOfBerita={pickOfBerita} />
         </div>

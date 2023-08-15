@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { Card } from "../components/pengumuman/Card";
-import ReactPaginate from "react-paginate";
-import Data from "../Data.json";
-import { Modal } from "../components/pengumuman/Modal";
+import React, { useState } from 'react';
+import { Card } from '../components/pengumuman/Card';
+import ReactPaginate from 'react-paginate';
+import Data from '../Data.json';
+import { Modal } from '../components/pengumuman/Modal';
 
 const Pengumuman = () => {
   const [data, setData] = useState([]);
@@ -22,12 +22,10 @@ const Pengumuman = () => {
   const pageCount = Data.length / pengumumanPerPage;
 
   return (
-    <div className="p-5">
-      <h1 className="text-xl text-center font-semibold text-[#094067] mb-5 md:text-4xl">
-        Pengumuman Hari ini
-      </h1>
+    <div className="px-5 md:px-10 lg:px-20">
+      <h1 className="text-xl text-center font-semibold text-[#094067] mb-6 mt-5 md:my-10 lg:my-15 md:text-4xl">Pengumuman Hari ini</h1>
       {/* =============== GRID COL CARD =============== */}
-      <div className="grid grid-cols-2 gap-2 gap-y-6 justify-items-center md:grid-cols-3">
+      <div className="card grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-10 md:gap-x-10 md:gap-y-14 items-stretch justify-between mt-5">
         {/* =============== CARD PENGUMUMAN PER PAGE =============== */}
         {Data.slice(0, card)
           .slice(currentPage, currentPage + pengumumanPerPage)
@@ -36,19 +34,19 @@ const Pengumuman = () => {
           ))}
       </div>
       {/* =============== PAGINATION =============== */}
-      <div className="flex justify-center">
+      <div className="flex justify-center mb-10 mt-3">
         <ReactPaginate
-          className="flex gap-3 mx-auto my-5"
-          previousLabel={"< Prev"}
-          nextLabel={"Next >"}
+          className="flex gap-3 mx-auto my-5 mb-7"
+          previousLabel={'< Prev'}
+          nextLabel={'Next >'}
           onPageChange={changePage}
           pageCount={pageCount}
           marginPagesDisplayed={2}
-          containerClassName={"paginationBttns"}
-          previousLinkClassName={"previousBttn"}
-          nextLinkClassName={"nextBttn"}
-          activeClassName={"paginationActivate"}
-          disabledLinkClassName={"paginationDisabled"}
+          containerClassName={'paginationBttns'}
+          previousLinkClassName={'previousBttn'}
+          nextLinkClassName={'nextBttn'}
+          activeClassName={'paginationActivate'}
+          disabledLinkClassName={'paginationDisabled'}
         />
       </div>
       <Modal data={data} />
