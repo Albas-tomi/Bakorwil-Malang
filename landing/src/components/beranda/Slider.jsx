@@ -7,7 +7,7 @@ const Slider = () => {
   useEffect(() => {
     const detikPerubahan = setInterval(() => {
       setIndexGambarSlide((gambarSlide) => (gambarSlide + 1) % Data.length);
-    }, 4000);
+    }, 10000);
     return () => {
       clearInterval(detikPerubahan);
     };
@@ -27,10 +27,22 @@ const Slider = () => {
               className="w-full h-56 md:h-96 lg:h-screen object-cover"
             />
             <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-              <a href={`#${idx - 1}`} className="btn btn-circle">
+              <a
+                onClick={() =>
+                  setIndexGambarSlide(
+                    (indexGambarSlide - 1 + Data.length) % Data.length
+                  )
+                }
+                className="btn btn-circle"
+              >
                 ❮
               </a>
-              <a href={`#${idx + 1}`} className="btn btn-circle">
+              <a
+                onClick={() =>
+                  setIndexGambarSlide((indexGambarSlide + 1) % Data.length)
+                }
+                className="btn btn-circle"
+              >
                 ❯
               </a>
             </div>
