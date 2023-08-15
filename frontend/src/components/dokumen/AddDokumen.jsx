@@ -124,6 +124,8 @@ const AddDokumen = ({ handleAddDokumen }) => {
             <option value="Perjanjian Kinerja">Perjanjian Kinerja</option>
             <option value="Laporan Kinerja">Laporan Kinerja</option>
             <option value="Evaluasi Internal">Evaluasi Internal</option>
+            <option value="Dokumen Teknis">Dokumen Teknis</option>
+            <option value="Dokumen PPID">Dokumen PPID</option>
             <option value="Lainnya">Lainnya</option>
             {/* Add more options as needed */}
           </select>

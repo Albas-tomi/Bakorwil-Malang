@@ -2,10 +2,13 @@ import React from "react";
 
 const Accordion = () => {
   return (
-    <div section="accordion" className="flex flex-col gap-y-4 p-5">
+    <div
+      section="accordion"
+      className="flex flex-col gap-y-4 p-5 md:px-10 lg:px-20"
+    >
       {/* ================== SEKERTARIAT ================== */}
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" checked="checked" />
+      <div className="collapse collapse-arrow bg-white">
+        <input type="radio" name="my-accordion-1" checked="checked" />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">
           Sekertariat
         </div>
@@ -22,8 +25,8 @@ const Accordion = () => {
         </div>
       </div>
       {/* ================== BIDANG PEMERINTAHAN ================== */}
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" checked="checked" />
+      <div className="collapse collapse-arrow bg-white">
+        <input type="radio" name="my-accordion-1" checked="checked" />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">
           Bidang Pemerintahan
         </div>
@@ -60,8 +63,8 @@ const Accordion = () => {
         </div>
       </div>
       {/* ================== BIDANG PEMBANGUNAN EKONOMI ================== */}
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" checked="checked" />
+      <div className="collapse collapse-arrow bg-white">
+        <input type="radio" name="my-accordion-1" checked="checked" />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">
           Bidang Pembangunan Ekonomi
         </div>
@@ -93,8 +96,8 @@ const Accordion = () => {
         </div>
       </div>
       {/* ================== BIDANG KEMASYARAKATAN ================== */}
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" checked="checked" />
+      <div className="collapse collapse-arrow bg-white">
+        <input type="radio" name="my-accordion-1" checked="checked" />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">
           Bidang Kemasyarakatan
         </div>
@@ -129,8 +132,8 @@ const Accordion = () => {
         </div>
       </div>
       {/* ================== BIDANG SARANA DAN PRASARANA ================== */}
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" checked="checked" />
+      <div className="collapse collapse-arrow bg-white">
+        <input type="radio" name="my-accordion-1" checked="checked" />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">
           Bidang Sarana Dan Prasarana
         </div>
