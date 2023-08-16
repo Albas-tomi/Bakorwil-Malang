@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { getDataGaleri } from "../../getDataApi";
 
-const Card = ({ setPickOfGaleri }) => {
+const CardKegiatan = ({ setPickOfGaleri }) => {
   const [dataGaleri, setDataGaleri] = useState([]);
   const urlImg = "http://localhost:4000/galeriImg/";
   useEffect(() => {
@@ -10,6 +10,12 @@ const Card = ({ setPickOfGaleri }) => {
       setDataGaleri(data);
     });
   }, []);
+  //   ====================Filter data kategori Rapat===================
+
+  const galeriKegiatan = dataGaleri.filter(
+    (data) => data.kategori === "Kegiatan"
+  );
+
   //  ==================== FOR PAGINATION ====================
   const [pageNumber, setPageNumber] = useState(0);
   const [card, setCard] = useState(1000);
@@ -19,12 +25,12 @@ const Card = ({ setPickOfGaleri }) => {
     setPageNumber(selected);
   };
 
-  const pageCount = dataGaleri.length / galeriPerPage;
+  const pageCount = galeriKegiatan.length / galeriPerPage;
 
   return (
     <>
       <div className="card grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-10 md:gap-x-10 md:gap-y-14 items-stretch justify-between mt-5">
-        {dataGaleri
+        {galeriKegiatan
           .slice(0, card)
           .slice(currentPage, currentPage + galeriPerPage)
           .reverse()
@@ -72,4 +78,4 @@ const Card = ({ setPickOfGaleri }) => {
   );
 };
 
-export default Card;
+export default CardKegiatan;
