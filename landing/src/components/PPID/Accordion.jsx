@@ -25,8 +25,6 @@ export const Accordion = () => {
                 </tr>
                 {dataA.map((A) => (
                 <tr>
-                  <th>1.</th>
-                  <td>Informasi tentang kedudukan, domisili dan alamat lengkap</td>
                   <th>{A.no}</th>
                   <td>
                     {A.judul}
@@ -39,45 +37,8 @@ export const Accordion = () => {
                     </a>
                   </td>
                 </tr>
-                <tr>
-                  <th>2.</th>
-                  <td>Struktur organisasi, gambaran umum dan profil singkat pejabat</td>
-                  <td>
-                    <a
-                      href="	
-https://bakorwilmalang.jatimprov.go.id/tentang-kami-struktur-organisasi.html"
-                    >
-                      Struktur Organisasi
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <th>3. </th>
-                  <td>Visi Misi</td>
-                  <td>
-                    <a href="">Visi Misi</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th>4. </th>
-                  <td>Tugas Pokok dan Fungsi</td>
-                  <td>
-                    <a href="">Tugas Fungsi Pemprov Jawa Timur</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th>5. </th>
-                  <td>Laporan harta kekayaan bagi pejabatNegara yang telah diperiksa, diverifikasi dan telah dikirimkan oleh Komisi Pemberatasan Korupsi ke Badan Publik untuk diumumkan</td>
-                  <td>
-                    <a href="">Wajib Lapor LHKPN Pemprov. Jatim</a>
-                  </td>
-                </tr>
                 ))}
                 {/* row B */}
-                <tr className="font-bold">
-                  <th>B</th>
-                  <td>Ringkasan informasi tentang program dan/atau kegiatan yang sedang dijalankan dalam lingkup Badan Publik, yang meliputi :</td>
-                </tr>
                 {dataB.map((B) => (
                 <tr>
                   <th>{B.no}</th>
