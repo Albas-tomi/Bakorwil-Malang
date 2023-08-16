@@ -1,7 +1,11 @@
 import React from 'react';
 import { FaAddressCard, FaFeather, FaFileSignature, FaMapMarked } from 'react-icons/fa';
+import DataPegawai from '../../DataPegawai.json'
 
 export const Accordion = () => {
+
+  const pns = DataPegawai.filter((kategori) => kategori.kategori === 'pns')
+  const ptt = DataPegawai.filter((kategori) => kategori.kategori === 'ptt') 
   return (
     <div section="accordion" className="bg-second flex flex-col gap-y-4 px-5 md:px-10 lg:px-20 py-10">
       {/* ================== SEJARAH ================== */}
@@ -79,19 +83,6 @@ export const Accordion = () => {
           <img src="https://bakorwilmalang.jatimprov.go.id/images/struktur_organisasi/3db4ad8555afee7d6e682d8dacd65590.png" alt="" />
         </div>
       </div>
-      {/* ================== WILAYAH KERJA ================== */}
-      <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" checked="checked" />
-        <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">
-          <span>
-            <FaMapMarked />
-          </span>
-          Wilayah Kerja
-        </div>
-        <div className="collapse-content">
-          <p className="text-sm md:text-base">hello sejarah bakorwil</p>
-        </div>
-      </div>
       {/* ================== Pejabat Struktural ================== */}
       <div className="collapse collapse-arrow bg-base-200">
         <input type="radio" name="my-accordion-2" checked="checked" />
@@ -100,6 +91,62 @@ export const Accordion = () => {
             <FaMapMarked />
           </span>
           Pejabat Struktural
+        </div>
+        <div className="collapse-content">
+          <p className="text-sm text-center font-bold md:text-base">PNS</p>
+            <div className="overflow-x-auto">
+            <table className="table-xs md:table">
+              {/* head */}
+              <thead>
+                <tr>
+                  <th></th>
+                  <td>NAMA</td>
+                  <td>JABATAN</td>
+                </tr>
+              </thead>
+              <tbody>
+                {/* row 1 */}
+                {pns.map((pns) =>(
+                  <tr>
+                  <th>{pns.id}</th>
+                  <td>{pns.nama}</td>
+                  <td>{pns.jabatan}</td>
+                </tr>
+                ))}
+              </tbody>
+            </table>
+           </div>
+            <p className="text-sm text-center font-bold md:text-base">PTT</p>
+            <div className="overflow-x-auto">
+              <table className="table-xs md:table">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <td>NAMA</td>
+                    <td>JABATAN</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ptt.map((ptt) =>(
+                  <tr>
+                    <th>{ptt.id}</th>
+                    <td>{ptt.nama}</td>
+                    <td>{ptt.jabatan}</td>
+                  </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+        </div>
+      </div>
+      {/* ================== WILAYAH KERJA ================== */}
+      <div className="collapse collapse-arrow bg-base-200">
+        <input type="radio" name="my-accordion-2" checked="checked" />
+        <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">
+          <span>
+            <FaMapMarked />
+          </span>
+          Wilayah Kerja
         </div>
         <div className="collapse-content">
           <p className="text-sm md:text-base">hello sejarah bakorwil</p>
