@@ -123,12 +123,13 @@ export const updateGaleri = async (req, res) => {
 
   // request new update
   const judul = req.body.judul;
+  const kategori = req.body.kategori;
   const url = `${req.protocol}://${process.env.DOMAIN}/galeriImg/${fileName}`;
 
   // save update to database
   try {
     await galeriModel.update(
-      { judul: judul,kategori: kategori, gambar: fileName, url: url },
+      { judul: judul, kategori: kategori, gambar: fileName, url: url },
       {
         where: {
           id: req.params.id,
@@ -139,7 +140,7 @@ export const updateGaleri = async (req, res) => {
   } catch (error) {
     res.json({
       message: "galeri update gagal",
-      error: error,
+      error: error.message,
     });
   }
 };

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { getDataGaleri } from "../../getDataApi";
 
-const Card = ({ setPickOfGaleri }) => {
+const CardKORPRI = ({ setPickOfGaleri }) => {
   const [dataGaleri, setDataGaleri] = useState([]);
   const urlImg = "http://localhost:4000/galeriImg/";
   useEffect(() => {
@@ -10,6 +10,10 @@ const Card = ({ setPickOfGaleri }) => {
       setDataGaleri(data);
     });
   }, []);
+  //   ====================Filter data kategori Rapat===================
+
+  const galeriKORPRI = dataGaleri.filter((data) => data.kategori === "KORPRI");
+
   //  ==================== FOR PAGINATION ====================
   const [pageNumber, setPageNumber] = useState(0);
   const [card, setCard] = useState(1000);
@@ -19,12 +23,12 @@ const Card = ({ setPickOfGaleri }) => {
     setPageNumber(selected);
   };
 
-  const pageCount = dataGaleri.length / galeriPerPage;
+  const pageCount = galeriKORPRI.length / galeriPerPage;
 
   return (
     <>
       <div className="card grid grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-10 md:gap-x-10 md:gap-y-14 items-stretch justify-between mt-5">
-        {dataGaleri
+        {galeriKORPRI
           .slice(0, card)
           .slice(currentPage, currentPage + galeriPerPage)
           .reverse()
@@ -53,7 +57,7 @@ const Card = ({ setPickOfGaleri }) => {
       </div>
 
       {/* =============== PAGINATION =============== */}
-      <div className="flex justify-center mb-5 mt-3">
+      <div className="flex justify-center mb-4">
         <ReactPaginate
           className="flex gap-3 mx-auto my-5"
           previousLabel={"< Prev"}
@@ -72,4 +76,4 @@ const Card = ({ setPickOfGaleri }) => {
   );
 };
 
-export default Card;
+export default CardKORPRI;
