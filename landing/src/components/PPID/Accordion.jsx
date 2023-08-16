@@ -1,11 +1,10 @@
-import React from "react";
-import dataPPID from '../../DataPPID.json'
+import React from 'react';
+import dataPPID from '../../DataPPID.json';
 
 export const Accordion = () => {
- const dataA = dataPPID.filter((kategori) => kategori.kategori === 'A')
- const dataB = dataPPID.filter((kategori) => kategori.kategori === 'B')
- const dataISM = dataPPID.filter((pages) => pages.pages === 'informasi serta merta')
-
+  const dataA = dataPPID.filter((kategori) => kategori.kategori === 'A');
+  const dataB = dataPPID.filter((kategori) => kategori.kategori === 'B');
+  const dataISM = dataPPID.filter((pages) => pages.pages === 'informasi serta merta');
 
   return (
     <div id="daftar" section="accordion" className="grid gap-y-4 p-5">
@@ -24,35 +23,23 @@ export const Accordion = () => {
                   <td>Informasi tentang profile Badan Publik :</td>
                 </tr>
                 {dataA.map((A) => (
-                <tr>
-                  <th>{A.no}</th>
-                  <td>
-                    {A.judul}
-                  </td>
-                  <td>
-                    <a
-                      href={A.link}
-                    >
-                      {A.direct}
-                    </a>
-                  </td>
-                </tr>
+                  <tr>
+                    <th>{A.no}</th>
+                    <td>{A.judul}</td>
+                    <td>
+                      <a href={A.link}>{A.direct}</a>
+                    </td>
+                  </tr>
                 ))}
                 {/* row B */}
                 {dataB.map((B) => (
-                <tr>
-                  <th>{B.no}</th>
-                  <td>
-                    {B.judul}
-                  </td>
-                  <td>
-                    <a
-                      href={B.link}
-                    >
-                      {B.direct}
-                    </a>
-                  </td>
-                </tr>
+                  <tr>
+                    <th>{B.no}</th>
+                    <td>{B.judul}</td>
+                    <td>
+                      <a href={B.link}>{B.direct}</a>
+                    </td>
+                  </tr>
                 ))}
                 {/* row C */}
                 <tr className="font-bold">
@@ -85,23 +72,19 @@ export const Accordion = () => {
         <div className="collapse-title text-base font-bold flex items-center gap-2 md:text-lg">Informasi Serta Merta</div>
         <div className="collapse-content">
           <p className="text-sm md:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere reiciendis asperiores unde odio incidunt deserunt quo est officia atque quod?</p>
-        <div className="overflow-x-auto">
+          <div className="overflow-x-auto">
             <table className="table table-xs md:table-md">
               {/* head */}
               <tbody>
-              <tr className="font-bold">
+                <tr className="font-bold">
                   <th>A</th>
                   <td>Informasi tentang profile Badan Publik :</td>
                 </tr>
                 {dataISM.map((ism) => (
-                <tr>
-                  <th>
-                    {ism.no}
-                  </th>
-                  <td>
-                      {ism.judul}
-                  </td>
-                </tr>
+                  <tr>
+                    <th>{ism.no}</th>
+                    <td>{ism.judul}</td>
+                  </tr>
                 ))}
               </tbody>
             </table>
@@ -114,9 +97,7 @@ export const Accordion = () => {
         <div className="collapse-title text-base font-bold flex items-center gap-2 md:text-lg">Informasi Setiap Saat</div>
         <div className="collapse-content">
           <p className="text-sm md:text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere reiciendis asperiores unde odio incidunt deserunt quo est officia atque quod?</p>
-          <p className="text-xs md:text-base">
-            Updating ...
-          </p>
+          <p className="text-xs md:text-base">Updating ...</p>
         </div>
       </div>
     </div>
