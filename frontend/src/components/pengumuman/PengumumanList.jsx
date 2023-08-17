@@ -84,7 +84,9 @@ const PengumumanList = () => {
                         </div>
                       </div>
                       <div>
-                        <div className="font-bold">{pengumuman.judul}</div>
+                        <div className="font-bold line-clamp-2">
+                          {pengumuman.judul}
+                        </div>
                       </div>
                     </div>
                   </td>

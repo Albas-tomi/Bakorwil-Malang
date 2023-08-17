@@ -22,8 +22,8 @@ const CardGaleri = ({ setPickOfGaleri }) => {
               window.modalGaleri.showModal();
               setPickOfGaleri({
                 id: dataGaleri.id,
-                title: dataGaleri.title,
-                image: dataGaleri.image,
+                judul: dataGaleri.judul,
+                gambar: dataGaleri.gambar,
               });
             }}
           >

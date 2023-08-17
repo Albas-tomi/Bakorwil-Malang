@@ -13,7 +13,6 @@ const CardKORPRI = ({ setPickOfGaleri }) => {
   //   ====================Filter data kategori Rapat===================
 
   const galeriKORPRI = dataGaleri.filter((data) => data.kategori === "KORPRI");
-
   //  ==================== FOR PAGINATION ====================
   const [pageNumber, setPageNumber] = useState(0);
   const [card, setCard] = useState(1000);
