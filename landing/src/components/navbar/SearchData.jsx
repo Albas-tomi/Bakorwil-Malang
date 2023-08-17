@@ -1,11 +1,23 @@
 import React, { useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import Data from "../../Data.json";
+import { getDataBerita, getDataPengumuman } from "../../getDataApi";
+import { useEffect } from "react";
 
 const SearchData = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState([]);
+
+  const [dataSearch, setDataSearch] = useState([]);
+  useEffect(() => {
+    getDataBerita().then((data) => {
+      setDataSearch(data);
+    });
+    getDataPengumuman().then((data) => {
+      setDataSearch(data);
+    });
+  }, []);
 
   const handleInputChange = (event) => {
     const value = event.target.value;
@@ -14,8 +26,8 @@ const SearchData = () => {
     if (value === "") {
       setFilteredData([]);
     } else {
-      const filtered = Data.filter((item) =>
-        item.title.toLowerCase().includes(value.toLowerCase())
+      const filtered = dataSearch.filter((item) =>
+        item.judul.toLowerCase().includes(value.toLowerCase())
       );
       setFilteredData(filtered);
     }
@@ -38,7 +50,11 @@ const SearchData = () => {
             id="search"
           />
           <button
-            onClick={() => setShowSearch(false)}
+            onClick={() => {
+              setFilteredData([]);
+              setShowSearch(false);
+              setQuery("");
+            }}
             className="text-text font-bold"
             type="button"
           >
@@ -52,19 +68,22 @@ const SearchData = () => {
       >
         <div
           className={`${
-            showSearch ? "opacity-100 " : "opacity-0"
+            showSearch ? "block " : "hidden"
           } duration-500 top-16 bg-birumuda2 ease-in-out absolute w-screen text-text  right-0`}
         >
-          {filteredData.length > 0 &&
+          {filteredData.length < 0 ? (
+            <div>Data Kosong</div>
+          ) : (
             filteredData.map((data) => (
               <div
                 className="flex justify-center items-center overflow-y-visible flex-col bg-birumuda2 rounded-md"
                 key={data.id}
               >
-                <p>{data.title}</p>
-                <img className="w-280" src={data.image} alt="" />
+                <p>{data.judul}</p>
+                <img className="w-280" src={data.url} alt="" />
               </div>
-            ))}
+            ))
+          )}
         </div>
         <FaMagnifyingGlass />
       </a>

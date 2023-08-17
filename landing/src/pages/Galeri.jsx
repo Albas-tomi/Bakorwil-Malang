@@ -5,6 +5,7 @@ import Card from "../components/galeri/Card";
 import Video from "../components/galeri/Video";
 import CardRapat from "../components/galeri/CardRapat";
 import CardKORPRI from "../components/galeri/CardKORPRI";
+import CardKegiatan from "../components/galeri/CardKegiatan";
 
 const Galeri = () => {
   const [pickOfGaleri, setPickOfGaleri] = useState("");
@@ -54,11 +55,11 @@ const Galeri = () => {
 
           <button
             className={
-              toggleState === "KORPRI"
+              toggleState === "korpri"
                 ? "bg-primer py-1 px-3 rounded-full  text-white"
                 : "py-1 px-3 rounded-full  active:bg-primer active:text-white"
             }
-            onClick={() => gantiTab("KORPRI")}
+            onClick={() => gantiTab("korpri")}
           >
             KORPRI
           </button>
@@ -75,13 +76,13 @@ const Galeri = () => {
         </div>
 
         {/* Card KORPRI */}
-        <div className={toggleState === "KORPRI" ? "" : "hidden"}>
+        <div className={toggleState === "korpri" ? "" : "hidden"}>
           <CardKORPRI setPickOfGaleri={setPickOfGaleri} />
         </div>
 
         {/* Card Kegiatan */}
         <div className={toggleState === "kegiatan" ? "" : "hidden"}>
-          <CardKORPRI setPickOfGaleri={setPickOfGaleri} />
+          <CardKegiatan setPickOfGaleri={setPickOfGaleri} />
         </div>
 
         {/* Modal */}
