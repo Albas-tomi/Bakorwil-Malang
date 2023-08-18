@@ -124,12 +124,19 @@ export const updateBerita = async (req, res) => {
   // request new update
   const judul = req.body.judul;
   const deskripsi = req.body.deskripsi;
+  const views = req.body.views;
   const url = `${req.protocol}://${process.env.DOMAIN}/beritaImg/${fileName}`;
 
   // save update to database
   try {
     await beritaModel.update(
-      { judul: judul, deskripsi: deskripsi, gambar: fileName, url: url },
+      {
+        judul: judul,
+        deskripsi: deskripsi,
+        views: views,
+        gambar: fileName,
+        url: url,
+      },
       {
         where: {
           id: req.params.id,
