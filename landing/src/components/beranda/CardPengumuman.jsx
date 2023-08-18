@@ -13,6 +13,7 @@ const CardPengumuman = ({ setPickOfPengumuman }) => {
     <>
       {dataPengumuman.slice(0, 2).map((data) => (
         <label
+          key={data.id}
           className="card md:grid md:grid-cols-1 lg:grid-cols-5 items-stretch object-cover cursor-pointer"
           onClick={() => {
             window.modal_pengumuman.showModal();

@@ -19,6 +19,7 @@ const CardBerita = ({ setPickOfBerita }) => {
     <>
       {dataBerita.slice(0, 6).map((data) => (
         <div
+          key={data.id}
           className="card card-compact bg-base-100 shadow-xl cursor-pointer"
           onClick={() => {
             window.my_modal_5.showModal();

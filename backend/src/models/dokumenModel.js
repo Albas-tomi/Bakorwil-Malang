@@ -18,6 +18,6 @@ const dokumenModel = db.define(
 
 export default dokumenModel;
 
-(async () => {
-  await db.sync();
-})();
+// (async () => {
+//   await db.sync();
+// })();
