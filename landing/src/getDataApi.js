@@ -20,3 +20,7 @@ export const getDataBerita = async () => {
   const res = await axios.get("http://localhost:4000/berita");
   return res.data;
 };
+export const getDataDokumen = async () => {
+  const res = await axios.get("http://localhost:4000/dokumen");
+  return res.data;
+};

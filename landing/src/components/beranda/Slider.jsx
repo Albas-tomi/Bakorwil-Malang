@@ -26,6 +26,7 @@ const Slider = () => {
       <div className="carousel w-full">
         {dataCarrousel.map((dataSlider, idx) => (
           <div
+            key={dataSlider.id}
             id={idx}
             className={`carousel-item relative w-full ${
               idx === indexGambarSlide ? "block" : "hidden"

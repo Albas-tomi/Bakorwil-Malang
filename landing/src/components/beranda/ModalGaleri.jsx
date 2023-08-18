@@ -2,7 +2,6 @@ import React from "react";
 
 const ModalGaleri = ({ pickOfGaleri }) => {
   const urlImg = "http://localhost:4000/galeriImg/";
-  console.log(pickOfGaleri);
 
   return (
     <>

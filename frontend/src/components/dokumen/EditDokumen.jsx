@@ -129,6 +129,8 @@ const editDokumen = ({ pickOfDokumenEdit, handleEditDokumen }) => {
               <option value="Evaluasi Internal">Evaluasi Internal</option>
               <option value="Dokumen Teknis">Dokumen Teknis</option>
               <option value="Dokumen PPID">Dokumen PPID</option>
+              <option value="Pengukuran Kinerja">Pengukuran Kinerja</option>
+              <option value="Reformasi Birokrasi">Reformasi Birokrasi</option>
               <option value="Lainnya">Lainnya</option>
             </select>
           </div>
