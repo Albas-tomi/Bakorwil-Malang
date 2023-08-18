@@ -1,7 +1,7 @@
-import BakorwilLogo from '../../assets/image/logobakorwilmalang.png';
-import { NavLink } from 'react-router-dom';
-import SearchData from './SearchData';
-import { Modal } from '../unduh/Modal';
+import BakorwilLogo from "../../assets/image/logobakorwilmalang.png";
+import { NavLink } from "react-router-dom";
+import SearchData from "./SearchData";
+import { Modal } from "../unduh/Modal";
 
 const Navbar = () => {
   return (
@@ -10,8 +10,19 @@ const Navbar = () => {
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 cursor-pointer"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
               </svg>
             </label>
             <ul tabIndex={0} className="menu menu-sm flex flex-col dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
@@ -62,45 +73,82 @@ const Navbar = () => {
           <ul className="menu flex items-center menu-horizontal px-1 ">
             <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/'}>
               {({ isActive }) => (
-                <a className={`${isActive ? 'text-birumuda' : ' '} cursor-pointer`}>
+                <a
+                  className={`${
+                    isActive ? "text-birumuda" : " "
+                  } cursor-pointer`}
+                >
                   Beranda
-                  <div className={`${isActive ? 'h-[3px] bg-birumuda w-full' : ' bg-none'} cursor-pointer`}></div>
+                  <div
+                    className={`${
+                      isActive ? "h-[3px] bg-birumuda w-full" : " bg-none"
+                    } cursor-pointer`}
+                  ></div>
                 </a>
               )}
             </NavLink>
 
             <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/profil'}>
               {({ isActive }) => (
-                <a className={`${isActive ? 'text-birumuda' : ' '} cursor-pointer`}>
+                <a
+                  className={`${
+                    isActive ? "text-birumuda" : " "
+                  } cursor-pointer`}
+                >
                   Profil
-                  <div className={`${isActive ? 'h-[3px] bg-birumuda w-full' : ' bg-none'} cursor-pointer`}></div>
+                  <div
+                    className={`${
+                      isActive ? "h-[3px] bg-birumuda w-full" : " bg-none"
+                    } cursor-pointer`}
+                  ></div>
                 </a>
               )}
             </NavLink>
-
             <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/kinerja'}>
               {({ isActive }) => (
-                <a className={`${isActive ? 'text-birumuda' : ' '} cursor-pointer`}>
+                <a
+                  className={`${
+                    isActive ? "text-birumuda" : " "
+                  } cursor-pointer`}
+                >
                   Kinerja
-                  <div className={`${isActive ? 'h-[3px] bg-birumuda w-full' : ' bg-none'} cursor-pointer`}></div>
+                  <div
+                    className={`${
+                      isActive ? "h-[3px] bg-birumuda w-full" : " bg-none"
+                    } cursor-pointer`}
+                  ></div>
                 </a>
               )}
             </NavLink>
-
             <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/ppid'}>
               {({ isActive }) => (
-                <a className={`${isActive ? 'text-birumuda' : ' '} cursor-pointer`}>
+                <a
+                  className={`${
+                    isActive ? "text-birumuda" : " "
+                  } cursor-pointer`}
+                >
                   PPID
-                  <div className={`${isActive ? 'h-[3px] bg-birumuda w-full' : ' bg-none'} cursor-pointer`}></div>
+                  <div
+                    className={`${
+                      isActive ? "h-[3px] bg-birumuda w-full" : " bg-none"
+                    } cursor-pointer`}
+                  ></div>
                 </a>
               )}
             </NavLink>
-
             <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/sakib'}>
               {({ isActive }) => (
-                <a className={`${isActive ? 'text-birumuda' : ' '} cursor-pointer`}>
-                  SAKIB & RB
-                  <div className={`${isActive ? 'h-[3px] bg-birumuda w-full' : ' bg-none'} cursor-pointer`}></div>
+                <a
+                  className={`${
+                    isActive ? "text-birumuda" : " "
+                  } cursor-pointer`}
+                >
+                  SAKIP & RB
+                  <div
+                    className={`${
+                      isActive ? "h-[3px] bg-birumuda w-full" : " bg-none"
+                    } cursor-pointer`}
+                  ></div>
                 </a>
               )}
             </NavLink>
