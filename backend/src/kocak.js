@@ -15,6 +15,7 @@ import sakibRoute from "./routes/sakibRoute.js";
 import carrouselRoute from "./routes/carrouselRoute.js";
 import fotoRoute from "./routes/fotoRoute.js";
 import usersRoute from "./routes/usersRoute.js";
+import pejabatRoute from "./routes/pejabatRoute.js";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -58,6 +59,8 @@ app.use(sakibRoute);
 app.use(carrouselRoute);
 // FOTO
 app.use(fotoRoute);
+// PEJABAT
+app.use(pejabatRoute);
 // USERS
 app.use(usersRoute);
 
