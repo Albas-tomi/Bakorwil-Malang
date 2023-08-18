@@ -25,91 +25,53 @@ const Navbar = () => {
                 />
               </svg>
             </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm flex flex-col gap-4 dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-            >
-              <NavLink className={"bg-none"} to={"/"}>
-                {({ isActive }) => (
-                  <a
-                    className={`${
-                      isActive ? "text-birumuda font-bold" : " "
-                    } cursor-pointer`}
-                  >
-                    Beranda
-                  </a>
-                )}
+            <ul tabIndex={0} className="menu menu-sm flex flex-col dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <NavLink className={'hover:bg-neutral-200 py-1 px-3 rounded-lg'} to={'/'}>
+                {({ isActive }) => <a className={`${isActive ? 'text-birumuda font-bold' : ' '} cursor-pointer`}>Beranda</a>}
               </NavLink>
-              <NavLink className={"bg-none"} to={"/profil"}>
-                {({ isActive }) => (
-                  <a
-                    className={`${
-                      isActive ? "text-birumuda font-bold" : " "
-                    } cursor-pointer`}
-                  >
-                    Profil
-                  </a>
-                )}
+              <NavLink className={'hover:bg-neutral-200 py-1 px-3 rounded-lg'} to={'/profil'}>
+                {({ isActive }) => <a className={`${isActive ? 'text-birumuda font-bold' : ' '} cursor-pointer`}>Profil</a>}
               </NavLink>
-              <NavLink className={"bg-none"} to={"/kinerja"}>
-                {({ isActive }) => (
-                  <a
-                    className={`${
-                      isActive ? "text-birumuda font-bold" : " "
-                    } cursor-pointer`}
-                  >
-                    Kinerja
-                  </a>
-                )}
+              <NavLink className={'hover:bg-neutral-200 py-1 px-3 rounded-lg'} to={'/kinerja'}>
+                {({ isActive }) => <a className={`${isActive ? 'text-birumuda font-bold' : ' '} cursor-pointer`}>Kinerja</a>}
               </NavLink>
-              <NavLink className={"bg-none"} to={"/ppid"}>
-                {({ isActive }) => (
-                  <a
-                    className={`${
-                      isActive ? "text-birumuda font-bold" : " "
-                    } cursor-pointer`}
-                  >
-                    PPID
-                  </a>
-                )}
+              <NavLink className={'hover:bg-neutral-200 py-1 px-3 rounded-lg'} to={'/ppid'}>
+                {({ isActive }) => <a className={`${isActive ? 'text-birumuda font-bold' : ' '} cursor-pointer`}>PPID</a>}
               </NavLink>
-              <NavLink className={"bg-none"} to={"/sakib"}>
-                {({ isActive }) => (
-                  <a
-                    className={`${
-                      isActive ? "text-birumuda font-bold" : " "
-                    } cursor-pointer`}
-                  >
-                    SAKIP & RB
-                  </a>
-                )}
+              <NavLink className={'hover:bg-neutral-200 py-1 px-3 rounded-lg'} to={'/sakib'}>
+                {({ isActive }) => <a className={`${isActive ? 'text-birumuda font-bold' : ' '} cursor-pointer`}>SAKIB & RB</a>}
               </NavLink>
-              <a className="p-2">Unduh</a>
-              <ul>
-                <li
-                  onClick={() => {
-                    window.modal_dokumen_teknis.showModal();
-                  }}
-                >
-                  <a>Buku Pedoman Teknis</a>
-                </li>
-                <li
-                  onClick={() => {
-                    window.modal_dokumen_ppid.showModal();
-                  }}
-                >
-                  <a>Dokumen PPID</a>
-                </li>
-              </ul>
+              <li>
+                <a>Unduh</a>
+                <ul className="p-2">
+                  <li
+                    onClick={() => {
+                      window.modal_dokumen_teknis.showModal();
+                    }}
+                  >
+                    <a>Buku Pedoman Teknis</a>
+                  </li>
+                  <li
+                    onClick={() => {
+                      window.modal_dokumen_ppid.showModal();
+                    }}
+                  >
+                    <a>Dokumen PPID</a>
+                  </li>
+                  <li>
+                    <a>Form Permohonan</a>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </div>
           <a className="ml-3">
-            <img src={BakorwilLogo} alt="" className="w-28" />
+            <img src={BakorwilLogo} alt="" className="w-36 lg:w-44" />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu flex items-center gap-4 menu-horizontal px-1">
-            <NavLink className={"bg-none"} to={"/"}>
+          <ul className="menu flex items-center menu-horizontal px-1 ">
+            <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/'}>
               {({ isActive }) => (
                 <a
                   className={`${
@@ -125,7 +87,8 @@ const Navbar = () => {
                 </a>
               )}
             </NavLink>
-            <NavLink className={"bg-none"} to={"/profil"}>
+
+            <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/profil'}>
               {({ isActive }) => (
                 <a
                   className={`${
@@ -141,7 +104,7 @@ const Navbar = () => {
                 </a>
               )}
             </NavLink>
-            <NavLink className={"bg-none"} to={"/kinerja"}>
+            <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/kinerja'}>
               {({ isActive }) => (
                 <a
                   className={`${
@@ -157,7 +120,7 @@ const Navbar = () => {
                 </a>
               )}
             </NavLink>
-            <NavLink className={"bg-none"} to={"/ppid"}>
+            <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/ppid'}>
               {({ isActive }) => (
                 <a
                   className={`${
@@ -173,7 +136,7 @@ const Navbar = () => {
                 </a>
               )}
             </NavLink>
-            <NavLink className={"bg-none"} to={"/sakib"}>
+            <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/sakib'}>
               {({ isActive }) => (
                 <a
                   className={`${
@@ -189,6 +152,7 @@ const Navbar = () => {
                 </a>
               )}
             </NavLink>
+
             <li tabIndex={0}>
               <details>
                 <summary>Unduh Dokumen</summary>
@@ -206,6 +170,9 @@ const Navbar = () => {
                     }}
                   >
                     <a>Dokumen PPID</a>
+                  </li>
+                  <li>
+                    <a href="#">Form Permohonan</a>
                   </li>
                 </ul>
               </details>
