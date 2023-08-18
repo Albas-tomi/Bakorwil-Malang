@@ -10,6 +10,7 @@ const beritaModel = db.define(
     deskripsi: DataTypes.STRING,
     gambar: DataTypes.STRING,
     url: DataTypes.STRING,
+    views: DataTypes.INTEGER,
   },
   {
     freezeTableName: true,
