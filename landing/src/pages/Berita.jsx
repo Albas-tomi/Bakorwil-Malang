@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "../components/berita/Card";
 import ReactPaginate from "react-paginate";
-import Data from "../Data.json";
 import { Modal } from "../components/berita/Modal";
 import { getDataBerita } from "../getDataApi";
 const Berita = () => {
@@ -12,7 +11,6 @@ const Berita = () => {
       setDataBerita(data);
     });
   }, []);
-
   // =========== STATE FOR DATA CARD ===========
   const [data, setData] = useState([]);
   const Get = (dataKlik) => {

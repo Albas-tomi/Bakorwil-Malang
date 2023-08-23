@@ -22,6 +22,7 @@ export const addDataDokumen = async (
     handleAddDokumen({
       judul: values.judul,
       link: values.link,
+      tahun: values.tahun,
       kategori: values.kategori,
     });
     notifyAddData("Data Dokumen berhasil ditambahkan!");
@@ -68,6 +69,7 @@ export const editDataDokumen = async (
       id: pickOfDokumenEdit.id,
       judul: values.judul,
       link: values.link,
+      tahun: values.tahun,
       kategori: values.kategori,
     });
     notifyEdit("Data Berita Berhasil Di edit!");

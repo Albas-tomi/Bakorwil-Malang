@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import { FaClock } from "react-icons/fa";
 import { getDataBerita } from "../../getDataApi";
 import { useEffect } from "react";
+import moment from "moment";
+import { FaEye } from "react-icons/fa6";
 
 const CardBerita = ({ setPickOfBerita }) => {
   //   ====================Get Data ===================
-
   const [dataBerita, setDataBerita] = useState([]);
   const urlImg = "http://localhost:4000/beritaImg/";
   useEffect(() => {
@@ -14,7 +15,6 @@ const CardBerita = ({ setPickOfBerita }) => {
       setDataBerita(data);
     });
   }, []);
-  //   ==================== Ubah tanggal Pembuatan ===================
   return (
     <>
       {dataBerita.slice(0, 6).map((data) => (
@@ -40,10 +40,14 @@ const CardBerita = ({ setPickOfBerita }) => {
           </figure>
           <div className="card-body flex gap-1">
             <span className="text-primer text-xs flex items-center gap-1">
-              <FaClock /> {data.createdAt}
+              <FaClock /> {moment(data.createdAt).format("DD MMM YYYY")}
             </span>
             <h3 className="font-medium capitalize">{data.judul}</h3>
           </div>
+          <p className="text-xs text-second flex items-center gap-2 right-0 bottom-0 absolute pr-5 pb-2">
+            <FaEye />
+            {data.views}
+          </p>
         </div>
       ))}
     </>

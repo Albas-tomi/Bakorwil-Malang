@@ -24,3 +24,24 @@ export const getDataDokumen = async () => {
   const res = await axios.get("http://localhost:4000/dokumen");
   return res.data;
 };
+export const getDataPejabat = async () => {
+  const res = await axios.get("http://localhost:4000/pejabat");
+  return res.data;
+};
+
+export const editDataBerita = async (beritaData, formData) => {
+  try {
+    await axios.patch(
+      `http://localhost:4000/berita/${beritaData.id}`,
+      formData,
+      {
+        headers: {
+          "content-Type": "multipart/form-data",
+        },
+      }
+    );
+    // window.location.reload();
+  } catch (error) {
+    console.log("Error submitting form:", error.message);
+  }
+};

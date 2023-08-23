@@ -1,23 +1,31 @@
 import React, { useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
-import Data from "../../Data.json";
 import { getDataBerita, getDataPengumuman } from "../../getDataApi";
 import { useEffect } from "react";
+import CardSeacrhDisplay from "./CardSeacrhDisplay";
+import ModalDisplaySearch from "./ModalDisplaySearch";
 
 const SearchData = () => {
   const [showSearch, setShowSearch] = useState(false);
+  const [dataBerita, setDataBerita] = useState([]);
+  const [dataPengumuman, setDataPengumuman] = useState([]);
   const [query, setQuery] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-
   const [dataSearch, setDataSearch] = useState([]);
+  const [dataModal, setDataModal] = useState("");
+
   useEffect(() => {
     getDataBerita().then((data) => {
-      setDataSearch(data);
+      setDataBerita(data);
     });
     getDataPengumuman().then((data) => {
-      setDataSearch(data);
+      setDataPengumuman(data);
     });
   }, []);
+
+  useEffect(() => {
+    setDataSearch([...dataBerita, ...dataPengumuman]);
+  }, [dataBerita, dataPengumuman]);
 
   const handleInputChange = (event) => {
     const value = event.target.value;
@@ -32,7 +40,6 @@ const SearchData = () => {
       setFilteredData(filtered);
     }
   };
-
   return (
     <>
       <div
@@ -64,27 +71,25 @@ const SearchData = () => {
       </div>
       <a
         onClick={() => setShowSearch(true)}
-        className="bg-second px-3 py-2 rounded-lg"
+        className="bg-second px-3 py-2 rounded-lg overflow-y-auto "
       >
         <div
           className={`${
             showSearch ? "block " : "hidden"
-          } duration-500 top-16 bg-birumuda2 ease-in-out absolute w-screen text-text  right-0`}
+          } duration-500 top-16 ease-in-out absolute w-screen text-text  right-0`}
         >
-          {filteredData.length < 0 ? (
-            <div>Data Kosong</div>
+          {filteredData.length <= 0 ? (
+            <div className="text-lg text-center"></div>
           ) : (
-            filteredData.map((data) => (
-              <div
-                className="flex justify-center items-center overflow-y-visible flex-col bg-birumuda2 rounded-md"
-                key={data.id}
-              >
-                <p>{data.judul}</p>
-                <img className="w-280" src={data.url} alt="" />
-              </div>
-            ))
+            <div className=" gap-3 bg-text/70 grid grid-flow-row grid-cols-4  justify-center mx-auto">
+              <CardSeacrhDisplay
+                setDataModal={setDataModal}
+                filteredData={filteredData}
+              />
+            </div>
           )}
         </div>
+        <ModalDisplaySearch dataModal={dataModal} />
         <FaMagnifyingGlass />
       </a>
     </>

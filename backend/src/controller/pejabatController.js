@@ -62,7 +62,7 @@ export const deletePejabat = async (req, res) => {
   try {
     await pejabatModel.destroy({
       where: {
-        id: id.params.id,
+        id: req.params.id,
       },
     });
     res.status(201).json({

@@ -19,6 +19,6 @@ const beritaModel = db.define(
 
 export default beritaModel;
 
-// (async () => {
-//   await db.sync();
-// })();
+(async () => {
+  await db.sync();
+})();

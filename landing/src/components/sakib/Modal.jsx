@@ -68,7 +68,7 @@ const Modal = () => {
                 <span>
                   <FaDownload />
                 </span>
-                {rs.judul}
+                {rs.tahun}
               </a>
             ))}
           </div>
@@ -93,7 +93,7 @@ const Modal = () => {
                 <span>
                   <FaDownload />
                 </span>
-                {rk.judul}
+                {rk.tahun}
               </a>
             ))}
           </div>
@@ -118,7 +118,7 @@ const Modal = () => {
                 <span>
                   <FaDownload />
                 </span>
-                {rs.judul}
+                {rs.tahun}
               </a>
             ))}
           </div>
@@ -145,7 +145,7 @@ const Modal = () => {
                 <span>
                   <FaDownload />
                 </span>
-                {rs.judul}
+                {rs.tahun}
               </a>
             ))}
           </div>
@@ -170,7 +170,7 @@ const Modal = () => {
                 <span>
                   <FaDownload />
                 </span>
-                {rs.judul}
+                {rs.tahun}
               </a>
             ))}
           </div>
@@ -197,7 +197,7 @@ const Modal = () => {
                 <span>
                   <FaDownload />
                 </span>
-                {rs.judul}
+                {rs.tahun}
               </a>
             ))}
           </div>
@@ -222,7 +222,7 @@ const Modal = () => {
                 <span>
                   <FaDownload />
                 </span>
-                {rs.judul}
+                {rs.tahun}
               </a>
             ))}
           </div>
@@ -249,7 +249,7 @@ const Modal = () => {
                 <span>
                   <FaDownload />
                 </span>
-                {rs.judul}
+                {rs.tahun}
               </a>
             ))}
           </div>
@@ -276,7 +276,7 @@ const Modal = () => {
                 <span>
                   <FaDownload />
                 </span>
-                {rs.judul}
+                {rs.tahun}
               </a>
             ))}
           </div>
