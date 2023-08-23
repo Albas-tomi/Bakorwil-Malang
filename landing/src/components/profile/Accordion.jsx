@@ -6,17 +6,22 @@ import {
   FaMapMarked,
 } from "react-icons/fa";
 import DataPegawai from "../../DataPegawai.json";
+import { getDataPejabat } from "../../getDataApi";
+import { useEffect } from "react";
+import { useState } from "react";
 
-export const Accordion = () => {
-  const pns = DataPegawai.filter((kategori) => kategori.kategori === "pns");
-  const ptt = DataPegawai.filter((kategori) => kategori.kategori === "ptt");
+export const Accordion = ({ dataPejabat }) => {
+  const pns = dataPejabat.filter((kategori) => kategori.kategori === "PNS");
+  const ptt = dataPejabat.filter((kategori) => kategori.kategori === "PTT-PK");
+
   return (
     <div
       section="accordion"
-      className="bg-second flex flex-col gap-y-4 px-5 md:px-10 lg:px-20 py-10">
+      className="bg-second flex flex-col gap-y-4 px-5 md:px-10 lg:px-20 py-10"
+    >
       {/* ================== SEJARAH ================== */}
       <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" checked="checked" />
+        <input type="radio" name="my-accordion-2" defaultChecked />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">
           <span>
             <FaFeather />
@@ -139,7 +144,7 @@ export const Accordion = () => {
       </div>
       {/* ================== TUJUAN & SASARAN ================== */}
       <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" checked="checked" />
+        <input type="radio" name="my-accordion-2" defaultChecked />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">
           <span>
             <FaFileSignature />
@@ -162,7 +167,7 @@ export const Accordion = () => {
       </div>
       {/* ================== STRUKTUR BAKORWIL ================== */}
       <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" checked="checked" />
+        <input type="radio" name="my-accordion-2" defaultChecked />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">
           <span>
             <FaAddressCard />
@@ -178,7 +183,7 @@ export const Accordion = () => {
       </div>
       {/* ================== Pejabat Struktural ================== */}
       <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" checked="checked" />
+        <input type="radio" name="my-accordion-2" defaultChecked />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">
           <span>
             <FaMapMarked />
@@ -199,9 +204,9 @@ export const Accordion = () => {
               </thead>
               <tbody>
                 {/* row 1 */}
-                {pns.map((pns) => (
-                  <tr>
-                    <th>{pns.id}</th>
+                {pns.map((pns, idx) => (
+                  <tr key={pns.id}>
+                    <th>{(idx += 1)}</th>
                     <td>{pns.nama}</td>
                     <td>{pns.jabatan}</td>
                   </tr>
@@ -224,7 +229,7 @@ export const Accordion = () => {
               <tbody>
                 {/* row 1 */}
                 {ptt.map((ptt) => (
-                  <tr>
+                  <tr key={ptt.id}>
                     <td>{ptt.nama}</td>
                     <td>{ptt.jabatan}</td>
                   </tr>
@@ -239,7 +244,7 @@ export const Accordion = () => {
       </div>
       {/* ================== WILAYAH KERJA ================== */}
       <div className="collapse collapse-arrow bg-base-200">
-        <input type="radio" name="my-accordion-2" checked="checked" />
+        <input type="radio" name="my-accordion-2" defaultChecked />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">
           <span>
             <FaMapMarked />

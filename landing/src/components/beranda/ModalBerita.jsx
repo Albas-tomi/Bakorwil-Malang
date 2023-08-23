@@ -20,7 +20,7 @@ const ModalBerita = ({ pickOfBerita }) => {
             {pickOfBerita.judul}
           </h3>
           <div
-            className="text-justify mx-auto"
+            className="text-justify mx-auto line-clamp-3"
             dangerouslySetInnerHTML={{
               __html: pickOfBerita.deskripsi,
             }}

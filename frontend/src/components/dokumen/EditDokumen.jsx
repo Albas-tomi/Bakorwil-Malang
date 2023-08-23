@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React from "react";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
 import { editDataDokumen } from "./apiDokumen";
@@ -7,6 +7,7 @@ import { editDataDokumen } from "./apiDokumen";
 const Schema = Yup.object({
   judul: Yup.string().required(),
   link: Yup.string().required(),
+  tahun: Yup.string().required().min(4),
   kategori: Yup.string().required(),
 });
 
@@ -19,6 +20,7 @@ const editDokumen = ({ pickOfDokumenEdit, handleEditDokumen }) => {
     initialValues: {
       judul: pickOfDokumenEdit?.judul || "",
       link: pickOfDokumenEdit?.link || "",
+      tahun: pickOfDokumenEdit?.tahun || "",
       kategori: pickOfDokumenEdit?.kategori || "",
     },
     validationSchema: Schema,
@@ -27,6 +29,7 @@ const editDokumen = ({ pickOfDokumenEdit, handleEditDokumen }) => {
 
       const formData = new FormData();
       formData.append("judul", values.judul);
+      formData.append("tahun", values.tahun);
       formData.append("link", values.link);
       editDataDokumen(
         pickOfDokumenEdit,
@@ -75,6 +78,24 @@ const editDokumen = ({ pickOfDokumenEdit, handleEditDokumen }) => {
               type="text"
               onChange={formik.handleChange}
               value={formik.values.judul}
+            />
+          </div>
+          <div className="flex flex-col mb-3">
+            <label className="text-xl" htmlFor="tahun">
+              Tahun Dokumen
+            </label>
+            {formik.errors.tahun && formik.touched.tahun && (
+              <p className="mt-1 text-red-500 max-[640px]:text-sm">
+                {formik.errors.tahun}
+              </p>
+            )}
+            <input
+              className="input input-bordered input-info w-full "
+              id="tahun"
+              name="tahun"
+              type="number"
+              onChange={formik.handleChange}
+              value={formik.values.tahun}
             />
           </div>
           <div className="mb-3 rounded-md">

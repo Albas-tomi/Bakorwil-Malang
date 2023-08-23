@@ -58,6 +58,7 @@ const DokumentList = () => {
             <tr>
               <th className="text-center">Nomor</th>
               <th className="text-center">Judul</th>
+              <th className="text-center">Tahun</th>
               <th className="text-center">Link</th>
               <th className="text-center">Kategori</th>
               <th className="text-center">Aksi</th>
@@ -81,6 +82,7 @@ const DokumentList = () => {
                       {dokumen.judul}
                     </a>
                   </td>
+                  <td>{dokumen.tahun}</td>
                   <td>{dokumen.kategori}</td>
                   <td className="flex gap-2 justify-center items-center">
                     <button
@@ -97,6 +99,7 @@ const DokumentList = () => {
                         handleEditDokumen({
                           id: dokumen.id,
                           judul: dokumen.judul,
+                          tahun: dokumen.tahun,
                           link: dokumen.link,
                           kategori: dokumen.kategori,
                         });
