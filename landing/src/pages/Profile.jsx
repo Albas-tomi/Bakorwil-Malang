@@ -20,11 +20,8 @@ const Profile = () => {
         {/* ================= FOTO KEPALA BADAN BAKORWIL ================= */}
         <div className="text-center md:order-last relative w-full">
           <div className="h-56 w-56 md:h-80 md:w-80 rounded-full bg-primer mx-auto mt-8 md:mt-16 drop-shadow-lg"></div>
-          <img
-            src={FotoKaban}
-            alt="foto"
-            className="w-48 md:w-72 absolute top-[-6px] right-24 md:right-10 lg:right-44 drop-shadow-xl"
-          />
+
+          <img src={FotoKaban} alt="foto" className="w-48 md:w-72 absolute left-[50%] top-[40%] lg:top-[44%] translate-x-[-50%] translate-y-[-50%] drop-shadow-xl" />
           <h1 className="font-bold underline mt-3">Drs. Budi Santosa</h1>
           <p className="text-xs text-text md:text-sm">Kepala Bakorwil Malang</p>
         </div>
