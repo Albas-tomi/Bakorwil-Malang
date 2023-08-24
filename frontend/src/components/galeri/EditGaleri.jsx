@@ -2,8 +2,6 @@ import { useFormik } from "formik";
 import React, { useState } from "react";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { editDataGaleri } from "./apiGaleri";
 
 const Schema = Yup.object({
@@ -13,8 +11,6 @@ const Schema = Yup.object({
 });
 
 const EditGaleri = ({ handleEditGaleri, pickOfGaleriEdit }) => {
-  const [editor, setEditor] = useState(null);
-
   const handleCloseModal = () => {
     window.my_modal_editGaleri.close();
   };
@@ -107,7 +103,6 @@ const EditGaleri = ({ handleEditGaleri, pickOfGaleriEdit }) => {
               <option value="Seminar">Seminar</option>
               <option value="Kegiatan">Kegiatan</option>
               <option value="KORPRI">KORPRI</option>
-              {/* Add more options as needed */}
             </select>
           </div>
           <div className="mb-3 flex flex-col">

@@ -1,8 +1,6 @@
 import { useFormik } from "formik";
 import React from "react";
 import * as Yup from "yup";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { toast } from "react-toastify";
 import { addDataGaleri } from "./apiGaleri";
 

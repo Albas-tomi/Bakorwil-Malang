@@ -6,6 +6,7 @@ import { addDataDokumen } from "./apiDokumen";
 const Schema = Yup.object({
   judul: Yup.string().required(),
   link: Yup.string().required(),
+  tahun: Yup.string().required().min(4),
   kategori: Yup.string().required(),
 });
 
@@ -18,6 +19,7 @@ const AddDokumen = ({ handleAddDokumen }) => {
     initialValues: {
       judul: "",
       link: "",
+      tahun: "",
       kategori: "",
     },
     ValidationSchema: Schema,
@@ -27,6 +29,7 @@ const AddDokumen = ({ handleAddDokumen }) => {
       const formData = new FormData();
       formData.append("judul", values.judul);
       formData.append("link", values.link);
+      formData.append("tahun", values.tahun);
       formData.append("kategori", values.kategori);
 
       addDataDokumen(
@@ -74,6 +77,24 @@ const AddDokumen = ({ handleAddDokumen }) => {
             type="text"
             onChange={formik.handleChange}
             value={formik.values.judul}
+          />
+        </div>
+        <div className="flex flex-col mb-3 ">
+          <label className="text-xl" htmlFor="tahun">
+            Tahun Dokumen
+          </label>
+          {formik.errors.tahun && formik.touched.tahun && (
+            <p className="mt-1 text-red-500 max-[640px]:text-sm">
+              {formik.errors.tahun}
+            </p>
+          )}
+          <input
+            className="input  input-bordered input-info w-full"
+            id="tahun"
+            name="tahun"
+            type="number"
+            onChange={formik.handleChange}
+            value={formik.values.tahun}
           />
         </div>
 
@@ -126,6 +147,8 @@ const AddDokumen = ({ handleAddDokumen }) => {
             <option value="Evaluasi Internal">Evaluasi Internal</option>
             <option value="Dokumen Teknis">Dokumen Teknis</option>
             <option value="Dokumen PPID">Dokumen PPID</option>
+            <option value="Pengukuran Kinerja">Pengukuran Kinerja</option>
+            <option value="Reformasi Birokrasi">Reformasi Birokrasi</option>
             <option value="Lainnya">Lainnya</option>
             {/* Add more options as needed */}
           </select>

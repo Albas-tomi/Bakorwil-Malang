@@ -15,19 +15,18 @@ const Slider = () => {
   const [indexGambarSlide, setIndexGambarSlide] = useState(0);
   useEffect(() => {
     const detikPerubahan = setInterval(() => {
-      setIndexGambarSlide(
-        (gambarSlide) => (gambarSlide + 1) % dataCarrousel.length
-      );
-    }, 7000);
+      setIndexGambarSlide((indexGambarSlide + 1) % dataCarrousel.length);
+    }, 2000);
     return () => {
       clearInterval(detikPerubahan);
     };
-  }, []);
+  }, [indexGambarSlide, dataCarrousel]);
   return (
     <>
       <div className="carousel w-full">
         {dataCarrousel.map((dataSlider, idx) => (
           <div
+            key={dataSlider.id}
             id={idx}
             className={`carousel-item relative w-full ${
               idx === indexGambarSlide ? "block" : "hidden"
