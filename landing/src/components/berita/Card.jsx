@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaClock, FaEye } from "react-icons/fa6";
-import moment from "moment";
+import dayjs from "dayjs";
 import { editDataBerita } from "../../getDataApi";
 
 export const Card = ({ beritaData, Get }) => {
@@ -28,11 +28,11 @@ export const Card = ({ beritaData, Get }) => {
         <div className="card-body flex gap-1">
           <span className="text-primer text-xs flex items-center gap-1">
             <FaClock />
-            {moment(beritaData.createdAt).format("DD MMM YYYY")}
+            {dayjs(beritaData.createdAt).format("DD MMM YYYY")}
           </span>
           <p className="capitalize">
-            {beritaData.judul.substring(0, 60)}
-            <span> </span>
+            {beritaData.judul.substring(0, 30)}
+            <span>...</span>
             {/* =========== MODAL =========== */}
             <button
               onClick={() => {

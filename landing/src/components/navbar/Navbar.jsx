@@ -1,5 +1,5 @@
 import BakorwilLogo from "../../assets/image/logobakorwilmalang.png";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import SearchData from "./SearchData";
 import { Modal } from "../unduh/Modal";
 
@@ -25,21 +25,79 @@ const Navbar = () => {
                 />
               </svg>
             </label>
-            <ul tabIndex={0} className="menu menu-sm flex flex-col dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              <NavLink className={'hover:bg-neutral-200 py-1 px-3 rounded-lg'} to={'/'}>
-                {({ isActive }) => <a className={`${isActive ? 'text-birumuda font-bold' : ' '} cursor-pointer`}>Beranda</a>}
+            <ul
+              tabIndex={0}
+              className="menu menu-sm flex flex-col dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <NavLink
+                className={"hover:bg-neutral-200 py-1 px-3 rounded-lg"}
+                to={"/"}
+              >
+                {({ isActive }) => (
+                  <a
+                    className={`${
+                      isActive ? "text-birumuda font-bold" : " "
+                    } cursor-pointer`}
+                  >
+                    Beranda
+                  </a>
+                )}
               </NavLink>
-              <NavLink className={'hover:bg-neutral-200 py-1 px-3 rounded-lg'} to={'/profil'}>
-                {({ isActive }) => <a className={`${isActive ? 'text-birumuda font-bold' : ' '} cursor-pointer`}>Profil</a>}
+              <NavLink
+                className={"hover:bg-neutral-200 py-1 px-3 rounded-lg"}
+                to={"/profil"}
+              >
+                {({ isActive }) => (
+                  <a
+                    className={`${
+                      isActive ? "text-birumuda font-bold" : " "
+                    } cursor-pointer`}
+                  >
+                    Profil
+                  </a>
+                )}
               </NavLink>
-              <NavLink className={'hover:bg-neutral-200 py-1 px-3 rounded-lg'} to={'/kinerja'}>
-                {({ isActive }) => <a className={`${isActive ? 'text-birumuda font-bold' : ' '} cursor-pointer`}>Kinerja</a>}
+              <NavLink
+                className={"hover:bg-neutral-200 py-1 px-3 rounded-lg"}
+                to={"/kinerja"}
+              >
+                {({ isActive }) => (
+                  <a
+                    className={`${
+                      isActive ? "text-birumuda font-bold" : " "
+                    } cursor-pointer`}
+                  >
+                    Kinerja
+                  </a>
+                )}
               </NavLink>
-              <NavLink className={'hover:bg-neutral-200 py-1 px-3 rounded-lg'} to={'/ppid'}>
-                {({ isActive }) => <a className={`${isActive ? 'text-birumuda font-bold' : ' '} cursor-pointer`}>PPID</a>}
+              <NavLink
+                className={"hover:bg-neutral-200 py-1 px-3 rounded-lg"}
+                to={"/ppid"}
+              >
+                {({ isActive }) => (
+                  <a
+                    className={`${
+                      isActive ? "text-birumuda font-bold" : " "
+                    } cursor-pointer`}
+                  >
+                    PPID
+                  </a>
+                )}
               </NavLink>
-              <NavLink className={'hover:bg-neutral-200 py-1 px-3 rounded-lg'} to={'/sakib'}>
-                {({ isActive }) => <a className={`${isActive ? 'text-birumuda font-bold' : ' '} cursor-pointer`}>SAKIB & RB</a>}
+              <NavLink
+                className={"hover:bg-neutral-200 py-1 px-3 rounded-lg"}
+                to={"/sakib"}
+              >
+                {({ isActive }) => (
+                  <a
+                    className={`${
+                      isActive ? "text-birumuda font-bold" : " "
+                    } cursor-pointer`}
+                  >
+                    SAKIB & RB
+                  </a>
+                )}
               </NavLink>
               <li>
                 <a>Unduh</a>
@@ -71,7 +129,10 @@ const Navbar = () => {
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu flex items-center menu-horizontal px-1 ">
-            <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/'}>
+            <NavLink
+              className={"hover:bg-neutral-200 py-2 px-4 rounded-lg"}
+              to={"/"}
+            >
               {({ isActive }) => (
                 <a
                   className={`${
@@ -88,7 +149,10 @@ const Navbar = () => {
               )}
             </NavLink>
 
-            <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/profil'}>
+            <NavLink
+              className={"hover:bg-neutral-200 py-2 px-4 rounded-lg"}
+              to={"/profil"}
+            >
               {({ isActive }) => (
                 <a
                   className={`${
@@ -104,7 +168,10 @@ const Navbar = () => {
                 </a>
               )}
             </NavLink>
-            <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/kinerja'}>
+            <NavLink
+              className={"hover:bg-neutral-200 py-2 px-4 rounded-lg"}
+              to={"/kinerja"}
+            >
               {({ isActive }) => (
                 <a
                   className={`${
@@ -120,7 +187,10 @@ const Navbar = () => {
                 </a>
               )}
             </NavLink>
-            <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/ppid'}>
+            <NavLink
+              className={"hover:bg-neutral-200 py-2 px-4 rounded-lg"}
+              to={"/ppid"}
+            >
               {({ isActive }) => (
                 <a
                   className={`${
@@ -136,7 +206,10 @@ const Navbar = () => {
                 </a>
               )}
             </NavLink>
-            <NavLink className={'hover:bg-neutral-200 py-2 px-4 rounded-lg'} to={'/sakib'}>
+            <NavLink
+              className={"hover:bg-neutral-200 py-2 px-4 rounded-lg"}
+              to={"/sakib"}
+            >
               {({ isActive }) => (
                 <a
                   className={`${
@@ -162,7 +235,7 @@ const Navbar = () => {
                       window.modal_dokumen_teknis.showModal();
                     }}
                   >
-                    <a>Buku Pedoman Teknis</a>
+                    <Link>Buku Pedoman Teknis</Link>
                   </li>
                   <li
                     onClick={() => {
