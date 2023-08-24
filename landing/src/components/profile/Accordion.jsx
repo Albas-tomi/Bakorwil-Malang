@@ -1,25 +1,24 @@
-import React from "react";
-import {
-  FaAddressCard,
-  FaFeather,
-  FaFileSignature,
-  FaMapMarked,
-} from "react-icons/fa";
-import DataPegawai from "../../DataPegawai.json";
-import { getDataPejabat } from "../../getDataApi";
-import { useEffect } from "react";
-import { useState } from "react";
-import dayjs from "dayjs";
 
-export const Accordion = ({ dataPejabat }) => {
-  const pns = dataPejabat.filter((kategori) => kategori.kategori === "PNS");
-  const ptt = dataPejabat.filter((kategori) => kategori.kategori === "PTT-PK");
+import React from 'react';
+import { FaAddressCard, FaFeather, FaFileSignature, FaMapMarked } from 'react-icons/fa';
+import DataPegawai from '../../DataPegawai.json';
+import KotaBatu from '../../assets/image/kota-batu.png';
+import KotaMalang from '../../assets/image/kota-malang.png';
+import KotaBlitar from '../../assets/image/kota-blitar.png';
+import KotaPasuruan from '../../assets/image/kota-pasuruan.png';
+import KotaSurabaya from '../../assets/image/kota-surabaya.png';
+import KabMalang from '../../assets/image/kab-malang.png';
+import KabBlitar from '../../assets/image/kab-blitar.png';
+import KabPasuruan from '../../assets/image/kab-pasuruan.png';
+import KabSidoarjo from '../../assets/image/kab-sidoarjo.png';
+import Struktur from '../../assets/image/struktur.png';
 
+
+export const Accordion = () => {
+  const pns = DataPegawai.filter((kategori) => kategori.kategori === 'pns');
+  const ptt = DataPegawai.filter((kategori) => kategori.kategori === 'ptt');
   return (
-    <div
-      section="accordion"
-      className="bg-second flex flex-col gap-y-4 px-5 md:px-10 lg:px-20 py-10"
-    >
+    <div section="accordion" className="bg-second flex flex-col gap-y-4 px-5 md:px-10 lg:px-20 py-10">
       {/* ================== SEJARAH ================== */}
       <div className="collapse collapse-arrow bg-base-200">
         <input type="radio" name="my-accordion-2" defaultChecked />
@@ -244,10 +243,9 @@ export const Accordion = ({ dataPejabat }) => {
           Struktur Bakorwil
         </div>
         <div className="collapse-content">
-          <img
-            src="https://bakorwilmalang.jatimprov.go.id/images/struktur_organisasi/3db4ad8555afee7d6e682d8dacd65590.png"
-            alt=""
-          />
+          <h1 className="text-center font-semibold text-2xl text-second mt-5">Struktur Organisasi Bakorwil III Malang</h1>
+          <img src={Struktur} alt="struktur" className="mt-5 w-[80%] mx-auto pb-10" />
+
         </div>
       </div>
       {/* ================== Pejabat Struktural ================== */}
@@ -273,9 +271,9 @@ export const Accordion = ({ dataPejabat }) => {
               </thead>
               <tbody>
                 {/* row 1 */}
-                {pns.map((pns, idx) => (
-                  <tr key={pns.id}>
-                    <th>{(idx += 1)}</th>
+                {pns.map((pns) => (
+                  <tr>
+                    <th>{pns.id}</th>
                     <td>{pns.nama}</td>
                     <td>{pns.jabatan}</td>
                   </tr>
@@ -298,7 +296,7 @@ export const Accordion = ({ dataPejabat }) => {
               <tbody>
                 {/* row 1 */}
                 {ptt.map((ptt) => (
-                  <tr key={ptt.id}>
+                  <tr>
                     <td>{ptt.nama}</td>
                     <td>{ptt.jabatan}</td>
                   </tr>
@@ -318,53 +316,61 @@ export const Accordion = ({ dataPejabat }) => {
           Wilayah Kerja
         </div>
         <div className="collapse-content">
-          <h1 className="mb-3 md:text-base font-bold">
-            9 Wilayah Kerja Bakorwil 3 Malang
-          </h1>
-          <ul className="text-sm md:text-base">
+          <h1 className="mb-3 md:text-base font-bold">9 Wilayah Kerja Bakorwil 3 Malang</h1>
+          <ul className="text-sm md:text-base grid grid-cols-2 md:grid-cols-3 lg:grid-cols-9 gap-5 mt-5">
+
             <li>
               <a target="_blank" href="https://www.surabaya.go.id/">
-                Surabaya
+                <div className="text-center text-sm font-semibold">Surabaya</div>
+                <img className="h-28 mx-auto" src={KotaSurabaya} alt="kota-surabaya" />
               </a>
             </li>
             <li>
               <a target="_blank" href="https://www.sidoarjokab.go.id/">
-                Sidoarjo
+                <div className="text-center text-sm font-semibold">Sidoarjo</div>
+                <img className="h-28 mx-auto" src={KabSidoarjo} alt="kab-sidoarjo" />
               </a>
             </li>
             <li>
               <a target="_blank" href="https://malangkota.go.id/">
-                Kota Malang
+                <div className="text-center text-sm font-semibold">Kota Malang</div>
+                <img className="h-28 mx-auto" src={KotaMalang} alt="kota-malang" />
               </a>
             </li>
             <li>
               <a target="_blank" href="https://batukota.go.id/Portal/profil">
-                Kota Batu
+                <div className="text-center text-sm font-semibold">Kota Batu</div>
+                <img className="h-28 mx-auto" src={KotaBatu} alt="kota-batu" />
               </a>
             </li>
             <li>
               <a target="_blank" href="https://blitarkota.go.id/">
-                Kota Blitar
+                <div className="text-center text-sm font-semibold">Kota Blitar</div>
+                <img className="h-28 mx-auto" src={KotaBlitar} alt="kota-blitar" />
               </a>
             </li>
             <li>
               <a target="_blank" href="https://pasuruankota.go.id/">
-                Kota Pasuruan
+                <div className="text-center text-sm font-semibold">Kota Pasuruan</div>
+                <img className="h-28 mx-auto" src={KotaPasuruan} alt="kota-pasuruan" />
               </a>
             </li>
             <li>
               <a target="_blank" href="https://www.malangkab.go.id/mlg/">
-                Kabupaten Malang
+                <div className="text-center text-sm font-semibold">Kabupaten Malang</div>
+                <img className="h-28 mx-auto" src={KabMalang} alt="kab-malang" />
               </a>
             </li>
             <li>
               <a target="_blank" href="https://www.blitarkab.go.id/">
-                Kabupaten Blitar
+                <div className="text-center text-sm font-semibold">Kabupaten Blitar</div>
+                <img className="h-28 mx-auto" src={KabBlitar} alt="kab-blitar" />
               </a>
             </li>
             <li>
               <a target="_blank" href="https://www.pasuruankab.go.id/">
-                Kabupaten Pasuruan
+                <div className="text-center text-sm font-semibold">Kabupaten Pasuruan</div>
+                <img className="h-28 mx-auto" src={KabPasuruan} alt="kab-pasuruan" />
               </a>
             </li>
           </ul>

@@ -1,12 +1,13 @@
 import React from 'react';
 import { FaClipboardList, FaSuitcase, FaUser } from 'react-icons/fa6';
+import FotoPPID from '../../assets/image/foto_ppid.jpg';
 
 const Fotopengertian = () => {
   return (
     <>
       {/* ===================== FOTO ===================== */}
       <div className="grid justify-center mt-3">
-        <img src="https://i.pinimg.com/736x/45/b3/16/45b31658d8beb88ae4db99a0a4efc4ae.jpg" alt="" className="rounded-full w-64 h-64 md:w-72 lg:w-96 md:h-72 lg:h-96 shadow-xl border-8 border-white" />
+        <img src={FotoPPID} alt="" className="rounded-full object-cover w-64 h-64 md:w-72 lg:w-96 md:h-72 lg:h-96 shadow-xl border-8 border-white" />
       </div>
       {/* ===================== JUDUL DAN PENGERTIAN ===================== */}
       <div className="md:grid justify-items-start">
