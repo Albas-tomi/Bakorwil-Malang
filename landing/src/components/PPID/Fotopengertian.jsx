@@ -20,7 +20,7 @@ const Fotopengertian = () => {
 
         {/* ===================== BUTTON ===================== */}
         <div className="mt-10 flex gap-2 justify-center md:gap-10">
-          <a href="#profil" id="profil" className="btn bg-white shadow-lg md:w-40 lg:text-base">
+          <a href="#profil" className="btn bg-white shadow-lg md:w-40 lg:text-base md:h-14">
             <div>
               <span className="text-second">
                 <FaUser className="text-xl lg:text-2xl" />
@@ -28,11 +28,11 @@ const Fotopengertian = () => {
             </div>
             <div className="text-start">
               <p className="capitalize">profile</p>
-              <p className="text-xs font-extralight">PPID</p>
+              <p className="text-xs font-light">PPID</p>
             </div>
             <br />
           </a>
-          <a href="#layanan" id="layanan" className="btn bg-white shadow-lg md:w-40 lg:text-base">
+          <a href="#layanan" className="btn bg-white shadow-lg md:w-40 lg:text-base md:h-14">
             <div>
               <span className="text-second">
                 <FaSuitcase className="text-xl lg:text-2xl" />
@@ -40,10 +40,10 @@ const Fotopengertian = () => {
             </div>
             <div className="text-start">
               <p className="capitalize">layanan</p>
-              <p className="text-xs capitalize font-extralight">Informasi</p>
+              <p className="text-xs capitalize font-light">Informasi</p>
             </div>
           </a>
-          <a href="#daftar" id="daftar" className="btn bg-white shadow-lg md:w-40 lg:text-base">
+          <a href="#daftar" className="btn bg-white shadow-lg md:w-40 lg:text-base md:h-14">
             <div>
               <span className="text-second">
                 <FaClipboardList className="text-xl lg:text-2xl" />
@@ -51,7 +51,7 @@ const Fotopengertian = () => {
             </div>
             <div className="text-start">
               <p className="capitalize">Daftar</p>
-              <p className="text-xs capitalize font-extralight">Informasi</p>
+              <p className="text-xs capitalize font-light">Informasi</p>
             </div>
           </a>
         </div>
