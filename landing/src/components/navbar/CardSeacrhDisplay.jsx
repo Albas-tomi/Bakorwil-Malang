@@ -1,4 +1,4 @@
-import moment from "moment";
+import dayjs from "dayjs";
 import React from "react";
 import { FaClock } from "react-icons/fa6";
 
@@ -16,7 +16,7 @@ const CardSeacrhDisplay = ({ setDataModal, filteredData }) => {
           <div className="card-body flex gap-1">
             <span className="text-primer text-xs flex items-center gap-1">
               <FaClock />
-              {moment(data.createdAt).format("DD MMM YYYY")}
+              {dayjs(data.createdAt).format("DD MMM YYYY")}
             </span>
             <p className="capitalize">
               {data.judul.substring(0, 60)}
