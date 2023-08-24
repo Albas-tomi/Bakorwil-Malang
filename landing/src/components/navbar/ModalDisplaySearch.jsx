@@ -5,7 +5,7 @@ const ModalDisplaySearch = ({ dataModal }) => {
     <dialog id="modalSearch" className="modal">
       <form
         method="dialog"
-        className=" bg-dark h-screen overflow-y-auto w-full p-4 absolute top-0"
+        className=" px-3 bg-dark h-screen overflow-y-auto w-full p-4 absolute top-0"
       >
         <button className="btn btn-sm btn-circle btn-ghost sticky left-0 top-0 place-self-end bg-error  hover:bg-primer text-white">
           ✕

@@ -40,7 +40,7 @@ const Berita = () => {
             .slice(0, card)
             .slice(currentPage, currentPage + beritaPerPage)
             .map((beritaData) => (
-              <Card beritaData={beritaData} Get={Get} />
+              <Card key={beritaData.id} beritaData={beritaData} Get={Get} />
             ))}
         </div>
         {/* =============== PAGINATION =============== */}
