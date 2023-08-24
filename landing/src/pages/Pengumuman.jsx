@@ -42,7 +42,11 @@ const Pengumuman = () => {
           .slice(0, card)
           .slice(currentPage, currentPage + pengumumanPerPage)
           .map((pengumumanData) => (
-            <Card pengumumanData={pengumumanData} Get={Get} />
+            <Card
+              key={pengumumanData.id}
+              pengumumanData={pengumumanData}
+              Get={Get}
+            />
           ))}
       </div>
 

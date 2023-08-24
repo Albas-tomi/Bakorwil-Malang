@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ModalBerita = ({ pickOfBerita }) => {
   return (
@@ -25,6 +26,9 @@ const ModalBerita = ({ pickOfBerita }) => {
               __html: pickOfBerita.deskripsi,
             }}
           />
+          <Link to={"/berita"} className="text-primer">
+            selengkanya
+          </Link>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

@@ -1,7 +1,5 @@
-import { data } from "autoprefixer";
 import React from "react";
 import { FaDownload } from "react-icons/fa6";
-import Dokumen from "../../Dokumen.json";
 import { useState } from "react";
 import { useEffect } from "react";
 import { getDataDokumen } from "../../getDataApi";
@@ -60,6 +58,7 @@ const Modal = () => {
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dokRencanaStrategis.map((rs) => (
               <a
+                key={rs.id}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={rs.link}
@@ -85,6 +84,7 @@ const Modal = () => {
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dokRencanaKerja.map((rk) => (
               <a
+                key={rk.id}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={rk.link}
@@ -110,6 +110,7 @@ const Modal = () => {
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dokRencanaAksi.map((rs) => (
               <a
+                key={rs.id}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={rs.link}
@@ -137,6 +138,7 @@ const Modal = () => {
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dokIndikatorKinerjaUtama.map((rs) => (
               <a
+                key={rs.id}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={rs.link}
@@ -162,6 +164,7 @@ const Modal = () => {
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dokPohonKinerja.map((rs) => (
               <a
+                key={rs.id}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={rs.link}
@@ -189,6 +192,7 @@ const Modal = () => {
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dokPerjanjianKinerja.map((rs) => (
               <a
+                key={rs.id}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={rs.link}
@@ -214,6 +218,7 @@ const Modal = () => {
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dokLaporanKinerja.map((rs) => (
               <a
+                key={rs.id}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={rs.link}
@@ -241,6 +246,7 @@ const Modal = () => {
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dokEvaluasiInternal.map((rs) => (
               <a
+                key={rs.id}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={rs.link}
@@ -268,6 +274,7 @@ const Modal = () => {
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dokPengukuranKinerja.map((rs) => (
               <a
+                key={rs.id}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={rs.link}
@@ -295,6 +302,7 @@ const Modal = () => {
           <div className="grid grid-cols-2 gap-2 mt-4">
             {dokReformasiBirokrasi.map((rs) => (
               <a
+                key={rs.id}
                 target="_blank"
                 rel="noopener noreferrer"
                 href={rs.link}

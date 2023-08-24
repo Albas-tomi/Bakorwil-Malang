@@ -30,6 +30,7 @@ const Card = ({ setPickOfGaleri }) => {
           .reverse()
           .map((dataGaleri) => (
             <label
+              key={dataGaleri.id}
               className="card card-compact bg-base-100 bg-cover rounded-md overflow-hidden relative cursor-pointer"
               onClick={() => {
                 window.modalGaleri.showModal();
