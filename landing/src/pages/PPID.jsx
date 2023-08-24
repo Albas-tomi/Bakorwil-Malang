@@ -21,7 +21,7 @@ const PPID = () => {
         <Prosedurpermohonaninformasi />
       </div>
       {/* ===================== GAMBAR PROSEDUR PERMOHONAN INFORMASI ===================== */}
-      <div className="grid p-5 md:px-10 lg:px-20 md:grid-cols-3">
+      <div className="grid p-5 md:px-10 lg:px-20 md:grid-cols-3 items-center">
         <Gambarprosedur />
       </div>
       {/* ===================== DAFTAR INFORMASI ===================== */}

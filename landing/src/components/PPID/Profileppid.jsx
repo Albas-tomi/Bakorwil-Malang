@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Struktur from '../../assets/image/struktur.png';
 
 const Profileppid = () => {
   // ============== GANTI TAB BUTTON ==============
@@ -12,13 +13,15 @@ const Profileppid = () => {
       <p id="profil" className="mb-7 font-bold mt-5 text-xl lg:text-2xl">
         Profile PPID Pelaksana Bakorwil Malang
       </p>
-      <div className="md:grid grid-cols-2 gap-4 items-center lg:mb-8">
+      <div className="lg:grid grid-cols-2 gap-10 items-center lg:mb-8">
         <div>
-          <img src="https://bakorwilmalang.jatimprov.go.id/images/struktur_organisasi/3db4ad8555afee7d6e682d8dacd65590.png" alt="" className="mb-5" />
+          <div className="bg-begron p-5">
+            <img src={Struktur} alt="" className="mb-5" />
+          </div>
         </div>
-        <div className="text-sm">
-          <p className="md:text-lg md:text-start text-justify">Pejabat Pengelola Informasi dan Dokumentasi (PPID) menyediakan dan memberikan informasi melalui desk layanan informasi baik secara langsung maupun melalui media antara lain:</p>
-          <ul className="list-disc ml-5 mb-8 md:text-base md:text-start text-justify">
+        <div className="text-sm mt-4 lg:mt-0">
+          <p className="md:text-lg text-justify">Pejabat Pengelola Informasi dan Dokumentasi (PPID) menyediakan dan memberikan informasi melalui desk layanan informasi baik secara langsung maupun melalui media antara lain:</p>
+          <ul className="list-disc ml-5 mb-8 md:text-lg md:text-start text-justify">
             <li>Situs Web : bakorwilmalang.jatimprov.go.id</li>
             <li>Email : bakorwilmalang@jatimprov.go.id</li>
             <li>Telepon : (0341) 555366, Fax (0341) 551323</li>
