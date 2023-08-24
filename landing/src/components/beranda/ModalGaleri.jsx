@@ -15,7 +15,7 @@ const ModalGaleri = ({ pickOfGaleri }) => {
             <img
               src={`${urlImg}${pickOfGaleri.gambar}`}
               alt=""
-              className="shadow-xl "
+              className="shadow-xl  max-w-3xl"
             />
           </figure>
         </form>
