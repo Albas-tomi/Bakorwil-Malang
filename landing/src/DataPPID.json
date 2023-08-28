@@ -1,5 +1,12 @@
 [
-  { "pages": "informasi berkala", "kategori": "A", "no": 1, "judul": "Informasi tentang kedudukan, domisili dan alamat lengkap", "direct": "", "link": "https://bakorwilmalang.jatimprov.go.id/tentang-kami-sejarah.html" },
+  {
+    "pages": "informasi berkala",
+    "kategori": "A",
+    "no": 1,
+    "judul": "Informasi tentang kedudukan, domisili dan alamat lengkap",
+    "direct": "",
+    "link": "https://bakorwilmalang.jatimprov.go.id/tentang-kami-sejarah.html"
+  },
   {
     "pages": "informasi berkala",
     "kategori": "A",
@@ -8,8 +15,22 @@
     "direct": "Struktur Organisasi",
     "link": "https://bakorwilmalang.jatimprov.go.id/tentang-kami-struktur-organisasi.html"
   },
-  { "pages": "informasi berkala", "kategori": "A", "no": 3, "judul": "Visi Misi", "direct": "Visi Misi", "link": "" },
-  { "pages": "informasi berkala", "kategori": "A", "no": 4, "judul": "Tugas Pokok dan Fungsi", "direct": "Tugas Fungsi Pemprov Jatim", "link": "" },
+  {
+    "pages": "informasi berkala",
+    "kategori": "A",
+    "no": 3,
+    "judul": "Visi Misi",
+    "direct": "Visi Misi",
+    "link": ""
+  },
+  {
+    "pages": "informasi berkala",
+    "kategori": "A",
+    "no": 4,
+    "judul": "Tugas Pokok dan Fungsi",
+    "direct": "Tugas Fungsi Pemprov Jatim",
+    "link": ""
+  },
   {
     "pages": "informasi berkala",
     "kategori": "A",
@@ -18,13 +39,62 @@
     "direct": "Wajib Lapor LHKPN Pemprov. Jatim",
     "link": ""
   },
-  { "pages": "informasi berkala", "kategori": "B", "no": 1, "judul": "Nama program dan kegiatan", "direct": "", "link": "" },
-  { "pages": "informasi berkala", "kategori": "B", "no": 2, "judul": "Penanggungjawab, pelaksana program dan kegiatan, serta nomor telepon dan/alamat yang dapat dihubungi", "direct": "", "link": "" },
-  { "pages": "informasi berkala", "kategori": "B", "no": 3, "judul": "Target dan/atau capaian program kegiatan", "direct": "", "link": "" },
-  { "pages": "informasi berkala", "kategori": "B", "no": 4, "judul": "Jadual pelaksanaan program dan kegiatan", "direct": "", "link": "" },
-  { "pages": "informasi berkala", "kategori": "B", "no": 5, "judul": "Anggaran program dam kegiatan yang meliputi sumber dan jumlah", "direct": "", "link": "" },
-  { "pages": "informasi berkala", "kategori": "B", "no": 6, "judul": "Agenda penting tekait pelaksanaan tugas Badan Publik", "direct": "", "link": "" },
-  { "pages": "informasi berkala", "kategori": "B", "no": 7, "judul": "Informasi khusus lainnya yang berkaitan langsung dengan hak-hak masyarakat", "direct": "", "link": "" },
+  {
+    "pages": "informasi berkala",
+    "kategori": "B",
+    "no": 1,
+    "judul": "Nama program dan kegiatan",
+    "direct": "",
+    "link": ""
+  },
+  {
+    "pages": "informasi berkala",
+    "kategori": "B",
+    "no": 2,
+    "judul": "Penanggungjawab, pelaksana program dan kegiatan, serta nomor telepon dan/alamat yang dapat dihubungi",
+    "direct": "",
+    "link": ""
+  },
+  {
+    "pages": "informasi berkala",
+    "kategori": "B",
+    "no": 3,
+    "judul": "Target dan/atau capaian program kegiatan",
+    "direct": "",
+    "link": ""
+  },
+  {
+    "pages": "informasi berkala",
+    "kategori": "B",
+    "no": 4,
+    "judul": "Jadual pelaksanaan program dan kegiatan",
+    "direct": "",
+    "link": ""
+  },
+  {
+    "pages": "informasi berkala",
+    "kategori": "B",
+    "no": 5,
+    "judul": "Anggaran program dam kegiatan yang meliputi sumber dan jumlah",
+    "direct": "",
+    "link": ""
+  },
+  {
+    "pages": "informasi berkala",
+    "kategori": "B",
+    "no": 6,
+    "judul": "Agenda penting tekait pelaksanaan tugas Badan Publik",
+    "direct": "",
+    "link": ""
+  },
+  {
+    "pages": "informasi berkala",
+    "kategori": "B",
+    "no": 7,
+    "judul": "Informasi khusus lainnya yang berkaitan langsung dengan hak-hak masyarakat",
+    "direct": "",
+    "link": ""
+  },
   {
     "pages": "informasi berkala",
     "kategori": "B",
@@ -41,7 +111,14 @@
     "direct": "Badan Publik yang menyelenggarakan pendidikan untuk umum adalah UPT Pelatihan Kerja Prov Jatim / BLK (Balai latihan Kerja). Informasi tentang penerimaan calon peserta didik tersedia pada website BLK",
     "link": ""
   },
-  { "pages": "informasi berkala", "kategori": "D", "no": 1, "judul": "Rencana anggaran", "direct": "PERDA APBD 2020, PERDA APBD 2021,RINGKASAN DPA 2021 & RINGKASAN RKA 2021", "link": "" },
+  {
+    "pages": "informasi berkala",
+    "kategori": "D",
+    "no": 1,
+    "judul": "Rencana anggaran",
+    "direct": "PERDA APBD 2020, PERDA APBD 2021,RINGKASAN DPA 2021 & RINGKASAN RKA 2021",
+    "link": ""
+  },
   {
     "pages": "informasi berkala",
     "kategori": "D",
@@ -50,7 +127,14 @@
     "direct": "TRANSPARANSI PENGELOLAAN ANGGARAN DAERAH, LAPORAN REALISASI ANGGARAN 2020,NERACA 2020, LAPORAN ARUS KAS 2020 & CATATAN ATAS LAPORAN KEUANGAN 2020",
     "link": "https://docs.google.com/spreadsheets/d/1oOTIlvabWPBmA8DmLRJYoahl54u4K3XL/edit?usp=sharing&ouid=104604463320757428967&rtpof=true&sd=true"
   },
-  { "pages": "informasi berkala", "kategori": "D", "no": 3, "judul": "Daftar aset dan investasi", "direct": "ASET 2019 & ASET 2020", "link": "https://drive.google.com/file/d/1EF7khhl5a399wqQ_Dcp3jr55Gb4lQFbW/view?usp=sharing" },
+  {
+    "pages": "informasi berkala",
+    "kategori": "D",
+    "no": 3,
+    "judul": "Daftar aset dan investasi",
+    "direct": "ASET 2019 & ASET 2020",
+    "link": "https://drive.google.com/file/d/1EF7khhl5a399wqQ_Dcp3jr55Gb4lQFbW/view?usp=sharing"
+  },
   {
     "pages": "informasi serta merta",
     "no": "A",
@@ -83,23 +167,88 @@
     "direct": "PERDA APBD 2020, PERDA APBD 2021,RINGKASAN DPA 2021 & RINGKASAN RKA 2021",
     "link": ""
   },
-  { "pages": "informasi setiap saat", "no": "A", "judul": "Daftar Informasi Publik (DIP)", "deskripsi": "" },
-  { "pages": "informasi setiap saat", "no": "B", "judul": "Informasi tentang peraturan, keputusan dan/atau kebijakan Badan Publik", "deskripsi": "" },
-  { "pages": "informasi setiap saat", "no": "C", "judul": "Seluruh informasi lengkap yang wajib disediakan dan diumumkan secara berkala", "deskripsi": "" },
-  { "pages": "informasi setiap saat", "no": "D", "judul": "Informasi tentang peraturan, keputusan dan/atau kebijakan Badan Publik", "deskripsi": "" },
-  { "pages": "informasi setiap saat", "no": "E", "judul": "Surat surat perjanjian dengan pihak ketiga berikut dokumen pendukungnya", "deskripsi": "" },
-  { "pages": "informasi setiap saat", "no": "F", "judul": "Surat menyurat pimpinan atau pejabat Badan Publik dalam rangka pelaksanaan tugas pokok dan fungsinya", "deskripsi": "" },
-  { "pages": "informasi setiap saat", "no": "G", "judul": "Syarat syarat perizinan, izin yang diterbitkan dan/atau dikeluarkan  berikut dokumen pendukungnya, dan laporan penataan izin yang diberikan", "deskripsi": "" },
-  { "pages": "informasi setiap saat", "no": "H", "judul": "Data perbendaharaan atau inventaris", "deskripsi": "" },
-  { "pages": "informasi setiap saat", "no": "I", "judul": "Rencana strategis dan rencana kerja Badan Publik", "deskripsi": "" },
-  { "pages": "informasi setiap saat", "no": "J", "judul": "Agenda kerja pimpinan satuan kerja", "deskripsi": "" },
+  {
+    "pages": "informasi setiap saat",
+    "no": "A",
+    "judul": "Daftar Informasi Publik (DIP)",
+    "deskripsi": ""
+  },
+  {
+    "pages": "informasi setiap saat",
+    "no": "B",
+    "judul": "Informasi tentang peraturan, keputusan dan/atau kebijakan Badan Publik",
+    "deskripsi": ""
+  },
+  {
+    "pages": "informasi setiap saat",
+    "no": "C",
+    "judul": "Seluruh informasi lengkap yang wajib disediakan dan diumumkan secara berkala",
+    "deskripsi": ""
+  },
+  {
+    "pages": "informasi setiap saat",
+    "no": "D",
+    "judul": "Informasi tentang peraturan, keputusan dan/atau kebijakan Badan Publik",
+    "deskripsi": ""
+  },
+  {
+    "pages": "informasi setiap saat",
+    "no": "E",
+    "judul": "Surat surat perjanjian dengan pihak ketiga berikut dokumen pendukungnya",
+    "deskripsi": ""
+  },
+  {
+    "pages": "informasi setiap saat",
+    "no": "F",
+    "judul": "Surat menyurat pimpinan atau pejabat Badan Publik dalam rangka pelaksanaan tugas pokok dan fungsinya",
+    "deskripsi": ""
+  },
+  {
+    "pages": "informasi setiap saat",
+    "no": "G",
+    "judul": "Syarat syarat perizinan, izin yang diterbitkan dan/atau dikeluarkan  berikut dokumen pendukungnya, dan laporan penataan izin yang diberikan",
+    "deskripsi": ""
+  },
+  {
+    "pages": "informasi setiap saat",
+    "no": "H",
+    "judul": "Data perbendaharaan atau inventaris",
+    "deskripsi": ""
+  },
+  {
+    "pages": "informasi setiap saat",
+    "no": "I",
+    "judul": "Rencana strategis dan rencana kerja Badan Publik",
+    "deskripsi": ""
+  },
+  {
+    "pages": "informasi setiap saat",
+    "no": "J",
+    "judul": "Agenda kerja pimpinan satuan kerja",
+    "deskripsi": ""
+  },
   {
     "pages": "informasi setiap saat",
     "no": "K",
     "judul": "Informasi mengenai kegiatan pelayanan informasi public yang  dilaksanakan, sarana dan prasarana layanan infomasi publik yang dimiliki beserta kondisinya, sumberdaya manusia yang menagani layanan informasi publik beserta kualitasnya, anggaran layanan informasi publik serta laporan penggunaannya",
     "deskripsi": ""
   },
-  { "pages": "informasi setiap saat", "no": "L", "judul": "Jumlah jenis, dan gambaran umum pelanggaran yang ditemukan dalam pengawasan internal serta laporan penindakannya", "deskripsi": "" },
-  { "pages": "informasi setiap saat", "no": "M", "judul": "Daftar serta hasil hasil penelitian yang dilakukan", "deskripsi": "" },
-  { "pages": "informasi setiap saat", "no": "N", "judul": "Informasi dan kebijakan yang disampaikan pejabat public dalam pertemuan terbuka  untuk  umum", "deskripsi": "" }
+  {
+    "pages": "informasi setiap saat",
+    "no": "L",
+    "judul": "Jumlah jenis, dan gambaran umum pelanggaran yang ditemukan dalam pengawasan internal serta laporan penindakannya",
+    "deskripsi": ""
+  },
+  {
+    "pages": "informasi setiap saat",
+    "no": "M",
+    "judul": "Daftar serta hasil hasil penelitian yang dilakukan",
+    "deskripsi": ""
+  },
+  {
+    "pages": "informasi setiap saat",
+    "no": "N",
+    "judul": "Informasi dan kebijakan yang disampaikan pejabat public dalam pertemuan terbuka  untuk  umum",
+    "deskripsi": ""
+  }
 ]

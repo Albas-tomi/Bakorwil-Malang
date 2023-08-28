@@ -6,8 +6,10 @@ const { DataTypes } = Sequelize;
 const daftarInformasiModel = db.define(
   "daftarinformasi",
   {
+    judul: DataTypes.STRING,
     deskripsi: DataTypes.STRING,
     link: DataTypes.STRING,
+    jenisKategori: DataTypes.STRING,
     kategori: DataTypes.STRING,
   },
   {

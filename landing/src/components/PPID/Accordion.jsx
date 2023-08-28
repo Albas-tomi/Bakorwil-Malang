@@ -1,7 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import dataPPID from "../../DataPPID.json";
+import { getDataDaftarInformasiPPID } from "../../getDataApi";
 
 export const Accordion = () => {
+  const [dataDokumenPPID, setDataDokumenPPID] = useState([]);
+  useEffect(() => {
+    getDataDaftarInformasiPPID().then((data) => {
+      setDataDokumenPPID(data);
+    });
+  }, []);
+
+  // ==================INFORMASI SERTA MERTA ==================
+  const informasiBerkala = dataDokumenPPID.filter(
+    (kategori) => kategori.kategori === "Informasi Berkala"
+  );
+
+  // ==================INFORMASI SERTA MERTA ==================
+
+  // ==================INFORMASI SERTA MERTA ==================
+  const informasiSertaMerta = dataDokumenPPID.filter(
+    (kategori) => kategori.kategori === "Informasi Serta Merta"
+  );
+
+  // ==================INFORMASI SERTA MERTA ==================
+
   const dataA = dataPPID.filter((kategori) => kategori.kategori === "A");
   const dataB = dataPPID.filter((kategori) => kategori.kategori === "B");
   const dataISM = dataPPID.filter(
@@ -29,15 +51,21 @@ export const Accordion = () => {
                   <th>A</th>
                   <td colSpan="3">Informasi tentang profile Badan Publik :</td>
                 </tr>
-                {dataA.map((A, idx) => (
-                  <tr key={idx}>
-                    <th>{A.no}</th>
-                    <td>{A.judul}</td>
-                    <td>
-                      <a href={A.link}>{A.direct}</a>
-                    </td>
-                  </tr>
-                ))}
+                {informasiBerkala
+                  .filter(
+                    (jenisKategori) => jenisKategori.jenisKategori === "A"
+                  )
+                  .map((dataA, idx) => (
+                    <tr key={idx}>
+                      <th>{(idx += 1)}</th>
+                      <td>{dataA.judul}</td>
+                      <td>
+                        <a target="_blank" href={dataA.link}>
+                          View
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
                 {/* row B */}
                 <tr className="font-bold">
                   <th>B</th>
@@ -46,15 +74,19 @@ export const Accordion = () => {
                     sedang dijalankan dalam lingkup Badan Publik, yang meliputi{" "}
                   </td>
                 </tr>
-                {dataB.map((B, idx) => (
-                  <tr key={idx}>
-                    <th>{B.no}</th>
-                    <td>{B.judul}</td>
-                    <td>
-                      <a href={B.link}>{B.direct}</a>
-                    </td>
-                  </tr>
-                ))}
+                {informasiBerkala
+                  .filter(
+                    (jenisKategori) => jenisKategori.jenisKategori === "B"
+                  )
+                  .map((B, idx) => (
+                    <tr key={idx}>
+                      <th>{(idx += 1)}</th>
+                      <td>{B.judul}</td>
+                      <td>
+                        <a href={B.link}></a>
+                      </td>
+                    </tr>
+                  ))}
                 {/* row C */}
                 <tr className="font-bold">
                   <th>C</th>
@@ -105,10 +137,23 @@ export const Accordion = () => {
                   <th>A</th>
                   <td>Informasi tentang profile Badan Publik :</td>
                 </tr>
-                {dataISM.map((ism, idx) => (
+                {informasiSertaMerta.map((ism, idx) => (
                   <tr key={idx}>
-                    <th>{ism.no}</th>
-                    <td>{ism.judul}</td>
+                    <th>{(idx += 1)}</th>
+                    <td className="flex gap-3 justify-center items-center">
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: ism.deskripsi,
+                        }}
+                      />
+                      <a
+                        className="font-extrabold text-birumuda"
+                        href={ism.link}
+                        target="_blank"
+                      >
+                        View
+                      </a>
+                    </td>
                   </tr>
                 ))}
               </tbody>

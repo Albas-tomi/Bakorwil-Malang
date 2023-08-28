@@ -71,7 +71,9 @@ const DaftarInformasiPPIDList = () => {
           <thead>
             <tr>
               <th className="text-center">Nomor</th>
+              <th className="text-center">Judul</th>
               <th className="text-center">deskripsi</th>
+              <th className="text-center">Jenis kategori</th>
               <th className="text-center">Link</th>
               <th className="text-center">Kategori</th>
               <th className="text-center">Aksi</th>
@@ -85,6 +87,7 @@ const DaftarInformasiPPIDList = () => {
               .map((DaftarInformasiPPID, idx) => (
                 <tr key={DaftarInformasiPPID.id}>
                   <td>{pageVisited + idx + 1}</td>
+                  <td>{DaftarInformasiPPID.judul}</td>
                   <td>
                     {" "}
                     <div
@@ -94,18 +97,14 @@ const DaftarInformasiPPIDList = () => {
                       }}
                     />
                   </td>
+                  <td>{DaftarInformasiPPID.jenisKategori}</td>
                   <td>
                     <a
                       className="text-blue-600"
                       target="_blank"
                       href={DaftarInformasiPPID.link}
                     >
-                      <div
-                        className="line-clamp-2"
-                        dangerouslySetInnerHTML={{
-                          __html: DaftarInformasiPPID.deskripsi,
-                        }}
-                      />
+                      {DaftarInformasiPPID.judul}
                     </a>
                   </td>
                   <td>{DaftarInformasiPPID.kategori}</td>
@@ -123,8 +122,10 @@ const DaftarInformasiPPIDList = () => {
                       onClick={() => {
                         handleEditDaftarInformasiPPID({
                           id: DaftarInformasiPPID.id,
+                          judul: DaftarInformasiPPID.judul,
                           deskripsi: DaftarInformasiPPID.deskripsi,
                           link: DaftarInformasiPPID.link,
+                          jenisKategori: DaftarInformasiPPID.jenisKategori,
                           kategori: DaftarInformasiPPID.kategori,
                         });
                         window.my_modal_editDaftarInformasiPPID.showModal();
