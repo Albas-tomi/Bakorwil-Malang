@@ -16,7 +16,6 @@ import Struktur from '../../assets/image/struktur.png';
 
 export const Accordion = () => {
   const pns = DataPegawai.filter((kategori) => kategori.kategori === 'pns');
-  const ptt = DataPegawai.filter((kategori) => kategori.kategori === 'ptt');
   return (
     <div section="accordion" className="bg-second flex flex-col gap-y-4 px-5 md:px-10 lg:px-20 py-10">
       {/* ================== SEJARAH ================== */}
@@ -276,29 +275,6 @@ export const Accordion = () => {
                     <th>{pns.id}</th>
                     <td>{pns.nama}</td>
                     <td>{pns.jabatan}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-sm text-center font-bold my-3 md:text-base">
-            PTT-PK
-          </p>
-          <div className="overflow-x-auto mb-5">
-            <table className="table-xs md:table">
-              {/* head */}
-              <thead>
-                <tr>
-                  <td>NAMA</td>
-                  <td>JABATAN</td>
-                </tr>
-              </thead>
-              <tbody>
-                {/* row 1 */}
-                {ptt.map((ptt) => (
-                  <tr>
-                    <td>{ptt.nama}</td>
-                    <td>{ptt.jabatan}</td>
                   </tr>
                 ))}
               </tbody>
