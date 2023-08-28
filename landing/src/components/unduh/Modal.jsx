@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaDownload } from "react-icons/fa6";
 import Dokumen from "../../Dokumen.json";
+import { useState } from "react";
+import { getDataDaftarInformasiPPID } from "../../getDataApi.js";
 
 export const Modal = () => {
-  const dataTeknis = Dokumen.filter(
-    (dokumenTeknis) => dokumenTeknis.kategori == "RS"
+  const [dataDokumenPPID, setDataDokumenPPID] = useState([]);
+
+  useEffect(() => {
+    getDataDaftarInformasiPPID().then((data) => {
+      setDataDokumenPPID(data);
+    });
+  }, []);
+
+  const laporanLayanan = dataDokumenPPID.filter(
+    (dokumenTeknis) =>
+      dokumenTeknis.kategori == "Laporan Layanan Informasi dan Dokumentasi"
   );
-  const dataPpid = Dokumen.filter(
-    (dokumenPpid) => dokumenPpid.kategori == "RK"
+  const informasiPublik = dataDokumenPPID.filter(
+    (informasi) => informasi.kategori == "Daftar Informasi Publik"
+  );
+  const suratKeputusan = dataDokumenPPID.filter(
+    (sk) => sk.kategori == "Surat Keputusan Kepala Bakorwil III Jawa Timur"
+  );
+  const pedomanTeknis = dataDokumenPPID.filter(
+    (pedoman) => pedoman.kategori == "Buku Pedoman Teknis"
   );
   return (
     <>
+      {/* Pedoman Teknis */}
       <dialog id="modal_dokumen_teknis" className="modal">
         <form method="dialog" className="modal-box">
           <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
@@ -18,22 +36,29 @@ export const Modal = () => {
           </button>
           <h3 className="font-bold text-base">Unduh Buku Pedoman Teknis</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
-            {dataTeknis.map((rs) => (
+            {pedomanTeknis.map((pedoman) => (
               <a
-                key={rs.id}
+                key={pedoman.id}
                 target="_blank"
                 rel="noopener noreferrer"
-                href={rs.link}
-                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+                href={pedoman.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>
-                {rs.tahun}
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: pedoman.deskripsi,
+                  }}
+                />{" "}
               </a>
             ))}
           </div>
         </form>
       </dialog>
+      {/* Pedoman Teknis */}
+
       <dialog id="modal_dokumen_ppid" className="modal">
         <form method="dialog" className="modal-box">
           <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
@@ -44,33 +69,43 @@ export const Modal = () => {
             Laporan Layanan Informasi dan Dokumentasi
           </h3>
           <div className="grid grid-cols-2 gap-2">
-            {dataPpid.map((rs) => (
+            {laporanLayanan.map((lP) => (
               <a
-                key={rs.id}
+                key={lP.id}
                 target="_blank"
                 rel="noopener noreferrer"
-                href={rs.link}
-                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+                href={lP.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>
-                {rs.tahun}
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: lP.deskripsi,
+                  }}
+                />
               </a>
             ))}
           </div>
           <h3 className="text-base mt-4">Daftar Informasi Publik</h3>
           <div className="grid grid-cols-2 gap-2">
-            {dataPpid.map((rs) => (
+            {informasiPublik.map((iP) => (
               <a
-                key={rs.id}
+                key={iP.id}
                 target="_blank"
                 rel="noopener noreferrer"
-                href={rs.link}
-                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+                href={iP.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>
-                {rs.tahun}
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: iP.deskripsi,
+                  }}
+                />{" "}
               </a>
             ))}
           </div>
@@ -78,17 +113,22 @@ export const Modal = () => {
             Surat Keputusan Kepala Bakorwil III Jawa Timur
           </h3>
           <div className="grid grid-cols-2 gap-2">
-            {dataPpid.map((rs) => (
+            {suratKeputusan.map((sk) => (
               <a
-                key={rs.id}
+                key={sk.id}
                 target="_blank"
                 rel="noopener noreferrer"
-                href={rs.link}
-                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+                href={sk.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>
-                {rs.tahun}
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: sk.deskripsi,
+                  }}
+                />{" "}
               </a>
             ))}
           </div>

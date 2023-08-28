@@ -20,14 +20,18 @@ export const addDataDaftarInformasiPPID = async (
       },
     });
     handleAddDaftarInformasiPPID({
+      judul: values.judul,
       deskripsi: values.deskripsi,
       link: values.link,
+      jenisKategori: values.jenisKategori,
       kategori: values.kategori,
     });
     notifyAddData("Data DaftarInformasiPPID berhasil ditambahkan!");
     handleCloseModal();
     formik.resetForm();
-    // window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   } catch (error) {
     console.log(error);
   }
@@ -70,13 +74,18 @@ export const editDataDaftarInformasiPPID = async (
     );
     handleEditDaftarInformasiPPID({
       id: pickOfDaftarInformasiPPIDEdit.id,
+      judul: values.judul,
       deskripsi: values.deskripsi,
       link: values.link,
+      jenisKategori: values.jenisKategori,
       kategori: values.kategori,
     });
     notifyEdit("Data Berita Berhasil Di edit!");
     handleCloseModal();
     formik.resetForm();
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   } catch (error) {
     console.log("Error submitting form:", error);
   }

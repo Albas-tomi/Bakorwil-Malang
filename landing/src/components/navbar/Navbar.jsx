@@ -245,7 +245,12 @@ const Navbar = () => {
                     <a>Dokumen PPID</a>
                   </li>
                   <li>
-                    <a href="#">Form Permohonan</a>
+                    <a
+                      target="_blank"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLSdjjPppyBs4ev-7-7iNru3CsviMk4muye6i3uvUCpDfVHMvpg/viewform"
+                    >
+                      Form Permohonan
+                    </a>
                   </li>
                 </ul>
               </details>

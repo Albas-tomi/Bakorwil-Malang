@@ -28,6 +28,10 @@ export const getDataPejabat = async () => {
   const res = await axios.get("http://localhost:4000/pejabat");
   return res.data;
 };
+export const getDataDaftarInformasiPPID = async () => {
+  const res = await axios.get("http://localhost:4000/daftarinformasi");
+  return res.data;
+};
 
 export const editDataBerita = async (beritaData, formData) => {
   try {

@@ -6,6 +6,8 @@ import { addDataDaftarInformasiPPID } from "./apiDaftarInformasiPPID";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 const Schema = Yup.object({
+  judul: Yup.string().required(),
+  jenisKategori: Yup.string().required(),
   deskripsi: Yup.string().required(),
   link: Yup.string().required(),
   kategori: Yup.string().required(),
@@ -17,8 +19,10 @@ const AddDaftarInformasiPPID = ({ handleAddDaftarInformasiPPID }) => {
   };
   const formik = useFormik({
     initialValues: {
+      judul: "",
       deskripsi: "",
       link: "",
+      jenisKategori: "",
       kategori: "",
     },
     ValidationSchema: Schema,
@@ -26,6 +30,8 @@ const AddDaftarInformasiPPID = ({ handleAddDaftarInformasiPPID }) => {
     onSubmit: async (values) => {
       const notifyAddData = (message) => toast.success(message);
       const formData = new FormData();
+      formData.append("judul", values.judul);
+      formData.append("jenisKategori", values.jenisKategori);
       formData.append("deskripsi", values.deskripsi);
       formData.append("link", values.link);
       formData.append("kategori", values.kategori);
@@ -64,9 +70,29 @@ const AddDaftarInformasiPPID = ({ handleAddDaftarInformasiPPID }) => {
           Tambah Daftar Informasi PPID
         </h1>
 
+        <div className="mb-3 flex flex-col rounded-md">
+          <label className="text-xl" htmlFor="judul">
+            Judul
+          </label>
+          {formik.errors.judul && formik.touched.judul && (
+            <p className="mt-1 text-red-500 max-[640px]:text-sm">
+              {formik.errors.judul}
+            </p>
+          )}
+
+          <input
+            id="judul"
+            name="judul"
+            value={formik.values.judul}
+            onChange={formik.handleChange}
+            type="text"
+            className="input  input-bordered input-info w-full "
+          />
+        </div>
+
         <div className="mb-3  rounded-md">
           <label className="text-xl" htmlFor="deskripsi">
-            Isi Berita
+            Deskripsi Dokumen
           </label>
           {formik.errors.deskripsi && formik.touched.deskripsi && (
             <p className="mt-1 text-red-500 max-[640px]:text-sm">
@@ -82,7 +108,7 @@ const AddDaftarInformasiPPID = ({ handleAddDaftarInformasiPPID }) => {
               const data = editor.getData();
               formik.setFieldValue("deskripsi", data);
             }}
-            value={formik.values.judul}
+            value={formik.values.deskripsi}
           />
 
           <input
@@ -97,7 +123,7 @@ const AddDaftarInformasiPPID = ({ handleAddDaftarInformasiPPID }) => {
 
         <div className="mb-3 flex flex-col rounded-md">
           <label className="text-xl" htmlFor="link">
-            Link DaftarInformasiPPID
+            Link Dokumen
           </label>
           {formik.errors.link && formik.touched.link && (
             <p className="mt-1 text-red-500 max-[640px]:text-sm">
@@ -116,7 +142,7 @@ const AddDaftarInformasiPPID = ({ handleAddDaftarInformasiPPID }) => {
         </div>
         <div className="mb-3 flex flex-col  rounded-md">
           <label className="text-xl" htmlFor="kategori">
-            Kategori DaftarInformasiPPID
+            Kategori Dokumen
           </label>
           {formik.errors.kategori && formik.touched.kategori && (
             <p className="mt-1 text-red-500 max-[640px]:text-sm">
@@ -132,25 +158,45 @@ const AddDaftarInformasiPPID = ({ handleAddDaftarInformasiPPID }) => {
             className="input input-bordered input-info w-full max-w-xs"
           >
             <option value="">Pilih Kategori</option>
-            <option value="Rencana Strategis">Rencana Strategis</option>
-            <option value="Rencana Kerja">Rencana Kerja</option>
-            <option value="Rencana Aksi">Rencana Aksi</option>
-            <option value="Indikator Kinerja Utama">
-              Indikator Kinerja Utama
+            <option value="Laporan Layanan Informasi dan Dokumentasi">
+              Laporan Layanan Informasi dan Dokumentasi
             </option>
-            <option value="Pohon Kinerja">Pohon Kinerja</option>
-            <option value="Perjanjian Kinerja">Perjanjian Kinerja</option>
-            <option value="Laporan Kinerja">Laporan Kinerja</option>
-            <option value="Evaluasi Internal">Evaluasi Internal</option>
-            <option value="DaftarInformasiPPID Teknis">
-              DaftarInformasiPPID Teknis
+            <option value="Daftar Informasi Publik">
+              Daftar Informasi Publik
             </option>
-            <option value="DaftarInformasiPPID PPID">
-              DaftarInformasiPPID PPID
+            <option value="Surat Keputusan Kepala Bakorwil III Jawa Timur">
+              Surat Keputusan Kepala Bakorwil III Jawa Timur
             </option>
-            <option value="Pengukuran Kinerja">Pengukuran Kinerja</option>
-            <option value="Reformasi Birokrasi">Reformasi Birokrasi</option>
-            <option value="Lainnya">Lainnya</option>
+            <option value="Informasi Berkala">Informasi Berkala</option>
+            <option value="Informasi Serta Merta">Informasi Serta Merta</option>
+            <option value="Informasi Setiap Saat">Informasi Setiap Saat</option>
+            <option value="Buku Pedoman Teknis">Buku Pedoman Teknis</option>
+          </select>
+        </div>
+        <div className="mb-3 flex flex-col  rounded-md">
+          <label className="text-xl" htmlFor="jenisKategori">
+            jenis Kategori Dokumen
+          </label>
+          {formik.errors.jenisKategori && formik.touched.jenisKategori && (
+            <p className="mt-1 text-red-500 max-[640px]:text-sm">
+              {formik.errors.jenisKategori}
+            </p>
+          )}
+
+          <select
+            id="jenisKategori"
+            name="jenisKategori"
+            value={formik.values.jenisKategori}
+            onChange={formik.handleChange}
+            className="input input-bordered input-info w-full max-w-xs"
+          >
+            <option value="">Pilih jenis Kategori</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
           </select>
         </div>
 
