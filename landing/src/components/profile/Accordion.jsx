@@ -19,15 +19,7 @@ import Struktur from "../../assets/image/struktur.png";
 import { getDataPejabat } from "../../getDataApi";
 
 export const Accordion = () => {
-  // =========== Get Data ===========
-  const [dataPejabat, setDataPejabat] = useState([]);
-  useEffect(() => {
-    getDataPejabat().then((data) => {
-      setDataPejabat(data);
-    });
-  }, []);
-  const pns = dataPejabat.filter((kategori) => kategori.kategori === "PNS");
-  const ptt = dataPejabat.filter((kategori) => kategori.kategori === "PTT-PK");
+ const pns = DataPegawai.filter((kategori) => kategori.kategori === 'pns');
   return (
     <div
       section="accordion"
@@ -295,29 +287,6 @@ export const Accordion = () => {
                     <th>{pns.id}</th>
                     <td>{pns.nama}</td>
                     <td>{pns.jabatan}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-sm text-center font-bold my-3 md:text-base">
-            PTT-PK
-          </p>
-          <div className="overflow-x-auto mb-5">
-            <table className="table-xs md:table">
-              {/* head */}
-              <thead>
-                <tr>
-                  <td>NAMA</td>
-                  <td>JABATAN</td>
-                </tr>
-              </thead>
-              <tbody>
-                {/* row 1 */}
-                {ptt.map((ptt) => (
-                  <tr key={ptt.id}>
-                    <td>{ptt.nama}</td>
-                    <td>{ptt.jabatan}</td>
                   </tr>
                 ))}
               </tbody>
