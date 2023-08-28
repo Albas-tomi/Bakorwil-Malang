@@ -19,6 +19,7 @@ import Struktur from "../../assets/image/struktur.png";
 import { getDataPejabat } from "../../getDataApi";
 
 export const Accordion = () => {
+  
  const pns = DataPegawai.filter((kategori) => kategori.kategori === 'pns');
   return (
     <div
