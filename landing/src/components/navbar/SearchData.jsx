@@ -81,7 +81,7 @@ const SearchData = () => {
           {filteredData.length <= 0 ? (
             <div className="text-lg text-center"></div>
           ) : (
-            <div className=" px-4 gap-3 bg-text/70 grid grid-flow-row grid-cols-4  justify-center mx-auto">
+            <div className=" px-4 gap-3 bg-text/70 grid grid-flow-row grid-cols-1 md:grid-cols-4   justify-center mx-auto">
               <CardSeacrhDisplay
                 setDataModal={setDataModal}
                 filteredData={filteredData}

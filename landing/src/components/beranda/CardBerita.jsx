@@ -43,7 +43,9 @@ const CardBerita = ({ setPickOfBerita }) => {
             <span className="text-primer text-xs flex items-center gap-1">
               <FaClock /> {dayjs(data.createdAt).format("DD MMM YYYY")}
             </span>
-            <h3 className="font-medium capitalize">{data.judul}</h3>
+            <h3 className="font-medium capitalize line-clamp-1 my-2 md:text-sm text-xs">
+              {data.judul}
+            </h3>
           </div>
           <p className="text-xs text-second flex items-center gap-2 right-0 bottom-0 absolute pr-5 pb-2">
             <FaEye />

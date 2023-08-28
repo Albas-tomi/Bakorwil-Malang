@@ -14,7 +14,8 @@ import Struktur from '../../assets/image/struktur.png';
 import { getDataPejabat } from '../../getDataApi';
 
 export const Accordion = () => {
-  const pns = DataPegawai.filter((kategori) => kategori.kategori === 'pns');
+  
+ const pns = DataPegawai.filter((kategori) => kategori.kategori === 'pns');
   return (
     <div section="accordion" className="bg-second flex flex-col gap-y-4 px-5 md:px-10 lg:px-20 py-10">
       {/* ================== SEJARAH ================== */}

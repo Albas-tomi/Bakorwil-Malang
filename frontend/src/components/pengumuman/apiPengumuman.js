@@ -45,7 +45,9 @@ export const editDataPengumuman = async (
     notifyEdit("Data Pengumuman Berhasil Di edit!");
     handleCloseModal();
     formik.resetForm();
-    // window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   } catch (error) {
     console.log("Error submitting form:", error);
   }
@@ -73,7 +75,9 @@ export const addDataPengumuman = async (
     notifyAddData("Data Pengumuman berhasil ditambahkan!");
     handleCloseModal();
     formik.resetForm();
-    // window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   } catch (error) {
     console.log("Error submitting form:", error);
   }

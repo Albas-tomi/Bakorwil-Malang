@@ -10,7 +10,6 @@ const BeritaList = () => {
   const [dataBerita, setDataBerita] = useState([]);
   const [pickOfBeritaEdit, setpickOfBeritaEdit] = useState("");
   const [pickIdDelete, setPickIdDelete] = useState("");
-  console.log(dataBerita);
 
   // Pagination
   const [pageNumber, setPageNumber] = useState(0);

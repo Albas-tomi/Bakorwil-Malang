@@ -6,7 +6,6 @@ import pengumumanRoute from "./routes/pengumumanRoute.js";
 import beritaRoute from "./routes/beritaRoute.js";
 import galeriRoute from "./routes/galeriRoute.js";
 import dokumenRoute from "./routes/dokumenRoute.js";
-import wilayahkerjaRoute from "./routes/wilayahkerjaRoute.js";
 import bakorwilRoute from "./routes/bakorwilRoute.js";
 import videoRoute from "./routes/videoRoute.js";
 import ppidRoute from "./routes/ppidRoute.js";
@@ -16,6 +15,7 @@ import carrouselRoute from "./routes/carrouselRoute.js";
 import fotoRoute from "./routes/fotoRoute.js";
 import usersRoute from "./routes/usersRoute.js";
 import pejabatRoute from "./routes/pejabatRoute.js";
+import daftarInformasiRoute from "./routes/daftarInformasiRoute.js";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -44,7 +44,6 @@ app.use(galeriRoute);
 // DOKUMEN
 app.use(dokumenRoute);
 // WILAYAH KERJA
-app.use(wilayahkerjaRoute);
 // BAKORWIL
 app.use(bakorwilRoute);
 // VIDEO
@@ -63,6 +62,8 @@ app.use(fotoRoute);
 app.use(pejabatRoute);
 // USERS
 app.use(usersRoute);
+// DAFTAR INFROMASI
+app.use(daftarInformasiRoute);
 
 app.listen(PORT, () =>
   console.log(`the server is running on port ${PORT}....`)

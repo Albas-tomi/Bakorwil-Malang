@@ -37,7 +37,9 @@ export const addDataBerita = async (
     notifyAddData("Data Berita berhasil ditambahkan!");
     handleCloseModal();
     formik.resetForm();
-    // window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   } catch (error) {
     console.log(error);
   }
@@ -71,7 +73,9 @@ export const editDataBerita = async (
     notifyEdit("Data Berita Berhasil Di edit!");
     handleCloseModal();
     formik.resetForm();
-    // window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   } catch (error) {
     console.log("Error submitting form:", error);
   }

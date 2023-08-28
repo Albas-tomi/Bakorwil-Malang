@@ -16,7 +16,7 @@ const Slider = () => {
   useEffect(() => {
     const detikPerubahan = setInterval(() => {
       setIndexGambarSlide((indexGambarSlide + 1) % dataCarrousel.length);
-    }, 2000);
+    }, 8000);
     return () => {
       clearInterval(detikPerubahan);
     };
