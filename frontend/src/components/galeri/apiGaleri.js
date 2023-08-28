@@ -37,7 +37,9 @@ export const addDataGaleri = async (
     notifyAddData("Data Galeri berhasil ditambahkan!");
     handleCloseModal();
     formik.resetForm();
-    // window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   } catch (error) {
     console.log(error);
   }
@@ -71,7 +73,9 @@ export const editDataGaleri = async (
     notifyEdit("Data Galeri Berhasil Di edit!");
     handleCloseModal();
     formik.resetForm();
-    // window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   } catch (error) {
     console.log("Error submitting form:", error);
   }
