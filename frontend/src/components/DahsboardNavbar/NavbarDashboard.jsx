@@ -18,7 +18,7 @@ const NavbarDashboard = () => {
     if (pathName === "galeri") return "Galeri";
     if (pathName === "program") return "Program";
     if (pathName === "video") return "Video";
-    if (pathName === "wilayah-kerja") return "Wilayah Kerja";
+    if (pathName === "daftar-informasi-PPID") return "Daftar-Informasi-PPID";
     if (pathName === "struktur-pejabat") return "Struktur-Pejabat";
   }, [location]);
 

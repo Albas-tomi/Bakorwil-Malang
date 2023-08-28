@@ -174,7 +174,7 @@ const Sidebar = () => {
           </ul>
         )}
       </NavLink>
-      <NavLink to={"/wilayah-kerja"}>
+      <NavLink to={"/daftar-informasi-PPID"}>
         {({ isActive }) => (
           <ul
             className={`${
@@ -187,7 +187,7 @@ const Sidebar = () => {
               <TiChartAreaOutline className="h-[28px] w-[28px]" />
 
               <span className="text-start pl-8 w-full text-sm  font-medium  ">
-                Wilayah Kerja
+                Daftar Informasi PPID
               </span>
             </li>
           </ul>
