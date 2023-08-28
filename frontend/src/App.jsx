@@ -16,6 +16,7 @@ import Video from "./pages/Video";
 import Program from "./pages/Program";
 import Galeri from "./pages/Galeri";
 import NotFound from "./pages/NotFound";
+import Pejabat from "./pages/Pejabat";
 
 function App() {
   return (
@@ -41,12 +42,12 @@ function App() {
             <Route path="/video" element={<Video />} />
             <Route path="/program" element={<Program />} />
             <Route path="/galeri" element={<Galeri />} />
+            <Route path="/struktur-pejabat" element={<Pejabat />} />
           </Route>
         </Routes>
       </BrowserRouter>
     </>
   );
 }
-// }
 
 export default App;

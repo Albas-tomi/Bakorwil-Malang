@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaAddressCard, FaFeather, FaFileSignature, FaMapMarked } from 'react-icons/fa';
 import DataPegawai from '../../DataPegawai.json';
 import KotaBatu from '../../assets/image/kota-batu.png';
@@ -11,10 +11,10 @@ import KabBlitar from '../../assets/image/kab-blitar.png';
 import KabPasuruan from '../../assets/image/kab-pasuruan.png';
 import KabSidoarjo from '../../assets/image/kab-sidoarjo.png';
 import Struktur from '../../assets/image/struktur.png';
+import { getDataPejabat } from '../../getDataApi';
 
 export const Accordion = () => {
   const pns = DataPegawai.filter((kategori) => kategori.kategori === 'pns');
-  const ptt = DataPegawai.filter((kategori) => kategori.kategori === 'ptt');
   return (
     <div section="accordion" className="bg-second flex flex-col gap-y-4 px-5 md:px-10 lg:px-20 py-10">
       {/* ================== SEJARAH ================== */}
@@ -27,7 +27,7 @@ export const Accordion = () => {
           Sejarah Bakorwil
         </div>
         <div className="collapse-content">
-          <p className="text-sm md:text-base text-justify">
+          <div className="text-sm md:text-base text-justify">
             Lembaga Koordinasi Wilayah di Indonesia memiliki sejarah perkembangan yang cukup panjang, masih menjadi daerah jajahan Belanda dengan nama Hindia Belanda, system pemerintahan bersifat sentralitistis, urusan-urusan Pemerintahan
             Pusat maupun urusan Pemrintahan Daerah sampai sekecil-kecilnya diselenggarakan oleh Pemerintahan Pusat, yaitu terpusat ditangan Governeur Genaral.
             <br />
@@ -118,7 +118,7 @@ export const Accordion = () => {
             Provinsi Jawa Timur sudah berdiri 4 Bakorwil yakni di Pamekasan, Bojonegoro, Madiun, dan Malang, Gubernur Jawa Timur berkeinginan untuk merevitalisasi fungsi Bakorwil di ruanglingkup Pemerintahan Provinsi Jawa Timur. Berdasarkan
             Peraturan daerah Provinsi Jawa Timur No. 16 Tahun 2016 dan Peraturan Gubernur Jatim No. 134 tahun 2016 dibentuklah 1 Bakorwil lagi di wilayah Jember yang membawahi Kabupaten Banyuwangi, Lumajang, Situbondo, Bondowoso, dan
             Kabupaten/Kota Probolinggo.
-          </p>
+          </div>
         </div>
       </div>
       {/* ================== TUJUAN & SASARAN ================== */}
@@ -138,7 +138,8 @@ export const Accordion = () => {
         </div>
       </div>
       {/* ================== STRUKTUR BAKORWIL ================== */}
-      <div className="collapse collapse-arrow bg-base-200 pb-10">
+
+      <div className="collapse collapse-arrow bg-base-200">
         <input type="radio" name="my-accordion-2" defaultChecked />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">
           <span>
@@ -148,7 +149,7 @@ export const Accordion = () => {
         </div>
         <div className="collapse-content">
           <h1 className="text-center font-semibold text-2xl text-second mt-5">Struktur Organisasi Bakorwil III Malang</h1>
-          <img src={Struktur} alt="struktur" className="mt-5 w-[85%] mx-auto" />
+          <img src={Struktur} alt="struktur" className="mt-5 w-[80%] mx-auto pb-10" />
         </div>
       </div>
       {/* ================== Pejabat Struktural ================== */}
@@ -175,7 +176,7 @@ export const Accordion = () => {
               <tbody>
                 {/* row 1 */}
                 {pns.map((pns) => (
-                  <tr>
+                  <tr key={pns.id}>
                     <th>{pns.id}</th>
                     <td>{pns.nama}</td>
                     <td>{pns.jabatan}</td>
@@ -183,30 +184,6 @@ export const Accordion = () => {
                 ))}
               </tbody>
             </table>
-          </div>
-          <p className="text-sm text-center font-bold my-3 md:text-base">PTT-PK</p>
-          <div className="overflow-x-auto mb-5">
-            <table className="table-xs md:table">
-              {/* head */}
-              <thead>
-                <tr>
-                  <td>NAMA</td>
-                  <td>JABATAN</td>
-                </tr>
-              </thead>
-              <tbody>
-                {/* row 1 */}
-                {ptt.map((ptt) => (
-                  <tr>
-                    <td>{ptt.nama}</td>
-                    <td>{ptt.jabatan}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="text-xs text-second">
-            <p className="text-right">last update 31 desember 2023</p>
           </div>
         </div>
       </div>

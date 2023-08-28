@@ -5,18 +5,18 @@ const Accordion = () => {
     <div section="accordion" className="flex flex-col gap-y-4 p-5 md:px-10 lg:px-20 my-7">
       {/* ================== SEKERTARIAT ================== */}
       <div className="collapse collapse-arrow bg-white">
-        <input type="radio" name="my-accordion-1" checked="checked" />
+        <input type="radio" name="my-accordion-1" defaultChecked />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">Sekertariat</div>
         <div className="collapse-content">
           <ul className="list-decimal ml-5 mb-8 text-sm md:text-base">
-            <li>Rapat koordinasi, fasilitasi, dan menyinergikan tugas dan fungsi Bakorwil III Malang dengan unit pelakasana teknis dan cabang Dinas Pendidikan di seluruh wilayah kerja Bakowril III Malang tahun 2021.</li>
-            <li>Sinkronisasi, monitoring, dan evaluasi keterisian data dalam Sistem Informasi Pemerentihan Daerah (SIPD) di seluruh Kabupaten dan Kota se-wilayah kerja Bakowril III Malang tahun 2021.</li>
+            <li>Rapat koordinasi, fasilitasi, dan menyinergikan tugas dan fungsi Bakorwil III Malang dengan unit pelakasana teknis dan cabang Dinas Pendidikan di seluruh wilayah kerja Bakowril III Malang tahun 2023.</li>
+            <li>Sinkronisasi, monitoring, dan evaluasi keterisian data dalam Sistem Informasi Pemerentihan Daerah (SIPD) di seluruh Kabupaten dan Kota se-wilayah kerja Bakowril III Malang tahun 2023.</li>
           </ul>
         </div>
       </div>
       {/* ================== BIDANG PEMERINTAHAN ================== */}
       <div className="collapse collapse-arrow bg-white">
-        <input type="radio" name="my-accordion-1" checked="checked" />
+        <input type="radio" name="my-accordion-1" defaultChecked />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">Bidang Pemerintahan</div>
         <div className="collapse-content">
           <ul className="list-decimal ml-5 mb-8 text-sm md:text-base md:text-start text-justify">
@@ -37,7 +37,7 @@ const Accordion = () => {
       </div>
       {/* ================== BIDANG PEMBANGUNAN EKONOMI ================== */}
       <div className="collapse collapse-arrow bg-white">
-        <input type="radio" name="my-accordion-1" checked="checked" />
+        <input type="radio" name="my-accordion-1" defaultChecked />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">Bidang Pembangunan Ekonomi</div>
         <div className="collapse-content">
           <ul className="list-decimal ml-5 mb-8 text-sm md:text-base md:text-start text-justify">
@@ -57,13 +57,13 @@ const Accordion = () => {
       </div>
       {/* ================== BIDANG KEMASYARAKATAN ================== */}
       <div className="collapse collapse-arrow bg-white">
-        <input type="radio" name="my-accordion-1" checked="checked" />
+        <input type="radio" name="my-accordion-1" defaultChecked />
         <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">Bidang Kemasyarakatan</div>
         <div className="collapse-content">
           <ul className="list-decimal ml-5 mb-8 text-sm md:text-base md:text-start text-justify">
             <li>Kegiatan koordinasi, fasilitasi, monitoring dan evaluasi efektivitas pembelajaran tatap muka bagi siswa sekolah sewilyah kerja Bakorwil III Malang</li>
             <li>Kegiatan koordinasi, fasilitasi, monitoring dan evaluasi permasalahan tenaga kerja sewilayah kerja Bakorwil III Malang.</li>
-            <li>Kegiatan koordinasi, fasilitasi, monitoring dan evaluasi Kesejahteraan Sosial Anak dan Pemenuhan Hak Anak seta Perlindungan Khusus Anak menuju Provinsi Jawa Timur sebagai Provinsi Layak Anak (Provila) Tahun 2021.</li>
+            <li>Kegiatan koordinasi, fasilitasi, monitoring dan evaluasi Kesejahteraan Sosial Anak dan Pemenuhan Hak Anak seta Perlindungan Khusus Anak menuju Provinsi Jawa Timur sebagai Provinsi Layak Anak (Provila) Tahun 2023.</li>
             <li>Kegiatan koordinasi. fasilitasi, monitoring dan evaluasi Pembangunan Jaring Komunikasi dan Komunikasi antar OPD Ierkait Dalam Pelaksanaan Millenial Job Center.</li>
             <li>Kegiatan koordinasi, fasilitasi, monitoring dan evaluasi optimalisasi vaksinasi COVID-19 untuk target Kekebalan Kelompok/Hera Immunity.</li>
             <li>
@@ -75,8 +75,8 @@ const Accordion = () => {
       </div>
       {/* ================== BIDANG SARANA DAN PRASARANA ================== */}
       <div className="collapse collapse-arrow bg-white">
-        <input type="radio" name="my-accordion-1" checked="checked" />
-        <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">Bidang Sarana Dan Prasarana</div>
+        <input type="radio" name="my-accordion-1" defaultChecked />
+        <div className="collapse-title text-sm font-bold text-second flex items-center gap-2 md:text-lg">Bidang Sarana dan Prasarana</div>
         <div className="collapse-content">
           <ul className="list-decimal ml-5 mb-8 text-sm md:text-base md:text-start text-justify">
             <li>Kegiatan koordinasi, fasilitasi. monitoring dan evaluasi inisiasi perjanjian kerja sama pengelolaan lingkungan hidup Malang Raya.</li>

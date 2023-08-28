@@ -10,6 +10,7 @@ const beritaModel = db.define(
     deskripsi: DataTypes.STRING,
     gambar: DataTypes.STRING,
     url: DataTypes.STRING,
+    views: DataTypes.INTEGER,
   },
   {
     freezeTableName: true,
@@ -18,6 +19,6 @@ const beritaModel = db.define(
 
 export default beritaModel;
 
-// (async () => {
-//   await db.sync();
-// })();
+(async () => {
+  await db.sync();
+})();

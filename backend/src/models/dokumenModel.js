@@ -9,6 +9,7 @@ const dokumenModel = db.define(
     judul: DataTypes.STRING,
     link: DataTypes.STRING,
     kategori: DataTypes.STRING,
+    tahun: DataTypes.STRING,
   },
   {
     freezeTableName: true,

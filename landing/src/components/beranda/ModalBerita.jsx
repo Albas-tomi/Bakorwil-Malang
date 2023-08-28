@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ModalBerita = ({ pickOfBerita }) => {
   return (
@@ -20,11 +21,14 @@ const ModalBerita = ({ pickOfBerita }) => {
             {pickOfBerita.judul}
           </h3>
           <div
-            className="text-justify mx-auto"
+            className="text-justify mx-auto line-clamp-3"
             dangerouslySetInnerHTML={{
               __html: pickOfBerita.deskripsi,
             }}
           />
+          <Link to={"/berita"} className="text-primer">
+            selengkanya
+          </Link>
         </form>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

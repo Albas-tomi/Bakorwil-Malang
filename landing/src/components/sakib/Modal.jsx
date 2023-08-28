@@ -1,23 +1,69 @@
-import { data } from 'autoprefixer';
-import React from 'react';
-import { FaDownload } from 'react-icons/fa6';
-import Dokumen from '../../Dokumen.json';
+import React from "react";
+import { FaDownload } from "react-icons/fa6";
+import { useState } from "react";
+import { useEffect } from "react";
+import { getDataDokumen } from "../../getDataApi";
 
 const Modal = () => {
-  const dataRS = Dokumen.filter((kategori) => kategori.kategori === 'RS');
-  const dataRK = Dokumen.filter((kategori) => kategori.kategori === 'RK');
-  const dataRA = Dokumen.filter((kategori) => kategori.kategori === 'RA');
+  const [dataDokumen, setDataDokumen] = useState([]);
+
+  useEffect(() => {
+    getDataDokumen().then((data) => {
+      setDataDokumen(data);
+    });
+  }, []);
+
+  const dokRencanaStrategis = dataDokumen.filter(
+    (dokumen) => dokumen.kategori === "Rencana Strategis"
+  );
+  const dokRencanaAksi = dataDokumen.filter(
+    (dokumen) => dokumen.kategori === "Rencana Aksi"
+  );
+  const dokRencanaKerja = dataDokumen.filter(
+    (dokumen) => dokumen.kategori === "Rencana Kerja"
+  );
+  const dokIndikatorKinerjaUtama = dataDokumen.filter(
+    (dokumen) => dokumen.kategori === "Indikator Kinerja Utama"
+  );
+  const dokPohonKinerja = dataDokumen.filter(
+    (dokumen) => dokumen.kategori === "Pohon Kinerja"
+  );
+  const dokLaporanKinerja = dataDokumen.filter(
+    (dokumen) => dokumen.kategori === "Laporan Kinerja"
+  );
+  const dokEvaluasiInternal = dataDokumen.filter(
+    (dokumen) => dokumen.kategori === "Evaluasi Internal"
+  );
+  const dokPerjanjianKinerja = dataDokumen.filter(
+    (dokumen) => dokumen.kategori === "Perjanjian Kinerja"
+  );
+  const dokPengukuranKinerja = dataDokumen.filter(
+    (dokumen) => dokumen.kategori === "Pengukuran Kinerja"
+  );
+  const dokReformasiBirokrasi = dataDokumen.filter(
+    (dokumen) => dokumen.kategori === "Reformasi Birokrasi"
+  );
 
   return (
     <div>
       {/* ===================== RENCANA STRATEGIS ===================== */}
       <dialog id="rencana_strategis" className="modal">
         <form method="dialog" className="modal-box">
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          <h3 className="font-bold text-base">Unduh Document Rencana Strategis</h3>
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
+          <h3 className="font-bold text-base">
+            Unduh Document Rencana Strategis
+          </h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
-            {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+            {dokRencanaStrategis.map((rs) => (
+              <a
+                key={rs.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={rs.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>
@@ -31,11 +77,19 @@ const Modal = () => {
       {/* ===================== RENCANA KERJA ===================== */}
       <dialog id="rencana_kerja" className="modal">
         <form method="dialog" className="modal-box">
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
           <h3 className="font-bold text-base">Unduh Document Rencana Kerja</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
-            {dataRK.map((rk) => (
-              <a target="_blank" rel="noopener noreferrer" href={rk.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+            {dokRencanaKerja.map((rk) => (
+              <a
+                key={rk.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={rk.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>
@@ -49,11 +103,19 @@ const Modal = () => {
       {/* ===================== RENCANA AKSI ===================== */}
       <dialog id="rencana_aksi" className="modal">
         <form method="dialog" className="modal-box">
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
           <h3 className="font-bold text-base">Unduh Document Rencana Aksi</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
-            {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+            {dokRencanaAksi.map((rs) => (
+              <a
+                key={rs.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={rs.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>
@@ -67,11 +129,21 @@ const Modal = () => {
       {/* ===================== INDIKATOR KINERJA UTAMA ===================== */}
       <dialog id="iku" className="modal">
         <form method="dialog" className="modal-box">
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          <h3 className="font-bold text-base">Unduh Document Indikator Kinerja Utama</h3>
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
+          <h3 className="font-bold text-base">
+            Unduh Document Indikator Kinerja Utama
+          </h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
-            {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+            {dokIndikatorKinerjaUtama.map((rs) => (
+              <a
+                key={rs.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={rs.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>
@@ -85,11 +157,19 @@ const Modal = () => {
       {/* ===================== POHON KINERJA ===================== */}
       <dialog id="pohon_kinerja" className="modal">
         <form method="dialog" className="modal-box">
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
           <h3 className="font-bold text-base">Unduh Documen Pohon Kinerja</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
-            {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+            {dokPohonKinerja.map((rs) => (
+              <a
+                key={rs.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={rs.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>
@@ -103,11 +183,21 @@ const Modal = () => {
       {/* ===================== PERJANJIAN KINERJA ===================== */}
       <dialog id="perjanjian_kinerja" className="modal">
         <form method="dialog" className="modal-box">
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          <h3 className="font-bold text-base">Unduh Documen perjanjian Kinerja</h3>
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
+          <h3 className="font-bold text-base">
+            Unduh Documen perjanjian Kinerja
+          </h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
-            {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+            {dokPerjanjianKinerja.map((rs) => (
+              <a
+                key={rs.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={rs.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>
@@ -121,11 +211,19 @@ const Modal = () => {
       {/* ===================== LAPORAN KINERJA ===================== */}
       <dialog id="laporan_kinerja" className="modal">
         <form method="dialog" className="modal-box">
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
           <h3 className="font-bold text-base">Unduh Documen Laporan Kinerja</h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
-            {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+            {dokLaporanKinerja.map((rs) => (
+              <a
+                key={rs.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={rs.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>
@@ -139,11 +237,21 @@ const Modal = () => {
       {/* ===================== EVALUASI INTERNAL ===================== */}
       <dialog id="evaluasi_internal" className="modal">
         <form method="dialog" className="modal-box">
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          <h3 className="font-bold text-base">Unduh Documen Evaluasi Internal</h3>
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
+          <h3 className="font-bold text-base">
+            Unduh Documen Evaluasi Internal
+          </h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
-            {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+            {dokEvaluasiInternal.map((rs) => (
+              <a
+                key={rs.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={rs.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>
@@ -157,11 +265,21 @@ const Modal = () => {
       {/* ===================== PENGUKURAN KINERJA ===================== */}
       <dialog id="pengukuran_kinerja" className="modal">
         <form method="dialog" className="modal-box">
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          <h3 className="font-bold text-base">Unduh Documen Pengukuran Kinerja</h3>
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
+          <h3 className="font-bold text-base">
+            Unduh Documen Pengukuran Kinerja
+          </h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
-            {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+            {dokPengukuranKinerja.map((rs) => (
+              <a
+                key={rs.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={rs.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>
@@ -175,11 +293,21 @@ const Modal = () => {
       {/* ===================== REFORMASI BIROKRASI ===================== */}
       <dialog id="reformasi_birokrasi" className="modal">
         <form method="dialog" className="modal-box">
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          <h3 className="font-bold text-base">Unduh Documen Reformasi Birokrasi</h3>
+          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+            ✕
+          </button>
+          <h3 className="font-bold text-base">
+            Unduh Documen Reformasi Birokrasi
+          </h3>
           <div className="grid grid-cols-2 gap-2 mt-4">
-            {dataRS.map((rs) => (
-              <a target="_blank" rel="noopener noreferrer" href={rs.link} className="btn bg-second hover:bg-birumuda text-white font-thin text-sm">
+            {dokReformasiBirokrasi.map((rs) => (
+              <a
+                key={rs.id}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={rs.link}
+                className="btn bg-second hover:bg-birumuda text-white font-thin text-sm"
+              >
                 <span>
                   <FaDownload />
                 </span>

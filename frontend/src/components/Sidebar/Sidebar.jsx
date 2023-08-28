@@ -6,7 +6,7 @@ import Logo from "../../assets/img/logopemrov.png";
 import { TfiAnnouncement, TfiImage } from "react-icons/tfi";
 import { TiDocumentText, TiNews, TiChartAreaOutline } from "react-icons/ti";
 import { RiGovernmentLine } from "react-icons/ri";
-import { GoVideo } from "react-icons/go";
+import { GoVersions, GoVideo } from "react-icons/go";
 import { HiOutlinePhotograph } from "react-icons/hi";
 import { AiOutlineProject } from "react-icons/ai";
 
@@ -188,6 +188,25 @@ const Sidebar = () => {
 
               <span className="text-start pl-8 w-full text-sm  font-medium  ">
                 Wilayah Kerja
+              </span>
+            </li>
+          </ul>
+        )}
+      </NavLink>
+      <NavLink to={"/struktur-pejabat"}>
+        {({ isActive }) => (
+          <ul
+            className={`${
+              isActive
+                ? "w-full py-4 bg-slate-100 border-r-4 border-blue-800 text-blue-500"
+                : "w-full py-4 text-slate-300 "
+            } cursor-pointer`}
+          >
+            <li className="flex mx-auto w-full pl-11 text-start justify-center items-center mr-10">
+              <GoVersions className="h-[28px] w-[28px]" />
+
+              <span className="text-start pl-8 w-full text-sm  font-medium  ">
+                Struktur Pejabat
               </span>
             </li>
           </ul>

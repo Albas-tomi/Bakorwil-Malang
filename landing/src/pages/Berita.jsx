@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "../components/berita/Card";
 import ReactPaginate from "react-paginate";
-import Data from "../Data.json";
 import { Modal } from "../components/berita/Modal";
 import { getDataBerita } from "../getDataApi";
 const Berita = () => {
@@ -12,7 +11,6 @@ const Berita = () => {
       setDataBerita(data);
     });
   }, []);
-
   // =========== STATE FOR DATA CARD ===========
   const [data, setData] = useState([]);
   const Get = (dataKlik) => {
@@ -42,7 +40,7 @@ const Berita = () => {
             .slice(0, card)
             .slice(currentPage, currentPage + beritaPerPage)
             .map((beritaData) => (
-              <Card beritaData={beritaData} Get={Get} />
+              <Card key={beritaData.id} beritaData={beritaData} Get={Get} />
             ))}
         </div>
         {/* =============== PAGINATION =============== */}

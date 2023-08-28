@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import { FaClock, FaEye } from "react-icons/fa6";
+import dayjs from "dayjs";
+import { editDataBerita } from "../../getDataApi";
 
 export const Card = ({ beritaData, Get }) => {
-  const [kunjungan, setKunjungan] = useState(0);
-  const urlImg = "http://localhost:4000/beritaImg/";
-
-  const handleKunjunganIncrement = (id) => {
-    setKunjungan((prevKunjungan) => ({
-      ...prevKunjungan,
-      [id]: (prevKunjungan[id] || 0) + 1,
-    }));
+  // ===================Menambahkan Jumlah Lihat Page ===================
+  const [kunjungan, setKunjungan] = useState(beritaData.views || 0);
+  const handleIncrementViews = () => {
+    const formData = new FormData();
+    formData.append("views", kunjungan + 1);
+    editDataBerita(beritaData, formData);
+    setKunjungan(kunjungan + 1);
   };
+  const urlImg = "http://localhost:4000/beritaImg/";
   return (
     <>
       <div
@@ -25,11 +27,12 @@ export const Card = ({ beritaData, Get }) => {
         </figure>
         <div className="card-body flex gap-1">
           <span className="text-primer text-xs flex items-center gap-1">
-            <FaClock /> {beritaData.createdAt}
+            <FaClock />
+            {dayjs(beritaData.createdAt).format("DD MMM YYYY")}
           </span>
           <p className="capitalize">
-            {beritaData.judul.substring(0, 60)}
-            <span> </span>
+            {beritaData.judul.substring(0, 30)}
+            <span>...</span>
             {/* =========== MODAL =========== */}
             <button
               onClick={() => {
@@ -41,7 +44,7 @@ export const Card = ({ beritaData, Get }) => {
                   judul: beritaData.judul,
                   deskripsi: beritaData.deskripsi,
                 });
-                handleKunjunganIncrement(beritaData.id);
+                handleIncrementViews(beritaData.id);
               }}
             >
               <a className="text-primer">selengkanya</a>
@@ -49,7 +52,7 @@ export const Card = ({ beritaData, Get }) => {
           </p>
           <p className="text-xs text-second flex items-center gap-2 right-0 bottom-0 absolute pr-5 pb-2">
             <FaEye />
-            {kunjungan[beritaData.id] || 0}
+            {kunjungan}
           </p>
         </div>
       </div>

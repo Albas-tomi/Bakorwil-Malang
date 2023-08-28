@@ -2,7 +2,6 @@ import React from "react";
 
 const ModalGaleri = ({ pickOfGaleri }) => {
   const urlImg = "http://localhost:4000/galeriImg/";
-  console.log(pickOfGaleri);
 
   return (
     <>
@@ -16,7 +15,7 @@ const ModalGaleri = ({ pickOfGaleri }) => {
             <img
               src={`${urlImg}${pickOfGaleri.gambar}`}
               alt=""
-              className="shadow-xl "
+              className="shadow-xl  max-w-3xl"
             />
           </figure>
         </form>
