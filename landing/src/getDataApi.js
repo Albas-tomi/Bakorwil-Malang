@@ -44,7 +44,6 @@ export const editDataBerita = async (beritaData, formData) => {
         },
       }
     );
-    // window.location.reload();
   } catch (error) {
     console.log("Error submitting form:", error.message);
   }

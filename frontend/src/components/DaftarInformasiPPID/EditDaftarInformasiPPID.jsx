@@ -8,7 +8,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 const Schema = Yup.object({
   judul: Yup.string().required(),
-  deskripsi: Yup.string().required(),
+  deskripsi: Yup.string(),
   jenisKategori: Yup.string().required(),
   link: Yup.string().required(),
   kategori: Yup.string().required(),
@@ -18,7 +18,6 @@ const editDaftarInformasiPPID = ({
   pickOfDaftarInformasiPPIDEdit,
   handleEditDaftarInformasiPPID,
 }) => {
-  console.log(pickOfDaftarInformasiPPIDEdit);
   const [editor, setEditor] = useState(null);
 
   const handleCloseModal = () => {
@@ -102,7 +101,7 @@ const editDaftarInformasiPPID = ({
 
           <div className="mb-3 rounded-md">
             <label className="text-xl" htmlFor="deskripsi">
-              Deskripsi Dokumen
+              Deskripsi Dokumen / Tahun Terbit
             </label>
             {formik.errors.deskripsi && formik.touched.deskripsi && (
               <p className="mt-1 text-red-500 max-[640px]:text-sm">
@@ -166,6 +165,15 @@ const editDaftarInformasiPPID = ({
               <option value="D">D</option>
               <option value="E">E</option>
               <option value="F">F</option>
+              <option value="G">G</option>
+              <option value="H">H</option>
+              <option value="I">I</option>
+              <option value="J">J</option>
+              <option value="K">K</option>
+              <option value="L">L</option>
+              <option value="M">M</option>
+              <option value="N">N</option>
+              <option value="O">O</option>
             </select>
           </div>
 

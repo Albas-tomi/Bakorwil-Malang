@@ -10,25 +10,25 @@ export const Accordion = () => {
     });
   }, []);
 
-  // ==================INFORMASI SERTA MERTA ==================
+  // ==================INFORMASI BERKALA ==================
   const informasiBerkala = dataDokumenPPID.filter(
     (kategori) => kategori.kategori === "Informasi Berkala"
   );
 
-  // ==================INFORMASI SERTA MERTA ==================
+  // ==================INFORMASI BERKALA ==================
 
   // ==================INFORMASI SERTA MERTA ==================
   const informasiSertaMerta = dataDokumenPPID.filter(
     (kategori) => kategori.kategori === "Informasi Serta Merta"
   );
+  // ==================INFORMASI SETIAP SAAT ==================
 
+  // ==================INFORMASI SETIAP SAAT ==================
+  const informasiSetiapSaat = dataDokumenPPID.filter(
+    (kategori) => kategori.kategori === "Informasi Setiap Saat"
+  );
   // ==================INFORMASI SERTA MERTA ==================
 
-  const dataA = dataPPID.filter((kategori) => kategori.kategori === "A");
-  const dataB = dataPPID.filter((kategori) => kategori.kategori === "B");
-  const dataISM = dataPPID.filter(
-    (pages) => pages.pages === "informasi serta merta"
-  );
   const dataISS = dataPPID.filter(
     (pages) => pages.pages === "informasi setiap saat"
   );
@@ -60,8 +60,16 @@ export const Accordion = () => {
                       <th>{(idx += 1)}</th>
                       <td>{dataA.judul}</td>
                       <td>
-                        <a target="_blank" href={dataA.link}>
-                          View
+                        <a
+                          className="text-birumuda"
+                          target="_blank"
+                          href={dataA.link}
+                        >
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html: dataA.deskripsi,
+                            }}
+                          />
                         </a>
                       </td>
                     </tr>
@@ -83,7 +91,17 @@ export const Accordion = () => {
                       <th>{(idx += 1)}</th>
                       <td>{B.judul}</td>
                       <td>
-                        <a href={B.link}></a>
+                        <a
+                          className="text-birumuda"
+                          target="_blank"
+                          href={B.link}
+                        >
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: B.deskripsi.substring(0, 70),
+                            }}
+                          />
+                        </a>
                       </td>
                     </tr>
                   ))}
@@ -96,6 +114,29 @@ export const Accordion = () => {
                     dijalankan beserta capaiannya
                   </td>
                 </tr>
+                {informasiBerkala
+                  .filter(
+                    (jenisKategori) => jenisKategori.jenisKategori === "C"
+                  )
+                  .map((C, idx) => (
+                    <tr key={idx}>
+                      <th>{(idx += 1)}</th>
+                      <td>{C.judul}</td>
+                      <td>
+                        <a
+                          className="text-birumuda"
+                          target="_blank"
+                          href={C.link}
+                        >
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: C.deskripsi.substring(0, 70),
+                            }}
+                          />
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
                 {/* row D */}
                 <tr className="font-bold">
                   <th>D</th>
@@ -103,11 +144,58 @@ export const Accordion = () => {
                     Ringkasan laporan keuangan, yang meliputi :
                   </td>
                 </tr>
+                {informasiBerkala
+                  .filter(
+                    (jenisKategori) => jenisKategori.jenisKategori === "D"
+                  )
+                  .map((C, idx) => (
+                    <tr key={idx}>
+                      <th>{(idx += 1)}</th>
+                      <td>{C.judul}</td>
+                      <td>
+                        <a
+                          className="text-birumuda"
+                          target="_blank"
+                          href={C.link}
+                        >
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: C.deskripsi.substring(0, 70),
+                            }}
+                          />
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+
                 {/* row E */}
                 <tr className="font-bold">
                   <th>E</th>
                   <td colSpan="3">Ringkasan laporan akses Informasi Publik</td>
                 </tr>
+                {informasiBerkala
+                  .filter(
+                    (jenisKategori) => jenisKategori.jenisKategori === "E"
+                  )
+                  .map((C, idx) => (
+                    <tr key={idx}>
+                      <th>{(idx += 1)}</th>
+                      <td>{C.judul}</td>
+                      <td>
+                        <a
+                          className="text-birumuda"
+                          target="_blank"
+                          href={C.link}
+                        >
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: C.deskripsi.substring(0, 70),
+                            }}
+                          />
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
                 {/* row F */}
                 <tr className="font-bold">
                   <th>F</th>
@@ -117,6 +205,29 @@ export const Accordion = () => {
                     dikeluarkan oleh Badan Publik
                   </td>
                 </tr>
+                {informasiBerkala
+                  .filter(
+                    (jenisKategori) => jenisKategori.jenisKategori === "F"
+                  )
+                  .map((C, idx) => (
+                    <tr key={idx}>
+                      <th>{(idx += 1)}</th>
+                      <td>{C.judul}</td>
+                      <td>
+                        <a
+                          className="text-birumuda"
+                          target="_blank"
+                          href={C.link}
+                        >
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: C.deskripsi.substring(0, 70),
+                            }}
+                          />
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>
@@ -131,31 +242,98 @@ export const Accordion = () => {
         <div className="collapse-content">
           <div className="overflow-x-auto">
             <table className="table table-xs md:table-md">
-              {/* head */}
               <tbody>
+                {/* Row A*/}
                 <tr className="font-bold">
                   <th>A</th>
                   <td>Informasi tentang profile Badan Publik :</td>
                 </tr>
-                {informasiSertaMerta.map((ism, idx) => (
-                  <tr key={idx}>
-                    <th>{(idx += 1)}</th>
-                    <td className="flex gap-3 justify-center items-center">
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: ism.deskripsi,
-                        }}
-                      />
-                      <a
-                        className="font-extrabold text-birumuda"
-                        href={ism.link}
-                        target="_blank"
-                      >
-                        View
-                      </a>
-                    </td>
-                  </tr>
-                ))}
+                {informasiSertaMerta
+                  .filter(
+                    (jenisKategori) => jenisKategori.jenisKategori === "A"
+                  )
+                  .map((C, idx) => (
+                    <tr key={idx}>
+                      <th>{(idx += 1)}</th>
+                      <td>{C.judul}</td>
+                      <td>
+                        <a
+                          className="text-birumuda"
+                          target="_blank"
+                          href={C.link}
+                        >
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: C.deskripsi.substring(0, 70),
+                            }}
+                          />
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                {/* row B */}
+                <tr className="font-bold">
+                  <th>B</th>
+                  <th>
+                    Informasi yang dapat mengancam hajat hidup orang banyak dan
+                    ketertiban umum sebagaimana dimaksud pada ayat (1) meliputi
+                    antara lain
+                  </th>
+                </tr>
+                {informasiSertaMerta
+                  .filter(
+                    (jenisKategori) => jenisKategori.jenisKategori === "B"
+                  )
+                  .map((C, idx) => (
+                    <tr key={idx}>
+                      <th>{(idx += 1)}</th>
+                      <td>{C.judul}</td>
+                      <td>
+                        <a
+                          className="text-birumuda"
+                          target="_blank"
+                          href={C.link}
+                        >
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: C.deskripsi.substring(0, 70),
+                            }}
+                          />
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                {/* row C */}
+                <tr className="font-bold">
+                  <th>C</th>
+                  <th>
+                    Standar pengumuman informasi sebagaimana dimaksud pada ayat
+                    (1) sekurang kurangnya meliputi :
+                  </th>
+                </tr>
+                {informasiSertaMerta
+                  .filter(
+                    (jenisKategori) => jenisKategori.jenisKategori === "C"
+                  )
+                  .map((C, idx) => (
+                    <tr key={idx}>
+                      <th>{(idx += 1)}</th>
+                      <td>{C.judul}</td>
+                      <td>
+                        <a
+                          className="text-birumuda"
+                          target="_blank"
+                          href={C.link}
+                        >
+                          <span
+                            dangerouslySetInnerHTML={{
+                              __html: C.deskripsi.substring(0, 70),
+                            }}
+                          />
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </div>
@@ -170,19 +348,32 @@ export const Accordion = () => {
         <div className="collapse-content">
           <div className="overflow-x-auto">
             <table className="table table-xs md:table-md">
-              {/* head */}
+              {/* Row A */}
               <tbody>
                 <tr className="font-bold">
-                  <th>A</th>
-                  <td>
+                  <th></th>
+                  <th>
                     Setiap Badan Publik wajib menyediakan informasi setiap saat
                     yang sekurang kurangnya terdiri atas:
-                  </td>
+                  </th>
                 </tr>
-                {dataISS.map((iss, idx) => (
-                  <tr key={idx} className="ml-8">
-                    <th>{iss.no}</th>
-                    <td>{iss.judul}</td>
+                {informasiSetiapSaat.map((C, idx) => (
+                  <tr key={idx}>
+                    <th>{(idx += 1)}</th>
+                    <td>{C.judul}</td>
+                    <td>
+                      <a
+                        className="text-birumuda"
+                        target="_blank"
+                        href={C.link}
+                      >
+                        <span
+                          dangerouslySetInnerHTML={{
+                            __html: C.deskripsi.substring(0, 70),
+                          }}
+                        />
+                      </a>
+                    </td>
                   </tr>
                 ))}
               </tbody>
