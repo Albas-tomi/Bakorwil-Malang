@@ -34,7 +34,7 @@ const CardGaleri = ({ setPickOfGaleri }) => {
               className="object-cover h-28 md:h-40 lg:h-64"
             />
             <div className="absolute bottom-0 w-full text-center text-white font-medium text-xs lg:text-sm py-2 bg-neutral-900 bg-opacity-50 capitalize">
-              {dataGaleri.judul}
+              {dataGaleri.judul.substring(0, 60)}
             </div>
           </label>
         ))}

@@ -93,7 +93,7 @@ const DaftarInformasiPPIDList = () => {
                     <div
                       className="line-clamp-2"
                       dangerouslySetInnerHTML={{
-                        __html: DaftarInformasiPPID.deskripsi,
+                        __html: DaftarInformasiPPID.deskripsi.substring(0, 50),
                       }}
                     />
                   </td>
@@ -104,7 +104,7 @@ const DaftarInformasiPPIDList = () => {
                       target="_blank"
                       href={DaftarInformasiPPID.link}
                     >
-                      {DaftarInformasiPPID.judul}
+                      {DaftarInformasiPPID.judul.substring(0, 50)}
                     </a>
                   </td>
                   <td>{DaftarInformasiPPID.kategori}</td>
