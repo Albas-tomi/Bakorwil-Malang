@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import dataPPID from "../../DataPPID.json";
 import { getDataDaftarInformasiPPID } from "../../getDataApi";
 
 export const Accordion = () => {
@@ -28,10 +27,6 @@ export const Accordion = () => {
     (kategori) => kategori.kategori === "Informasi Setiap Saat"
   );
   // ==================INFORMASI SERTA MERTA ==================
-
-  const dataISS = dataPPID.filter(
-    (pages) => pages.pages === "informasi setiap saat"
-  );
 
   return (
     <div id="daftar" section="accordion" className="grid gap-y-4 p-5">

@@ -28,19 +28,22 @@ const Footer = () => {
             <a
               href="https://jdih.jatimprov.go.id/"
               target="_blank"
-              rel="noreferrer">
+              rel="noreferrer"
+            >
               <img src={LogoJdihn} alt="" className="w-20" />
             </a>
             <a
               href="https://lpse.jatimprov.go.id/eproc4"
               target="_blank"
-              rel="noreferrer">
+              rel="noreferrer"
+            >
               <img src={LogoLpse} alt="" className="w-20" />
             </a>
             <a
               href="https://jatim.lapor.go.id/instansi/badan-koordinasi-wilayah-pemerintahan-dan-pembangunan-iii-malang-pemerintah-provinsi-jawa-timur/"
               target="_blank"
-              rel="noreferrer">
+              rel="noreferrer"
+            >
               <img src={LogoLapor} alt="" className="w-20" />
             </a>
           </div>
@@ -53,7 +56,8 @@ const Footer = () => {
             href="https://maps.app.goo.gl/JRkBeyETKrHQNp4M7"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex gap-3 mt-3">
+            className="flex gap-3 mt-3"
+          >
             <FaLocationDot className="self-center" />
             <div className="font-light">
               Jl. Simpang Ijen No. 2 Oro-oro Dowo,
@@ -71,7 +75,8 @@ const Footer = () => {
           </a>
           <a
             href="mailto:bakorwilmalang@jatimprov.go.id"
-            className="flex gap-3">
+            className="flex gap-3"
+          >
             <FaEnvelope className="self-center" />
             <div className="font-light">
               bakorwilmalang@jatimprov.go.id
@@ -83,7 +88,8 @@ const Footer = () => {
             href="https://wa.me/+6281937065659"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex gap-3">
+            className="flex gap-3"
+          >
             <FaClipboardUser className="self-center" />
             <div className="font-light">
               Pak Wildan (0819 3706 5659)
@@ -95,7 +101,8 @@ const Footer = () => {
             href="https://wa.me/+6281615679629"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex gap-3">
+            className="flex gap-3"
+          >
             <FaClipboardUser className="self-center" />
             <div className="font-light">
               Pak Minarno (0816 1567 9629)
@@ -109,7 +116,8 @@ const Footer = () => {
           <h1 className="font-medium text-sm mx-auto">BAKORWIL JATIM</h1>
           <a
             href="http://www.bakorwilmadiun.jatimprov.go.id/"
-            className="flex gap-3 mt-3">
+            className="flex gap-3 mt-3"
+          >
             <FaGlobe className="self-center" />
             <div className="font-light">
               Bakorwil Madiun
@@ -118,7 +126,8 @@ const Footer = () => {
           </a>
           <a
             href="https://bakorwilbojonegoro.jatimprov.go.id/"
-            className="flex gap-3">
+            className="flex gap-3"
+          >
             <FaGlobe className="self-center" />
             <div className="font-light">
               Bakorwil Bojonegoro
@@ -127,7 +136,8 @@ const Footer = () => {
           </a>
           <a
             href="https://bakorwilpamekasan.jatimprov.go.id/"
-            className="flex gap-3">
+            className="flex gap-3"
+          >
             <FaGlobe className="self-center" />
             <div className="font-light">
               Bakorwil Pamekasan
@@ -136,7 +146,8 @@ const Footer = () => {
           </a>
           <a
             href="https://bakorwiljember.jatimprov.go.id/"
-            className="flex gap-3">
+            className="flex gap-3"
+          >
             <FaGlobe className="self-center" />
             <div className="font-light">
               Bakorwil Jember
@@ -152,30 +163,34 @@ const Footer = () => {
           <a
             href="https://www.instagram.com/bakorwilmalang/"
             target="_blank"
-            rel="noreferrer">
+            rel="noreferrer"
+          >
             <FaInstagram />
           </a>
           <a
             href="https://www.facebook.com/bakorwil.malang.7/"
             target="_blank"
-            rel="noreferrer">
+            rel="noreferrer"
+          >
             <FaFacebook />
           </a>
           <a
             href="https://twitter.com/BakorwilMalang"
             target="_blank"
-            rel="noreferrer">
+            rel="noreferrer"
+          >
             <FaTwitter />
           </a>
           <a
             href="mailto:bakorwilmalang@jatimprov.go.id?Subject=Mau%20tanya"
             target="_blank"
-            rel="noreferrer">
+            rel="noreferrer"
+          >
             <FaEnvelope />
           </a>
         </div>
         <div className="text-sm md:text-base font-medium text-white text-center mt-5 md:mt-0">
-          Copyright © 2022. Bakorwil Malang
+          Copyright © 2023. Bakorwil Malang / @forech_id
         </div>
       </div>
     </>

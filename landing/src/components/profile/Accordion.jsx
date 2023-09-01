@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   FaAddressCard,
   FaFeather,
   FaFileSignature,
   FaMapMarked,
 } from "react-icons/fa";
-import DataPegawai from "../../DataPegawai.json";
 import KotaBatu from "../../assets/image/kota-batu.png";
 import KotaMalang from "../../assets/image/kota-malang.png";
 import KotaBlitar from "../../assets/image/kota-blitar.png";
@@ -17,10 +16,16 @@ import KabPasuruan from "../../assets/image/kab-pasuruan.png";
 import KabSidoarjo from "../../assets/image/kab-sidoarjo.png";
 import Struktur from "../../assets/image/struktur.png";
 import { getDataPejabat } from "../../getDataApi";
+import { useEffect } from "react";
+import { useState } from "react";
 
 export const Accordion = () => {
-  
- const pns = DataPegawai.filter((kategori) => kategori.kategori === 'pns');
+  const [dataPejabat, setDataPejabat] = useState([]);
+  useEffect(() => {
+    getDataPejabat().then((data) => {
+      setDataPejabat(data);
+    });
+  }, []);
   return (
     <div
       section="accordion"
@@ -270,7 +275,6 @@ export const Accordion = () => {
           Pejabat Struktural
         </div>
         <div className="collapse-content">
-          <p className="text-sm text-center font-bold md:text-base">PNS</p>
           <div className="overflow-x-auto">
             <table className="table-xs md:table">
               {/* head */}
@@ -283,9 +287,9 @@ export const Accordion = () => {
               </thead>
               <tbody>
                 {/* row 1 */}
-                {pns.map((pns) => (
+                {dataPejabat.map((pns, idx) => (
                   <tr key={pns.id}>
-                    <th>{pns.id}</th>
+                    <th>{(idx += 1)}</th>
                     <td>{pns.nama}</td>
                     <td>{pns.jabatan}</td>
                   </tr>
