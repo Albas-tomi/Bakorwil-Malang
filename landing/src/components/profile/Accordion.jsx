@@ -1,21 +1,32 @@
-import React, { useEffect, useState } from 'react';
-import { FaAddressCard, FaFeather, FaFileSignature, FaMapMarked } from 'react-icons/fa';
-import DataPegawai from '../../DataPegawai.json';
-import KotaBatu from '../../assets/image/kota-batu.png';
-import KotaMalang from '../../assets/image/kota-malang.png';
-import KotaBlitar from '../../assets/image/kota-blitar.png';
-import KotaPasuruan from '../../assets/image/kota-pasuruan.png';
-import KotaSurabaya from '../../assets/image/kota-surabaya.png';
-import KabMalang from '../../assets/image/kab-malang.png';
-import KabBlitar from '../../assets/image/kab-blitar.png';
-import KabPasuruan from '../../assets/image/kab-pasuruan.png';
-import KabSidoarjo from '../../assets/image/kab-sidoarjo.png';
-import Struktur from '../../assets/image/struktur.png';
-import { getDataPejabat } from '../../getDataApi';
+import React from "react";
+import {
+  FaAddressCard,
+  FaFeather,
+  FaFileSignature,
+  FaMapMarked,
+} from "react-icons/fa";
+import KotaBatu from "../../assets/image/kota-batu.png";
+import KotaMalang from "../../assets/image/kota-malang.png";
+import KotaBlitar from "../../assets/image/kota-blitar.png";
+import KotaPasuruan from "../../assets/image/kota-pasuruan.png";
+import KotaSurabaya from "../../assets/image/kota-surabaya.png";
+import KabMalang from "../../assets/image/kab-malang.png";
+import KabBlitar from "../../assets/image/kab-blitar.png";
+import KabPasuruan from "../../assets/image/kab-pasuruan.png";
+import KabSidoarjo from "../../assets/image/kab-sidoarjo.png";
+import Struktur from "../../assets/image/struktur.png";
+import { getDataPejabat } from "../../getDataApi";
+import { useEffect } from "react";
+import { useState } from "react";
+
 
 export const Accordion = () => {
-  
- const pns = DataPegawai.filter((kategori) => kategori.kategori === 'pns');
+  const [dataPejabat, setDataPejabat] = useState([]);
+  useEffect(() => {
+    getDataPejabat().then((data) => {
+      setDataPejabat(data);
+    });
+  }, []);
   return (
     <div section="accordion" className="bg-second flex flex-col gap-y-4 px-5 md:px-10 lg:px-20 py-10">
       {/* ================== SEJARAH ================== */}
@@ -163,7 +174,6 @@ export const Accordion = () => {
           Pejabat Struktural
         </div>
         <div className="collapse-content">
-          <p className="text-sm text-center font-bold md:text-base">PNS</p>
           <div className="overflow-x-auto">
             <table className="table-xs md:table">
               {/* head */}
@@ -176,9 +186,9 @@ export const Accordion = () => {
               </thead>
               <tbody>
                 {/* row 1 */}
-                {pns.map((pns) => (
+                {dataPejabat.map((pns, idx) => (
                   <tr key={pns.id}>
-                    <th>{pns.id}</th>
+                    <th>{(idx += 1)}</th>
                     <td>{pns.nama}</td>
                     <td>{pns.jabatan}</td>
                   </tr>

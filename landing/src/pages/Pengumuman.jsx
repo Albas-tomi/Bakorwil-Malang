@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "../components/pengumuman/Card";
 import ReactPaginate from "react-paginate";
-import Data from "../Data.json";
 import { Modal } from "../components/pengumuman/Modal";
 import { getDataPengumuman } from "../getDataApi";
 

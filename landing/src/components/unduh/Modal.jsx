@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { FaDownload } from "react-icons/fa6";
-import Dokumen from "../../Dokumen.json";
 import { useState } from "react";
 import { getDataDaftarInformasiPPID } from "../../getDataApi.js";
 
