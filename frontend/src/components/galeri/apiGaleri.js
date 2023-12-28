@@ -1,13 +1,14 @@
 import axios from "axios";
+const API_ENDPOINTS_BAKORWIL = import.meta.env.VITE_APP_DOMAIN;
 
 export const getGaleri = async () => {
-  const res = await axios.get("http://localhost:4000/galeri");
+  const res = await axios.get(`${API_ENDPOINTS_BAKORWIL}/galeri`);
   return res.data;
 };
 
 export const deleteGaleri = async (id, setDataGaleri, notifyDelete) => {
   try {
-    await axios.delete(`http://localhost:4000/galeri/${id}`);
+    await axios.delete(`${API_ENDPOINTS_BAKORWIL}/galeri/${id}`);
     setDataGaleri((prevData) => prevData.filter((Galeri) => Galeri.id !== id));
     notifyDelete("Data Galeri Berhasil Dihapus!");
   } catch (error) {
@@ -24,7 +25,7 @@ export const addDataGaleri = async (
   formik
 ) => {
   try {
-    await axios.post("http://localhost:4000/galeri", formData, {
+    await axios.post(`${API_ENDPOINTS_BAKORWIL}/galeri`, formData, {
       headers: {
         "content-Type": "multipart/form-data",
       },
@@ -56,7 +57,7 @@ export const editDataGaleri = async (
 ) => {
   try {
     await axios.patch(
-      `http://localhost:4000/galeri/${pickOfGaleriEdit.id}`,
+      `${API_ENDPOINTS_BAKORWIL}/galeri/${pickOfGaleriEdit.id}`,
       formData,
       {
         headers: {

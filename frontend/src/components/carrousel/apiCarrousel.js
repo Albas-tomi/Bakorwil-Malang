@@ -1,13 +1,14 @@
 import axios from "axios";
+const API_ENDPOINTS_BAKORWIL = import.meta.env.VITE_APP_DOMAIN;
 
 export const getCarrouesel = async () => {
-  const res = await axios.get("http://localhost:4000/carrousel");
+  const res = await axios.get(`${API_ENDPOINTS_BAKORWIL}/carrousel`);
   return res.data;
 };
 
 export const deleteCarrousel = async (id, setDataCarrousel, notifyDelete) => {
   try {
-    await axios.delete(`http://localhost:4000/carrousel/${id}`);
+    await axios.delete(`${API_ENDPOINTS_BAKORWIL}/carrousel/${id}`);
     setDataCarrousel((prevData) =>
       prevData.filter((carrousel) => carrousel.id !== id)
     );
@@ -26,7 +27,7 @@ export const addDataCarrousel = async (
   formik
 ) => {
   try {
-    await axios.post("http://localhost:4000/carrousel", formData, {
+    await axios.post(`${API_ENDPOINTS_BAKORWIL}/carrousel`, formData, {
       headers: {
         "content-Type": "multipart/form-data",
       },
@@ -57,7 +58,7 @@ export const editDataCarrousel = async (
 ) => {
   try {
     await axios.patch(
-      `http://localhost:4000/carrousel/${pickOfCarrouselEdit.id}`,
+      `${API_ENDPOINTS_BAKORWIL}/carrousel/${pickOfCarrouselEdit.id}`,
       formData,
       {
         headers: {

@@ -1,7 +1,8 @@
 import axios from "axios";
+const API_ENDPOINTS_BAKORWIL = import.meta.env.VITE_APP_DOMAIN;
 
 export const getDokumen = async () => {
-  const res = await axios.get("http://localhost:4000/dokumen");
+  const res = await axios.get(`${API_ENDPOINTS_BAKORWIL}/dokumen`);
   return res.data;
 };
 
@@ -14,7 +15,7 @@ export const addDataDokumen = async (
   formik
 ) => {
   try {
-    await axios.post("http://localhost:4000/dokumen", formData, {
+    await axios.post(`${API_ENDPOINTS_BAKORWIL}/dokumen`, formData, {
       headers: {
         "content-Type": "multipart/form-data",
       },
@@ -36,7 +37,7 @@ export const addDataDokumen = async (
 
 export const deleteDokumen = async (id, setDataDokumen, notifyDelete) => {
   try {
-    await axios.delete(`http://localhost:4000/dokumen/${id}`);
+    await axios.delete(`${API_ENDPOINTS_BAKORWIL}/dokumen/${id}`);
     setDataDokumen((prevData) =>
       prevData.filter((dokumen) => dokumen.id !== id)
     );
@@ -57,7 +58,7 @@ export const editDataDokumen = async (
 ) => {
   try {
     await axios.patch(
-      `http://localhost:4000/dokumen/${pickOfDokumenEdit.id}`,
+      `${API_ENDPOINTS_BAKORWIL}/dokumen/${pickOfDokumenEdit.id}`,
       formData,
       {
         headers: {

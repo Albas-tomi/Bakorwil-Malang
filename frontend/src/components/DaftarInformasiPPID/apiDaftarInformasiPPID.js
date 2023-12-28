@@ -1,7 +1,8 @@
 import axios from "axios";
+const API_ENDPOINTS_BAKORWIL = import.meta.env.VITE_APP_DOMAIN;
 
 export const getDaftarInformasiPPID = async () => {
-  const res = await axios.get("http://localhost:4000/daftarinformasi");
+  const res = await axios.get(`${API_ENDPOINTS_BAKORWIL}/daftarinformasi`);
   return res.data;
 };
 
@@ -14,7 +15,7 @@ export const addDataDaftarInformasiPPID = async (
   formik
 ) => {
   try {
-    await axios.post("http://localhost:4000/daftarinformasi", formData, {
+    await axios.post(`${API_ENDPOINTS_BAKORWIL}/daftarinformasi`, formData, {
       headers: {
         "content-Type": "multipart/form-data",
       },
@@ -43,7 +44,7 @@ export const deleteDaftarInformasiPPID = async (
   notifyDelete
 ) => {
   try {
-    await axios.delete(`http://localhost:4000/daftarinformasi/${id}`);
+    await axios.delete(`${API_ENDPOINTS_BAKORWIL}/daftarinformasi/${id}`);
     setDataDaftarInformasiPPID((prevData) =>
       prevData.filter((DaftarInformasiPPID) => DaftarInformasiPPID.id !== id)
     );
@@ -64,7 +65,7 @@ export const editDataDaftarInformasiPPID = async (
 ) => {
   try {
     await axios.patch(
-      `http://localhost:4000/daftarinformasi/${pickOfDaftarInformasiPPIDEdit.id}`,
+      `${API_ENDPOINTS_BAKORWIL}/daftarinformasi/${pickOfDaftarInformasiPPIDEdit.id}`,
       formData,
       {
         headers: {
