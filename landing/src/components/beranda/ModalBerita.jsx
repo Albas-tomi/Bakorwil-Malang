@@ -13,7 +13,9 @@ const ModalBerita = ({ pickOfBerita }) => {
             ✕
           </button>
           <img
-            src={`http://localhost:4000/beritaImg//${pickOfBerita.gambar}`}
+            src={`${import.meta.env.VITE_APP_DOMAIN}/beritaImg//${
+              pickOfBerita.gambar
+            }`}
             alt=""
             className="max-w-92 rounded-md mx-auto mt-[-40px]"
           />

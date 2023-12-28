@@ -1,7 +1,7 @@
 import React from "react";
 
 const ModalGaleri = ({ pickOfGaleri }) => {
-  const urlImg = "http://localhost:4000/galeriImg/";
+  const urlImg = `${import.meta.env.VITE_APP_DOMAIN}/galeriImg/`;
 
   return (
     <>

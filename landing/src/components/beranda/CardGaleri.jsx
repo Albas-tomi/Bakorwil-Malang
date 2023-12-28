@@ -3,7 +3,7 @@ import { getDataGaleri } from "../../getDataApi";
 
 const CardGaleri = ({ setPickOfGaleri }) => {
   const [dataGaleri, setDataGaleri] = useState([]);
-  const urlImg = "http://localhost:4000/galeriImg/";
+  const urlImg = `${import.meta.env.VITE_APP_DOMAIN}/galeriImg/`;
   useEffect(() => {
     getDataGaleri().then((data) => {
       setDataGaleri(data);

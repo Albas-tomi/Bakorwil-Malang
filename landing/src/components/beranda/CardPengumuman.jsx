@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 
 const CardPengumuman = ({ setPickOfPengumuman }) => {
   const [dataPengumuman, setDataPengumuman] = useState([]);
-  const urlImg = "http://localhost:4000/pengumumanImg/";
+  const urlImg = `${import.meta.env.VITE_APP_DOMAIN}/pengumumanImg/`;
   useEffect(() => {
     getDataPengumuman().then((data) => {
       setDataPengumuman(data);

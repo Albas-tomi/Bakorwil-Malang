@@ -1,42 +1,44 @@
 import axios from "axios";
 
 export const getDataVideo = async () => {
-  const res = await axios.get("http://localhost:4000/video");
+  const res = await axios.get(`${import.meta.env.VITE_APP_DOMAIN}/video`);
   return res.data;
 };
 export const getDataCarrousel = async () => {
-  const res = await axios.get("http://localhost:4000/carrousel");
+  const res = await axios.get(`${import.meta.env.VITE_APP_DOMAIN}/carrousel`);
   return res.data;
 };
 export const getDataGaleri = async () => {
-  const res = await axios.get("http://localhost:4000/galeri");
+  const res = await axios.get(`${import.meta.env.VITE_APP_DOMAIN}/galeri`);
   return res.data;
 };
 export const getDataPengumuman = async () => {
-  const res = await axios.get("http://localhost:4000/pengumuman");
+  const res = await axios.get(`${import.meta.env.VITE_APP_DOMAIN}/pengumuman`);
   return res.data;
 };
 export const getDataBerita = async () => {
-  const res = await axios.get("http://localhost:4000/berita");
+  const res = await axios.get(`${import.meta.env.VITE_APP_DOMAIN}/berita`);
   return res.data;
 };
 export const getDataDokumen = async () => {
-  const res = await axios.get("http://localhost:4000/dokumen");
+  const res = await axios.get(`${import.meta.env.VITE_APP_DOMAIN}/dokumen`);
   return res.data;
 };
 export const getDataPejabat = async () => {
-  const res = await axios.get("http://localhost:4000/pejabat");
+  const res = await axios.get(`${import.meta.env.VITE_APP_DOMAIN}/pejabat`);
   return res.data;
 };
 export const getDataDaftarInformasiPPID = async () => {
-  const res = await axios.get("http://localhost:4000/daftarinformasi");
+  const res = await axios.get(
+    `${import.meta.env.VITE_APP_DOMAIN}/daftarinformasi`
+  );
   return res.data;
 };
 
 export const editDataBerita = async (beritaData, formData) => {
   try {
     await axios.patch(
-      `http://localhost:4000/berita/${beritaData.id}`,
+      `${import.meta.env.VITE_APP_DOMAIN}/berita/${beritaData.id}`,
       formData,
       {
         headers: {
@@ -45,6 +47,6 @@ export const editDataBerita = async (beritaData, formData) => {
       }
     );
   } catch (error) {
-    console.log("Error submitting form:", error.message);
+    console.log(`Error submitting form:`, error.message);
   }
 };

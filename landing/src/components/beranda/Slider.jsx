@@ -3,7 +3,7 @@ import { getDataCarrousel } from "../../getDataApi";
 
 const Slider = () => {
   const [dataCarrousel, setDataCarrousel] = useState([]);
-  const urlImg = "http://localhost:4000/carrouselImg/";
+  const urlImg = `${import.meta.env.VITE_APP_DOMAIN}/carrouselImg/`;
 
   // ===================== FOR GET API ======================
   useEffect(() => {

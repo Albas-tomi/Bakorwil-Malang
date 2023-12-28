@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { FaClock } from "react-icons/fa";
 import { getDataBerita } from "../../getDataApi";
-import { useEffect } from "react";
 import dayjs from "dayjs";
 import { FaEye } from "react-icons/fa6";
 
@@ -10,7 +9,7 @@ const CardBerita = ({ setPickOfBerita }) => {
   //   ====================Get Data ===================
   const [dataBerita, setDataBerita] = useState([]);
 
-  const urlImg = "http://localhost:4000/beritaImg/";
+  const urlImg = `${import.meta.env.VITE_APP_DOMAIN}/beritaImg/`;
   useEffect(() => {
     getDataBerita().then((data) => {
       setDataBerita(data);
