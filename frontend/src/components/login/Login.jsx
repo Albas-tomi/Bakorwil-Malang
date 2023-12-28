@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 import { toast } from "react-toastify";
+const API_ENDPOINTS_BAKORWIL = import.meta.env.VITE_APP_DOMAIN;
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,7 +16,7 @@ const Login = () => {
   const handleLogin = async (data) => {
     const { email, password } = data;
     try {
-      const res = await axios.post("http://localhost:4000/login", {
+      const res = await axios.post(`${API_ENDPOINTS_BAKORWIL}/login`, {
         email,
         password,
       });

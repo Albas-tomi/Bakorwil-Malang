@@ -1,7 +1,8 @@
 import axios from "axios";
+const API_ENDPOINTS_BAKORWIL = import.meta.env.VITE_APP_DOMAIN;
 
 export const getVideo = async () => {
-  const res = await axios.get("http://localhost:4000/video");
+  const res = await axios.get(`${API_ENDPOINTS_BAKORWIL}/video`);
   return res.data;
 };
 
@@ -14,7 +15,7 @@ export const addDataVideo = async (
   formik
 ) => {
   try {
-    await axios.post("http://localhost:4000/video", formData, {
+    await axios.post(`${API_ENDPOINTS_BAKORWIL}/video`, formData, {
       headers: {
         "content-Type": "multipart/form-data",
       },
@@ -34,7 +35,7 @@ export const addDataVideo = async (
 
 export const deleteVideo = async (id, setDataVideo, notifyDelete) => {
   try {
-    await axios.delete(`http://localhost:4000/video/${id}`);
+    await axios.delete(`${API_ENDPOINTS_BAKORWIL}/video/${id}`);
     setDataVideo((prevData) => prevData.filter((Video) => Video.id !== id));
     notifyDelete("Data Video Berhasil Dihapus!");
   } catch (error) {
@@ -53,7 +54,7 @@ export const editDataVideo = async (
 ) => {
   try {
     await axios.patch(
-      `http://localhost:4000/video/${pickOfVideoEdit.id}`,
+      `${API_ENDPOINTS_BAKORWIL}/video/${pickOfVideoEdit.id}`,
       formData,
       {
         headers: {

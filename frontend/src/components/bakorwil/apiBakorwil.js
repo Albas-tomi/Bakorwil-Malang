@@ -1,13 +1,14 @@
 import axios from "axios";
+const API_ENDPOINTS_BAKORWIL = import.meta.env.VITE_APP_DOMAIN;
 
 export const getBakorwil = async () => {
-  const res = await axios.get("http://localhost:4000/bakorwil");
+  const res = await axios.get(`${API_ENDPOINTS_BAKORWIL}/bakorwil`);
   return res.data;
 };
 
 export const deleteBakorwil = async (id, setDataBakorwil, notifyDelete) => {
   try {
-    await axios.delete(`http://localhost:4000/bakorwil/${id}`);
+    await axios.delete(`${API_ENDPOINTS_BAKORWIL}/bakorwil/${id}`);
     setDataBakorwil((prevData) =>
       prevData.filter((bakorwil) => bakorwil.id !== id)
     );
@@ -26,7 +27,7 @@ export const addDataBakorwil = async (
   formik
 ) => {
   try {
-    await axios.post("http://localhost:4000/bakorwil", formData, {
+    await axios.post(`${API_ENDPOINTS_BAKORWIL}/bakorwil`, formData, {
       headers: {
         "content-Type": "multipart/form-data",
       },
@@ -39,7 +40,7 @@ export const addDataBakorwil = async (
     notifyAddData("Data Bakorwil berhasil ditambahkan!");
     handleCloseModal();
     formik.resetForm();
-    // window.location.reload();
+    window.location.reload();
   } catch (error) {
     console.log(error);
   }
@@ -56,7 +57,7 @@ export const editDataBakorwil = async (
 ) => {
   try {
     await axios.patch(
-      `http://localhost:4000/bakorwil/${pickOfBakorwilEdit.id}`,
+      `${API_ENDPOINTS_BAKORWIL}/bakorwil/${pickOfBakorwilEdit.id}`,
       formData,
       {
         headers: {
@@ -73,7 +74,7 @@ export const editDataBakorwil = async (
     notifyEdit("Data Bakorwil Berhasil Di edit!");
     handleCloseModal();
     formik.resetForm();
-    // window.location.reload();
+    window.location.reload();
   } catch (error) {
     console.log("Error submitting form:", error);
   }

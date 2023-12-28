@@ -1,7 +1,8 @@
 import axios from "axios";
+const API_ENDPOINTS_BAKORWIL = import.meta.env.VITE_APP_DOMAIN;
 
 export const getProgram = async () => {
-  const res = await axios.get("http://localhost:4000/program");
+  const res = await axios.get(`${API_ENDPOINTS_BAKORWIL}/program`);
   return res.data;
 };
 
@@ -14,7 +15,7 @@ export const addDataProgram = async (
   formik
 ) => {
   try {
-    await axios.post("http://localhost:4000/program", formData, {
+    await axios.post(`${API_ENDPOINTS_BAKORWIL}/program`, formData, {
       headers: {
         "content-Type": "multipart/form-data",
       },
@@ -34,7 +35,7 @@ export const addDataProgram = async (
 
 export const deleteProgram = async (id, setDataProgram, notifyDelete) => {
   try {
-    await axios.delete(`http://localhost:4000/program/${id}`);
+    await axios.delete(`${API_ENDPOINTS_BAKORWIL}/program/${id}`);
     setDataProgram((prevData) =>
       prevData.filter((Program) => Program.id !== id)
     );
@@ -55,7 +56,7 @@ export const editDataProgram = async (
 ) => {
   try {
     await axios.patch(
-      `http://localhost:4000/program/${pickOfProgramEdit.id}`,
+      `${API_ENDPOINTS_BAKORWIL}/program/${pickOfProgramEdit.id}`,
       formData,
       {
         headers: {

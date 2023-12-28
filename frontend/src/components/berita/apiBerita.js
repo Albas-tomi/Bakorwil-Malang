@@ -1,13 +1,14 @@
 import axios from "axios";
+const API_ENDPOINTS_BAKORWIL = import.meta.env.VITE_APP_DOMAIN;
 
 export const getBerita = async () => {
-  const res = await axios.get("http://localhost:4000/berita");
+  const res = await axios.get(`${API_ENDPOINTS_BAKORWIL}/berita`);
   return res.data;
 };
 
 export const deleteBerita = async (id, setDataBerita, notifyDelete) => {
   try {
-    await axios.delete(`http://localhost:4000/berita/${id}`);
+    await axios.delete(`${API_ENDPOINTS_BAKORWIL}/berita/${id}`);
     setDataBerita((prevData) => prevData.filter((berita) => berita.id !== id));
     notifyDelete("Data Berita Berhasil Dihapus!");
   } catch (error) {
@@ -24,7 +25,7 @@ export const addDataBerita = async (
   formik
 ) => {
   try {
-    await axios.post("http://localhost:4000/berita", formData, {
+    await axios.post(`${API_ENDPOINTS_BAKORWIL}/berita`, formData, {
       headers: {
         "content-Type": "multipart/form-data",
       },
@@ -56,7 +57,7 @@ export const editDataBerita = async (
 ) => {
   try {
     await axios.patch(
-      `http://localhost:4000/berita/${pickOfBeritaEdit.id}`,
+      `${API_ENDPOINTS_BAKORWIL}/berita/${pickOfBeritaEdit.id}`,
       formData,
       {
         headers: {

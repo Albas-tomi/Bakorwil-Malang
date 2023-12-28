@@ -1,7 +1,8 @@
 import axios from "axios";
+const API_ENDPOINTS_BAKORWIL = import.meta.env.VITE_APP_DOMAIN;
 
 export const getPejabat = async () => {
-  const res = await axios.get("http://localhost:4000/pejabat");
+  const res = await axios.get(`${API_ENDPOINTS_BAKORWIL}/pejabat`);
   return res.data;
 };
 
@@ -14,7 +15,7 @@ export const addDataPejabat = async (
   formik
 ) => {
   try {
-    await axios.post("http://localhost:4000/pejabat", formData, {
+    await axios.post(`${API_ENDPOINTS_BAKORWIL}/pejabat`, formData, {
       headers: {
         "content-Type": "multipart/form-data",
       },
@@ -35,7 +36,7 @@ export const addDataPejabat = async (
 
 export const deletePejabat = async (id, setDataPejabat, notifyDelete) => {
   try {
-    await axios.delete(`http://localhost:4000/pejabat/${id}`);
+    await axios.delete(`${API_ENDPOINTS_BAKORWIL}/pejabat/${id}`);
     setDataPejabat((prevData) =>
       prevData.filter((Pejabat) => Pejabat.id !== id)
     );
@@ -56,7 +57,7 @@ export const editDataPejabat = async (
 ) => {
   try {
     await axios.patch(
-      `http://localhost:4000/pejabat/${pickOfPejabatEdit.id}`,
+      `${API_ENDPOINTS_BAKORWIL}/pejabat/${pickOfPejabatEdit.id}`,
       formData,
       {
         headers: {
