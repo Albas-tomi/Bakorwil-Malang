@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { FaDownload } from "react-icons/fa6";
 import { useState } from "react";
-import { getDataDaftarInformasiPPID } from "../../getDataApi.js";
+import { getDataDaftarInformasiPPID } from "../../getDataApi";
 
 export const Modal = () => {
   const [dataDokumenPPID, setDataDokumenPPID] = useState([]);

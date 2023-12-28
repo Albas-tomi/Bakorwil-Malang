@@ -13,7 +13,7 @@ export const Modal = ({ data }) => {
             ✕
           </button>
           <img
-            src={`http://localhost:4000/beritaImg//${data.gambar}`}
+            src={`${import.meta.env.VITE_APP_DOMAIN}/beritaImg//${data.gambar}`}
             alt=""
             className="max-w-96 md:w-[60%] w-[100%] rounded-md mx-auto mt-[-40px]"
           />

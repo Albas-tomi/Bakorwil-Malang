@@ -12,7 +12,7 @@ export const Card = ({ beritaData, Get }) => {
     editDataBerita(beritaData, formData);
     setKunjungan(kunjungan + 1);
   };
-  const urlImg = "http://localhost:4000/beritaImg/";
+  const urlImg = `${import.meta.env.VITE_APP_DOMAIN}/beritaImg/`;
   return (
     <>
       <div
